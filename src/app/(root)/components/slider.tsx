@@ -31,14 +31,14 @@ function Slider({ sliderData }: { sliderData: SlideItem[] }) {
             return (
               <CarouselItem
                 key={index}
-                className="relative  lg:h-[680px] pt-24   lg:pt-[130px] pb-20 lg:pb-0 lg:pb-[240px]"
+                className="relative flex flex-col justify-center  lg:h-[680px] pt-24   lg:pt-[130px] pb-20 lg:pb-[240px]"
               >
                 <div
-                  className="absolute inset-0 bg-cover bg-center lg:h-[500px] "
+                  className="absolute inset-0 bg-cover bg-center lg:h-[600px] "
                   style={{ backgroundImage: `url(${item.image})`, filter: "brightness(0.5)" }}
                 />
 
-                <div className="relative flex flex-col lg:flex-row px-3 mx-0 lg:mx-[200px] items-center select-none">
+                <div className="relative flex flex-col  lg:flex-row px-3 mx-0 lg:mx-[200px] items-center select-none">
                   <div className="flex-1 flex gap-4 lg:gap-12 flex-col items-center ">
                     {item.subImage.map((img, idx) => {
                       return <Image key={idx} alt="" src={img} width={200} height={300} />;

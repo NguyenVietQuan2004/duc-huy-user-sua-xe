@@ -5,7 +5,7 @@ function Booking() {
   return (
     <div
       className="flex px-4 flex-col lg:flex-row lg:px-[200px] items-center gap-10 relative  z-[8] 
-      lg:-top-[200px] mt-8 lg:mt-0"
+      lg:-top-[240px] mt-8 lg:mt-0"
     >
       <div className="flex-1 border  h-[100vh] border-[#08080808]  bg-[#]">
         <Form />

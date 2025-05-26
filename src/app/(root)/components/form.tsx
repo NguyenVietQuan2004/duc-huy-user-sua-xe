@@ -75,7 +75,7 @@ export default function Form({ hasCloseIcon }: { hasCloseIcon?: boolean }) {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="max-w-[540px] relative  overflow-auto mx-auto bg-[#F4F6F7] p-10 rounded-lg shadow-md"
+      className="max-w-[510px] relative  overflow-auto mx-auto bg-[#F4F6F7] p-10 rounded-xl shadow-md"
     >
       {hasCloseIcon && (
         <button className="absolute top-4 right-4 cursor-pointer" onClick={() => setIsShowModelBooking(false)}>
