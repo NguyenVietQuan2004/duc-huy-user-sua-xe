@@ -125,7 +125,7 @@ function Header() {
               src="https://nhatphatauto.vn/wp-content/uploads/2024/05/Group-625622.svg"
               width={160}
               height={300}
-              className="absolute z-3 top-[calc(30%+16px)] lg:top-[30%] left-1/2 -translate-x-1/2"
+              className="absolute  h-auto z-3 object-cover top-[calc(30%+16px)] lg:top-[30%] left-1/2 -translate-x-1/2"
             />
           </Link>
 

@@ -8,6 +8,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { format, isToday, parseISO } from "date-fns";
 import { useForm, Controller, useWatch } from "react-hook-form";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { CloseIcon, XIcon } from "../../../public/icon";
+import useModalBooking from "@/hooks/use-model-booking";
 
 type FormValues = {
   name: string;
@@ -31,7 +33,8 @@ const servicesOptions = [
 
 const centerOptions = ["Trung tâm 1", "Trung tâm 2", "Trung tâm 3", "Trung tâm 4"];
 
-export default function Form() {
+export default function Form({ hasCloseIcon }: { hasCloseIcon?: boolean }) {
+  const { setIsShowModelBooking } = useModalBooking();
   const {
     register,
     handleSubmit,
@@ -73,8 +76,13 @@ export default function Form() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="max-w-[540px]   overflow-auto mx-auto bg-[#F4F6F7] p-10 rounded-lg shadow-md"
+      className="max-w-[540px] relative  overflow-auto mx-auto bg-[#F4F6F7] p-10 rounded-lg shadow-md"
     >
+      {hasCloseIcon && (
+        <button className="absolute top-4 right-4 cursor-pointer" onClick={() => setIsShowModelBooking(false)}>
+          <CloseIcon />
+        </button>
+      )}
       <h2 className="text-red-700 font-bold text-xl mb-4 border-b border-red-700 pb-2">ĐẶT LỊCH HẸN NGAY</h2>
 
       {/* Họ và tên */}

@@ -11,19 +11,9 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 import { Blog } from "@/type/blog";
+import { sampleArrayBlog } from "@/data";
 
 // Data mẫu dạng blog
-const sampleBlog = Array.from({ length: 23 }).map((_, i) => ({
-  _id: `${i + 1}`,
-  title: `Bài viết số ${i + 1}`,
-  name: `bai-viet-so-${i + 1}`,
-  content: `Nội dung mô tả cho bài viết số ${i + 1}. Đây là ví dụ mẫu.`,
-  images: [],
-  images_name: [],
-  author_id: 1,
-  created_at: new Date(),
-  updated_at: new Date(),
-}));
 
 export default function SearchResults({ keyword }: { keyword: string }) {
   const [blogs, setBlogs] = useState<Blog[]>([]);
@@ -31,7 +21,7 @@ export default function SearchResults({ keyword }: { keyword: string }) {
   const itemsPerPage = 9;
 
   useEffect(() => {
-    setBlogs(sampleBlog);
+    setBlogs(sampleArrayBlog);
   }, []);
 
   const totalPages = Math.ceil(blogs.length / itemsPerPage);
@@ -45,7 +35,7 @@ export default function SearchResults({ keyword }: { keyword: string }) {
   };
 
   return (
-    <div className="space-y-6 py-20 min-h-[80vh]">
+    <div className="space-y-6 py-30 lg:py-20 min-h-[80vh]">
       <h2 className="text-2xl font-bold">
         Kết quả tìm kiếm cho "<span className="text-primary">{keyword}</span>"
       </h2>
@@ -64,6 +54,7 @@ export default function SearchResults({ keyword }: { keyword: string }) {
           </p>
         </Link>
       ))}
+      {blogs.length === 0 && <div>Không tìm thấy kết quả tìm kiếm với từ khóa '{keyword}'</div>}
 
       {/* Pagination UI */}
       {totalPages > 1 && (

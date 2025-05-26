@@ -2,6 +2,7 @@ import Link from "next/link";
 import ServiceDetail from "./service-details";
 import { dichvu, services } from "@/data";
 import Image from "next/image";
+import ButtonClient from "./button-client";
 type Params = Promise<{ tendichvu: string }>;
 
 export default async function DichVu({ params }: { params: Params }) {
@@ -27,7 +28,7 @@ export default async function DichVu({ params }: { params: Params }) {
       </div>
 
       {/* List */}
-      <div className="max-w-[1140px] mx-auto text-[18px] pt-60 py-20 pt-30 flex flex-col gap-8">
+      <div className="max-w-[1140px] mx-auto text-[18px] lg:pt-60 px-4 lg:px-0 py-20 pt-30 flex flex-col gap-8">
         <div
           className="flex flex-row-reverse  justify-between items-start gap-10 relative  z-[8] 
       lg:-top-[300px]"
@@ -53,13 +54,11 @@ export default async function DichVu({ params }: { params: Params }) {
 
               <div className="h-[1px] bg-[#d51921] my-4" />
 
-              <button className="bg-[#d51921] text-white transition-all duration-300 border border-transparent hover:border-[#d51921] hover:bg-white hover:text-[#d51921] text-sm font-bold w-full py-3 rounded-md uppercase">
-                Đặt lịch hẹn
-              </button>
+              <ButtonClient />
             </div>
           </div>
 
-          <div className="relative z-10  mt-[200px]">
+          <div className="lg:relative z-10  lg:mt-[200px]">
             <div className="text-4xl mb-7 font-semibold text-[#d51921]">
               {"CUNG CẤP LỐP XE CHÍNH HÃNG VỚI DỊCH VỤ TIÊU CHUẨN QUỐC TẾ"}
             </div>

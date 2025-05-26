@@ -7,6 +7,8 @@ import { advicesArr, salesArr } from "@/data";
 import { LinkToIcon } from "../../../public/icon";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
+import SlideKM from "@/components/slide-khuyenmai-card";
+import TuVanOtherCard from "@/components/tuvan-other-card";
 
 function AdviceSale() {
   return (
@@ -19,7 +21,7 @@ function AdviceSale() {
       />
       <div className="py-[170px] px-4  relative max-w-[1140px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 ">
         {/* SALE SECTION */}
-        <div className="bg-white overflow-hidden hover:text-[#d51921] shadow-[4px_4px_15px_0px_rgba(0,0,0,0.15)] border border-[#d9d9d9] rounded-sm">
+        {/* <div className="bg-white overflow-hidden hover:text-[#d51921] shadow-[4px_4px_15px_0px_rgba(0,0,0,0.15)] border border-[#d9d9d9] rounded-sm">
           <div className="py-5 px-8 flex items-center gap-5">
             <Image
               alt=""
@@ -68,8 +70,8 @@ function AdviceSale() {
             <LinkToIcon strokeColor="black" />
             <div className="sale-swiper-pagination swiper-pagination !static !flex !justify-end pb-[10px]" />
           </div>
-        </div>
-
+        </div> */}
+        <SlideKM />
         {/* ADVICE SECTION - Sửa giống SALE SECTION */}
         <div className="bg-white overflow-hidden hover:text-[#d51921] shadow-[4px_4px_15px_0px_rgba(0,0,0,0.15)] border border-[#d9d9d9] rounded-sm">
           <div className="py-5 px-8 flex items-center gap-5">
@@ -121,6 +123,7 @@ function AdviceSale() {
             <div className="advice-swiper-pagination swiper-pagination !static !flex !justify-end pb-[10px]" />
           </div>
         </div>
+        {/* <TuVanOtherCard /> */}
       </div>
     </div>
   );

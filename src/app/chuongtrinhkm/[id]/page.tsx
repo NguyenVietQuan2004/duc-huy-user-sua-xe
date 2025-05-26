@@ -1,4 +1,4 @@
-import SearchDetails from "./search-detail";
+import TuVanDetail from "./chuongtrinhkm-detail";
 type Params = Promise<{ id: string }>;
 
 async function Search({ params }: { params: Params }) {
@@ -6,7 +6,7 @@ async function Search({ params }: { params: Params }) {
 
   return (
     <div>
-      <SearchDetails id={id} />{" "}
+      <TuVanDetail id={id} />{" "}
     </div>
   );
 }

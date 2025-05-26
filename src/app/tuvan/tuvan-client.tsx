@@ -21,25 +21,27 @@ function formatDate(dateStr: string) {
 
 // Fake 100 promotions
 const basePromo = {
-  image: "https://nhatphatauto.vn/wp-content/uploads/2025/04/25T04-04-NhatPhat-Post-QuaTang-1200x1200-02.jpg",
-  startDate: "10/05/2025",
-  endDate: "25/06/2025",
+  image: "https://nhatphatauto.vn/wp-content/uploads/2025/04/24T04-03-NhatPhat-Post-ThayPhanh-1200x1200-01.jpg",
+  sub: "Giảm xóc ô tô là một trong những bộ phận quan trọng của hệ thống treo, giúp xe vận hành êm ái và ổn định. Tuy nhiên, sau thời gian dài sử dụng, giảm xóc có thể bị xuống cấp, yếu, hỏng, gây ảnh hưởng nghiêm trọng đến sự...",
   location: "Tất cả trung tâm thuộc hệ thống Nhật Phát",
+  startDate: "10/05/2025",
 };
 
-const promotions = Array.from({ length: 100 }, (_, i) => ({
+const promotions = Array.from({ length: 24 }, (_, i) => ({
   id: i + 1,
-  title: `Chương trình khuyến mãi số ${i + 1}`,
+  title: `Căn chỉnh Hunter là bước quan trọng để đảm bảo xe vận hành ổn định, an toàn và mang đến trải nghiệm lái xe thoải mái, dễ ${
+    i + 1
+  }`,
   ...basePromo,
 }));
 
 const ITEMS_PER_PAGE = 9;
-
-export default function GioiThieu() {
+export default function TuVanClient() {
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(promotions.length / ITEMS_PER_PAGE);
 
   const handlePageChange = (page: number) => {
+    console.log("Chuyển tới trang:", page);
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -53,36 +55,34 @@ export default function GioiThieu() {
         <div
           className="absolute inset-0 bg-cover bg-center h-[500px] "
           style={{
-            backgroundImage: "url(https://nhatphatauto.vn/wp-content/uploads/2024/06/Hero-GioiThieu.jpg)",
+            backgroundImage: "url(https://nhatphatauto.vn/wp-content/uploads/2024/06/Hero-GocTuVan.jpg)",
           }}
         />
-        <div className=" relative max-w-[1140px] py-[120px] pt-[160px] lg:pt-[120px] mx-auto px-4 ">
+        <div className="relative max-w-[1140px] py-[120px] pt-[160px] lg:pt-[120px] mx-auto px-4 ">
           <div className=" text-white max-w-[540px]">
-            <div className="text-[18px]">TIN KHUYẾN MẠI</div>
-            <div className="text-[36px] font-bold text-wrap">Ưu đãi đặc biệt từ Nhật Phát Auto cùng các đối tác</div>
+            <div className="text-[18px]">GÓC TƯ VẤN</div>
+            <div className="text-[36px] font-bold">Kiến thức cho những hành trình an toàn trên mọi cung đường</div>
           </div>
         </div>
       </div>
 
       {/* List */}
-      <div className="px-4  max-w-[1140px] mx-auto text-[18px] pt-40 py-20 flex flex-col gap-10">
+      <div className="max-w-[1100px] px-4  mx-auto  pt-40 text-[18px] py-20 flex flex-col gap-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {currentItems.map((promo) => {
             const { day, month, year } = formatDate(promo.startDate);
             return (
-              <Link
-                href={`/chuongtrinhkm/${promo.id}`}
-                key={promo.id}
-                className="border rounded-sm p-4 flex flex-col shadow-md"
-              >
-                <h2 className="text-[24px] font-light h-[108px] line-clamp-3 mb-2">{promo.title}</h2>
-                <div className="w-full  relative mb-4">
+              <Link href={`/tuvan/${promo.id}`} key={promo.id} className="border group  p-4 flex flex-col shadow-md">
+                <h2 className="text-[24px] font-light h-[108px] line-clamp-3 mb-2 group-hover:text-[#d51921]">
+                  {promo.title}
+                </h2>
+                <div className="w-full rounded-sm relative mb-4 overflow-hidden">
                   <Image
                     src={promo.image}
                     alt={promo.title}
                     width={600}
                     height={600}
-                    className="w-full rounded-lg !aspect-square object-cover"
+                    className="w-full rounded-sm hover:scale-105 transition-all duration-300 !aspect-square object-cover"
                   />
                 </div>
                 <div className="flex gap-4 mb-1 items-start">
@@ -93,9 +93,8 @@ export default function GioiThieu() {
                     <div className="text-[14px] py-1 border-t text-gray-600 font-light text-nowrap">tháng {month}</div>
                     <div className="text-[14px] pt-1 border-t text-gray-500 font-light">{year}</div>
                   </div>
-                  <div className="text-sm text-gray-700 leading-snug  line-clamp-4">
-                    Thời hạn Chương trình: <br /> {promo.startDate} tới hết ngày {promo.endDate}. <br />
-                    Địa điểm: {promo.location}.
+                  <div className="text-sm text-gray-700 leading-snug  line-clamp-4 group-hover:text-[#d51921] transition-all duration-200">
+                    {promo.sub}
                   </div>
                 </div>
                 <div className="mt-auto flex justify-between items-center pt-3">

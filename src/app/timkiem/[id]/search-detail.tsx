@@ -10,6 +10,8 @@ import { Autoplay, Pagination } from "swiper/modules";
 import { advicesArr, salesArr } from "@/data";
 import "swiper/css";
 import "swiper/css/pagination";
+import SlideKM from "@/components/slide-khuyenmai-card";
+import TuVanOtherCard from "@/components/tuvan-other-card";
 
 const blogSample: Blog = {
   _id: "1",
@@ -90,7 +92,7 @@ function SearchDetails({}: { id: string }) {
   return (
     <div className="max-w-[1200px] mx-auto py-[100px] ">
       <div className="grid grid-cols-12 gap-10">
-        <div className="col-span-8">
+        <div className="px-4 lg:px-0 pt-20 lg:pt-0 col-span-12 lg:col-span-8">
           <div className="text-[36px] font-light">{blog?.title}</div>
           <div className="text-[14px] flex justify-between font-light my-4">
             <div>Tin khuyến mại</div>
@@ -109,8 +111,8 @@ function SearchDetails({}: { id: string }) {
         </div>
 
         {/* Sidebar */}
-        <div className="col-span-4">
-          <div className="bg-white overflow-hidden hover:text-[#d51921] shadow-[4px_4px_15px_0px_rgba(0,0,0,0.15)] border border-[#d9d9d9] rounded-sm">
+        <div className="hidden lg:block col-span-4">
+          {/* <div className="bg-white overflow-hidden hover:text-[#d51921] shadow-[4px_4px_15px_0px_rgba(0,0,0,0.15)] border border-[#d9d9d9] rounded-sm">
             <div className="py-5 px-8 flex items-center gap-5">
               <Image
                 alt=""
@@ -160,10 +162,10 @@ function SearchDetails({}: { id: string }) {
               <LinkToIcon strokeColor="black" />
               <div className="sale-swiper-pagination swiper-pagination !static !flex !justify-end pb-[10px]" />
             </div>
-          </div>
-
+          </div> */}
+          <SlideKM />
           {/* Bài viết tư vấn */}
-          <div className="bg-white mt-8 overflow-hidden hover:text-[#d51921] shadow-[4px_4px_15px_0px_rgba(0,0,0,0.15)] border border-[#d9d9d9] rounded-sm">
+          {/* <div className="bg-white mt-8 overflow-hidden hover:text-[#d51921] shadow-[4px_4px_15px_0px_rgba(0,0,0,0.15)] border border-[#d9d9d9] rounded-sm">
             <div className="py-5 px-8 flex items-center gap-5">
               <Image
                 alt=""
@@ -212,7 +214,9 @@ function SearchDetails({}: { id: string }) {
               <LinkToIcon strokeColor="black" />
               <div className="advice-swiper-pagination swiper-pagination !static !flex !justify-end pb-[10px]" />
             </div>
-          </div>
+          </div> */}
+
+          <TuVanOtherCard />
         </div>
       </div>
     </div>

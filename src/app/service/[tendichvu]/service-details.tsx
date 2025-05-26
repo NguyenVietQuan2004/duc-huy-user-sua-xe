@@ -32,7 +32,7 @@ const ClientSafeHTML = dynamic(() => import("./client-safe-html"), { ssr: false 
 function ServiceDetail({ dichvu }: { dichvu: Dichvu }) {
   const { setIsShowModelBooking } = useModalBooking();
   return (
-    <div className="text-lg  font-light  px-4  -mt-[500px]">
+    <div className="text-lg  font-light  px-4  lg:-mt-[500px]">
       {dichvu?.content && <ClientSafeHTML content={dichvu.content} images={dichvu.images} />}
 
       <Button

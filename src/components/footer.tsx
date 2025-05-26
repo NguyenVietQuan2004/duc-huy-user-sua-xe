@@ -1,14 +1,7 @@
 import Image from "next/image";
 import { EmailIcon, FacebookIcon, InstagramIcon, LinkedIcon, PhoneIcon, XIcon, YoutubeIcon } from "../../public/icon";
 import Link from "next/link";
-const dichVu = [
-  "Thay thế lốp xe chinh hàng",
-  "Cân bằng động, đảo lốp xe",
-  "Cân chinh độ chum Hunter",
-  "Láng đĩa, thay má phanh",
-  "Thay dầu xe, bảo dưỡng nhanh",
-  "Dịch vụ chăm sóc xe khác",
-];
+import { services } from "@/data";
 
 const centers = [
   {
@@ -37,6 +30,7 @@ function Footer() {
                 width={164}
                 height={80}
                 src={"https://nhatphatauto.vn/wp-content/uploads/2024/05/Group-625622.svg"}
+                className="object-cover "
               />
             </div>
             <div className="flex items-center gap-4 hover:opacity-80 cursor-pointer">
@@ -69,10 +63,10 @@ function Footer() {
           <div className="col-span-4 hidden lg:block">
             <div className="font-bold">DỊCH VỤ CỦA NHẬT PHÁT AUTO</div>
             <ul className="flex flex-col gap-3 mt-4 text-start ml-5 font-light">
-              {dichVu.map((item) => {
+              {services.map((item) => {
                 return (
-                  <li key={item} className="list-disc hover:opacity-70">
-                    <Link href={""}>{item}</Link>
+                  <li key={item.key} className="list-disc hover:opacity-70">
+                    <Link href={""}>{item.key}</Link>
                   </li>
                 );
               })}
