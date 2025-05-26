@@ -1,7 +1,7 @@
-import Image from "next/image";
-import { EmailIcon, FacebookIcon, InstagramIcon, LinkedIcon, PhoneIcon, XIcon, YoutubeIcon } from "../../public/icon";
 import Link from "next/link";
+import Image from "next/image";
 import { services } from "@/data";
+import { EmailIcon, FacebookIcon, InstagramIcon, LinkedIcon, PhoneIcon, XIcon, YoutubeIcon } from "../../public/icon";
 
 const centers = [
   {

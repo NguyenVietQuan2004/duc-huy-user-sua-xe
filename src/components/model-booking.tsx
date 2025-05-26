@@ -1,7 +1,7 @@
 "use client";
-import Form from "@/app/(root)/form";
-import useModalBooking from "@/hooks/use-model-booking";
 import { useEffect, useRef } from "react";
+import Form from "@/app/(root)/components/form";
+import useModalBooking from "@/hooks/use-model-booking";
 
 function ModelBooking() {
   const contentRef = useRef<HTMLDivElement>(null);

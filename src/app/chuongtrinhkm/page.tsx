@@ -1,18 +1,18 @@
 "use client";
 
+import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import { LinkToIcon } from "../../../public/icon";
 import {
   Pagination,
-  PaginationContent,
+  PaginationNext,
   PaginationItem,
   PaginationLink,
-  PaginationNext,
+  PaginationContent,
   PaginationPrevious,
 } from "@/components/ui/pagination";
-import Link from "next/link";
+import { LinkToIcon } from "../../../public/icon";
 
 function formatDate(dateStr: string) {
   const [day, month, year] = dateStr.split("/");
@@ -56,7 +56,7 @@ export default function GioiThieu() {
             backgroundImage: "url(https://nhatphatauto.vn/wp-content/uploads/2024/06/Hero-GioiThieu.jpg)",
           }}
         />
-        <div className=" relative max-w-[1140px] py-[120px] pt-[160px] lg:pt-[120px] mx-auto px-4 ">
+        <div className=" relative max-w-[1140px] py-[120px] h-[500px] pt-[160px] lg:pt-[120px] mx-auto px-4 ">
           <div className=" text-white max-w-[540px]">
             <div className="text-[18px]">TIN KHUYẾN MẠI</div>
             <div className="text-[36px] font-bold text-wrap">Ưu đãi đặc biệt từ Nhật Phát Auto cùng các đối tác</div>
@@ -65,7 +65,7 @@ export default function GioiThieu() {
       </div>
 
       {/* List */}
-      <div className="px-4  max-w-[1140px] mx-auto text-[18px] pt-40 py-20 flex flex-col gap-10">
+      <div className="px-4  max-w-[1140px] mx-auto text-[18px]  py-20 flex flex-col gap-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {currentItems.map((promo) => {
             const { day, month, year } = formatDate(promo.startDate);

@@ -1,45 +1,11 @@
 "use client";
-
-import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-
-import { Menu } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import { services } from "@/data";
+import { Menu } from "lucide-react";
 import SearchForm from "./search-input";
-
-const service = [
-  {
-    key: "Thay thế lốp xe chính hãng",
-    value: "/service/thaylop",
-    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Frame-2.svg",
-  },
-  {
-    key: "Cân bằng động, đảo lốp xe",
-    value: "/service/canbang",
-    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group_2-6.svg",
-  },
-  {
-    key: "Cân chỉnh độ chụm Hunter",
-    value: "/service/canchinh",
-    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group_3-1.svg",
-  },
-  {
-    key: "Láng đĩa, thay má phanh",
-    value: "/service/langdia",
-    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group_2-7.svg",
-  },
-  {
-    key: "Thay dầu xe, bảo dưỡng nhanh",
-    value: "/service/thaydauxe",
-    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group_2-1.svg",
-  },
-  {
-    key: "Dịch vụ chăm sóc xe khác",
-    value: "/service/chamsoc",
-    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Clip-path-group-3.svg",
-  },
-];
+import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
@@ -63,7 +29,7 @@ export default function MobileMenu() {
             <AccordionItem value="services">
               <AccordionTrigger className="text-left">DỊCH VỤ</AccordionTrigger>
               <AccordionContent className="pl-4 space-y-2 ">
-                {service.map((item) => (
+                {services.map((item) => (
                   <Link key={item.key} href={item.value} className="block py-1" onClick={handleClose}>
                     • {item.key}
                   </Link>

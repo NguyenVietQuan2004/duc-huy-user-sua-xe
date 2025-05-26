@@ -1,5 +1,5 @@
-import { SixReasonData } from "@/data";
 import Image from "next/image";
+import { SixReasonData } from "@/data";
 
 function SixReason() {
   return (

@@ -1,85 +1,9 @@
 import Image from "next/image";
-import { CloseIcon } from "../../../public/icon";
-import { useEffect, useRef } from "react";
 import { Button } from "../ui/button";
+import { useEffect, useRef } from "react";
+import { dataTablePriceArr } from "@/data";
+import { CloseIcon } from "../../../public/icon";
 import useModalBooking from "@/hooks/use-model-booking";
-const dataTablePriceArr = [
-  {
-    key: "CÂN BẰNG ĐỘNG",
-    value: [
-      { "Kích cỡ mâm": "Mâm 13” – 16”", "Đơn vị tính": "Bánh", "Đơn giá": "50.000đ" },
-      { "Kích cỡ mâm": "Mâm 17” – 19”", "Đơn vị tính": "Bánh", "Đơn giá": "70.000đ" },
-      { "Kích cỡ mâm": "Mâm 20” – 22”", "Đơn vị tính": "Bánh", "Đơn giá": "100.000đ" },
-    ],
-    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group_2-6.svg",
-  },
-  {
-    key: "CHỈNH ĐỘ CHỤM (GỐC LÁI)",
-    value: [
-      { "Loại xe": "Xe phổ thông", "Đơn vị tính": "Xe", "Đơn giá": "600.000đ" },
-      { "Loại xe": "Crossover, SUV", "Đơn vị tính": "Xe", "Đơn giá": "800.000đ" },
-      { "Loại xe": "Xe sang, Xe siêu sang", "Đơn vị tính": "Xe", "Đơn giá": "1.000.000đ – 2.000.000đ" },
-    ],
-    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group_3-1.svg",
-  },
-  {
-    key: "CÂN CHỈNH THEO GÓI",
-    value: [
-      { "Loại xe": "Xe phổ thông", "Đơn vị tính": "Xe", "Đơn giá": "800.000đ" },
-      { "Loại xe": "Crossover, SUV", "Đơn vị tính": "Xe", "Đơn giá": "1.000.000đ" },
-      { "Loại xe": "Xe sang, Xe siêu sang", "Đơn vị tính": "Xe", "Đơn giá": "1.300.000đ – 2.500.000đ" },
-    ],
-    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Frame-1.svg",
-  },
-  {
-    key: "LÁNG ĐĨA PHANH",
-    value: [
-      { "Loại xe": "Xe phổ thông", "Đơn vị tính": "Đĩa", "Đơn giá": "300.000đ" },
-      { "Loại xe": "Crossover, SUV", "Đơn vị tính": "Đĩa", "Đơn giá": "400.000đ" },
-      { "Loại xe": "Xe sang, Xe siêu sang", "Đơn vị tính": "Đĩa", "Đơn giá": "500.000đ – 1.000.000đ" },
-    ],
-    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group_2-7.svg",
-  },
-  {
-    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Frame-2.svg",
-    key: "DỊCH VỤ LỐP XE",
-    value: [
-      {
-        "Dịch vụ": "Vá lốp",
-        "Mâm 13” – 15”": "50.000đ",
-        "Mâm 16” – 18”": "70.000đ",
-        "Mâm 16” – 18”_2": "90.000đ",
-      },
-      {
-        "Dịch vụ": "Vá lốp miếng lớn",
-        "Mâm 13” – 15”": "70.000đ",
-        "Mâm 16” – 18”": "90.000đ",
-        "Mâm 16” – 18”_2": "100.000đ",
-      },
-      {
-        "Dịch vụ": "Đào mặt lốp",
-        "Mâm 13” – 15”": "50.000đ",
-        "Mâm 16” – 18”": "70.000đ",
-        "Mâm 16” – 18”_2": "90.000đ",
-      },
-      {
-        "Dịch vụ": "Lốp chống xịt",
-        "Mâm 13” – 15”": "",
-        "Mâm 16” – 18”": "100.000đ",
-        "Mâm 16” – 18”_2": "120.000đ",
-      },
-    ],
-  },
-  {
-    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group_3-2.svg",
-    key: "BƠM NITƠ",
-    value: [
-      { "Loại xe": "Bơm lốp mới", "Đơn vị tính": "Xe", "Đơn giá": "100.000đ" },
-      { "Loại xe": "Bơm lốp bổ sung", "Đơn vị tính": "Xe", "Đơn giá": "50.000đ" },
-      { "Loại xe": "Bơm lốp sơ cua", "Đơn vị tính": "Xe", "Đơn giá": "50.000đ" },
-    ],
-  },
-];
 
 function TablePrice({ onClick, isShow }: { onClick: () => void; isShow: boolean }) {
   const contentRef = useRef<HTMLDivElement>(null);

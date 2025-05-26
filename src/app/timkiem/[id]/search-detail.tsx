@@ -1,15 +1,9 @@
 "use client";
 
-import { Blog } from "@/type/blog";
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { LinkToIcon } from "../../../../public/icon";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
-import { advicesArr, salesArr } from "@/data";
 import "swiper/css";
 import "swiper/css/pagination";
+import { Blog } from "@/type/blog";
+import { useEffect, useState } from "react";
 import SlideKM from "@/components/slide-khuyenmai-card";
 import TuVanOtherCard from "@/components/tuvan-other-card";
 
@@ -90,7 +84,7 @@ function SearchDetails({}: { id: string }) {
   }, []);
 
   return (
-    <div className="max-w-[1200px] mx-auto py-[100px] ">
+    <div className="max-w-[1200px] mx-auto py-[100px] px-4 ">
       <div className="grid grid-cols-12 gap-10">
         <div className="px-4 lg:px-0 pt-20 lg:pt-0 col-span-12 lg:col-span-8">
           <div className="text-[36px] font-light">{blog?.title}</div>

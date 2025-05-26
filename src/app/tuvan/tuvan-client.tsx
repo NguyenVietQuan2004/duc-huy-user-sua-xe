@@ -1,8 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
 import { LinkToIcon } from "../../../public/icon";
 import {
   Pagination,
@@ -12,7 +13,6 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
-import Link from "next/link";
 
 function formatDate(dateStr: string) {
   const [day, month, year] = dateStr.split("/");
@@ -58,7 +58,7 @@ export default function TuVanClient() {
             backgroundImage: "url(https://nhatphatauto.vn/wp-content/uploads/2024/06/Hero-GocTuVan.jpg)",
           }}
         />
-        <div className="relative max-w-[1140px] py-[120px] pt-[160px] lg:pt-[120px] mx-auto px-4 ">
+        <div className="relative max-w-[1140px] py-[120px] pt-[160px] h-[500px] lg:pt-[120px] mx-auto px-4 ">
           <div className=" text-white max-w-[540px]">
             <div className="text-[18px]">GÓC TƯ VẤN</div>
             <div className="text-[36px] font-bold">Kiến thức cho những hành trình an toàn trên mọi cung đường</div>
@@ -67,7 +67,7 @@ export default function TuVanClient() {
       </div>
 
       {/* List */}
-      <div className="max-w-[1100px] px-4  mx-auto  pt-40 text-[18px] py-20 flex flex-col gap-10">
+      <div className="max-w-[1100px] px-4  mx-auto  text-[18px] py-20 flex flex-col gap-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {currentItems.map((promo) => {
             const { day, month, year } = formatDate(promo.startDate);

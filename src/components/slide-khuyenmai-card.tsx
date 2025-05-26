@@ -1,13 +1,11 @@
-import { TuVan } from "@/type/tuvan";
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { salesArr, sampleArrayBlog } from "@/data";
 import "swiper/css";
+import Link from "next/link";
 import "swiper/css/pagination";
+import Image from "next/image";
+import { sampleArrayBlog } from "@/data";
+import { LinkToIcon } from "../../public/icon";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
-import { LinkToIcon } from "../../public/icon";
 
 function SlideKM() {
   return (
@@ -30,7 +28,7 @@ function SlideKM() {
         pagination={{
           clickable: true,
           el: ".sale-swiper-pagination",
-          renderBullet: (index, className) => {
+          renderBullet: (_, className) => {
             return `<span class="custom-bullet ${className}"></span>`;
           },
         }}

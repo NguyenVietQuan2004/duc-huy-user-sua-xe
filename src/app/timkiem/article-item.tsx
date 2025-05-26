@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { Blog } from "@/type/blog";
 import {
   Pagination,
   PaginationContent,
@@ -10,8 +10,8 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
-import { Blog } from "@/type/blog";
 import { sampleArrayBlog } from "@/data";
+import { useEffect, useState } from "react";
 
 // Data mẫu dạng blog
 
@@ -35,7 +35,7 @@ export default function SearchResults({ keyword }: { keyword: string }) {
   };
 
   return (
-    <div className="space-y-6 py-30 lg:py-20 min-h-[80vh]">
+    <div className="space-y-6 py-30 lg:py-20 pt-32 lg:pt-0 pb-10 lg:pb-0 min-h-[80vh]">
       <h2 className="text-2xl font-bold">
         Kết quả tìm kiếm cho "<span className="text-primary">{keyword}</span>"
       </h2>

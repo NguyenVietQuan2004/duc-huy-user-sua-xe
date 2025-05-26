@@ -1,11 +1,11 @@
 "use client";
-import Image from "next/image";
-import { ClockIcon, SaleIcon, SearchIcon, TablePriceIcon } from "../../../public/icon";
-import TablePrice from "./table-price";
-import { useState } from "react";
 import Link from "next/link";
-import SearchForm from "./search-input";
+import Image from "next/image";
+import { useState } from "react";
 import MobileMenu from "./menu-mobile";
+import TablePrice from "./table-price";
+import SearchForm from "./search-input";
+import { ClockIcon, SaleIcon, SearchIcon, TablePriceIcon } from "../../../public/icon";
 
 const service = [
   { key: "Thay thế lốp xe chính hãng", value: "/service/thaylop" },
@@ -68,19 +68,16 @@ function Header() {
         </div>
       </div>
 
-      {/* sidebar */}
       <div className="bg-[#242424] z-20 lg:z-0 top-0 left-0 right-0 fixed lg:static border-b border-white lg:mt-[57px]">
-        <div className="max-w-[900px] px-3 select-none h-[65px] items-center flex justify-between font-semibold text-lg mx-auto">
-          {/* responsive */}
+        <div className="max-w-[900px] px-4  select-none h-[65px] items-center flex justify-between font-semibold text-lg mx-auto">
           <div
             onClick={handleShowTablePrice}
-            className="flex gap-3 lg:hidden cursor-pointer hover:text-[#D51921] transition-all duration-150"
+            className="flex gap-3 lg:hidden px-2 lg:px-0 cursor-pointer hover:text-[#D51921] transition-all duration-150"
           >
             <TablePriceIcon />
             <span className="hidden lg:block">Bảng giá dịch vụ</span>
           </div>
 
-          {/* responsive */}
           <div className="hidden  group  lg:flex h-full items-center relative  gap-[7px] hover:text-[#FFBE27] cursor-pointer">
             DỊCH VỤ
             <Image
@@ -140,22 +137,14 @@ function Header() {
             LIÊN HỆ
           </Link>
 
-          {/* responsive */}
           <div className="lg:hidden">
-            {/* <MenuIcon /> */}
             <div>
               <MobileMenu />
             </div>
           </div>
-
-          {/* responsive */}
         </div>
       </div>
       {isShowTablePrice && <TablePrice isShow={isShowTablePrice} onClick={handleShowTablePrice} />}
-
-      {/* {isShowMenuMobile && ( */}
-
-      {/* )} */}
     </div>
   );
 }

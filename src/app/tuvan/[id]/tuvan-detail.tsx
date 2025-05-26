@@ -1,15 +1,10 @@
 "use client";
 
-import { TuVan } from "@/type/tuvan";
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { LinkToIcon } from "../../../../public/icon";
-import { salesArr, sampleArrayBlog } from "@/data";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { TuVan } from "@/type/tuvan";
+import { sampleArrayBlog } from "@/data";
+import { useEffect, useState } from "react";
 import SlideKMCard from "@/components/slide-khuyenmai-card";
 import TuVanOtherCard from "@/components/tuvan-other-card";
 // const tuvanSample: TuVan = {
@@ -86,10 +81,10 @@ function TuVanDetail({ id }: { id: string }) {
       setBlogs(() => sampleArrayBlog.find((item) => item._id === id));
     };
     fetchAPI();
-  }, []);
+  }, [id]);
 
   return (
-    <div className="max-w-[1200px] mx-auto py-[100px] ">
+    <div className="max-w-[1200px] mx-auto py-[100px] px-4">
       <div className="grid grid-cols-10 gap-10">
         <div className="px-4 lg:px-0 pt-20 lg:pt-0 col-span-12 lg:col-span-7">
           <div className="text-[36px] font-light">{tuvan?.title}</div>
@@ -109,10 +104,8 @@ function TuVanDetail({ id }: { id: string }) {
           )}
         </div>
 
-        {/* Sidebar */}
         <div className="hidden lg:block col-span-3">
           <SlideKMCard />
-          {/* Bài viết tư vấn */}
           <TuVanOtherCard />
         </div>
       </div>

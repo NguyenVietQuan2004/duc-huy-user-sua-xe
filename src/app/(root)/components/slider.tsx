@@ -1,8 +1,11 @@
 "use client";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+
 import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
+import useModalBooking from "@/hooks/use-model-booking";
 import { Button, buttonVariants } from "@/components/ui/button";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+
 type SlideItem = {
   image: string;
   text: string;
@@ -12,6 +15,7 @@ type SlideItem = {
 };
 
 function Slider({ sliderData }: { sliderData: SlideItem[] }) {
+  const { setIsShowModelBooking } = useModalBooking();
   return (
     <div>
       <Carousel
@@ -25,9 +29,12 @@ function Slider({ sliderData }: { sliderData: SlideItem[] }) {
         <CarouselContent>
           {sliderData.map((item, index) => {
             return (
-              <CarouselItem key={index} className="relative h-[680px] pt-24  lg:pt-[130px] pb-0 lg:pb-[240px]">
+              <CarouselItem
+                key={index}
+                className="relative  lg:h-[680px] pt-24   lg:pt-[130px] pb-20 lg:pb-0 lg:pb-[240px]"
+              >
                 <div
-                  className="absolute inset-0 bg-cover bg-center h-[500px] "
+                  className="absolute inset-0 bg-cover bg-center lg:h-[500px] "
                   style={{ backgroundImage: `url(${item.image})`, filter: "brightness(0.5)" }}
                 />
 
@@ -47,6 +54,7 @@ function Slider({ sliderData }: { sliderData: SlideItem[] }) {
 
                     <div className="text-[24px] font-light text-white">{item.sub}</div>
                     <Button
+                      onClick={() => setIsShowModelBooking(true)}
                       className={buttonVariants({
                         className:
                           "text-lg mt-7 min-w-[300px] transition-all duration-500 hover:bg-[#D51921] hover:text-white h-[51px] text-black border border-[#d9d9d9] bg-[#FFBE27] ",

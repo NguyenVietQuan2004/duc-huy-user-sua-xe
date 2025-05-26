@@ -5,13 +5,13 @@ function Booking() {
   return (
     <div
       className="flex px-4 flex-col lg:flex-row lg:px-[200px] items-center gap-10 relative  z-[8] 
-      -top-[200px]"
+      lg:-top-[200px] mt-8 lg:mt-0"
     >
       <div className="flex-1 border  h-[100vh] border-[#08080808]  bg-[#]">
         <Form />
       </div>
 
-      <div className="flex-1 text-lg font-light mt-28">
+      <div className="flex-1 text-lg font-light mt-16 lg:mt-28">
         <Image
           alt=""
           src={"https://nhatphatauto.vn/wp-content/uploads/2024/05/Group-625622-1.svg"}

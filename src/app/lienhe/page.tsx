@@ -11,7 +11,7 @@ function GioiThieu() {
             backgroundImage: "url(https://nhatphatauto.vn/wp-content/uploads/2024/06/Hero-LienHe.jpg)",
           }}
         />
-        <div className="relative max-w-[1140px] py-[120px] pt-[160px] lg:pt-[120px] mx-auto px-4 ">
+        <div className="relative max-w-[1140px] py-[120px] h-[500px] pt-[160px] lg:pt-[120px] mx-auto px-4 ">
           <div className=" text-white max-w-[540px]">
             <div className="text-[18px]">LIÊN HỆ</div>
             <div className="text-[36px] font-bold">Nếu có câu hỏi, đừng ngần ngại liên hệ với Nhật Phát Auto</div>
@@ -20,7 +20,7 @@ function GioiThieu() {
       </div>
 
       {/* Contact Section */}
-      <div className="max-w-[1100px] px-4  mx-auto text-[18px] pt-40 font-light py-20 flex flex-col gap-6">
+      <div className="max-w-[1100px] px-4  mx-auto text-[18px]  font-light py-20 flex flex-col gap-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Left - Maps & Addresses */}
           <div className="flex flex-col gap-8">

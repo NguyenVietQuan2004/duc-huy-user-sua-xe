@@ -1,7 +1,8 @@
 "use client";
+
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import useModalBooking from "@/hooks/use-model-booking";
-import Image from "next/image";
 
 function GioiThieu() {
   const { setIsShowModelBooking } = useModalBooking();
@@ -9,20 +10,20 @@ function GioiThieu() {
     <div>
       <div className="relative">
         <div
-          className="absolute inset-0 bg-cover bg-center h-[500px] "
+          className="absolute inset-0 bg-cover bg-center h-[500px]  lg:pt-0 "
           style={{
             backgroundImage: "url(https://nhatphatauto.vn/wp-content/uploads/2024/06/Hero-GioiThieu.jpg)",
           }}
         />
-        <div className="relative max-w-[1140px] py-[120px] pt-[160px] lg:pt-[120px] mx-auto px-4 ">
-          <div className=" text-white max-w-[540px]">
+        <div className="relative max-w-[1140px] py-[120px] pt-[160px] h-[500px] lg:pt-[120px] mx-auto px-4 ">
+          <div className=" text-white max-w-[540px] h-[189px]">
             <div className="text-[18px]">GIỚI THIỆU VỀ NHẬT PHÁT AUTO</div>
             <div className="text-[36px] font-bold">Công nghệ đỉnh cao mang lại uy tín & chất lượng vượt trội</div>
           </div>
         </div>
       </div>
 
-      <div className="max-w-[1140px] px-4  mx-auto text-[18px] font-light pt-40 py-20 flex flex-col gap-6">
+      <div className="max-w-[1140px] px-4  mx-auto text-[18px] font-light py-10 [min-width:500px]:pt-40   flex flex-col gap-6">
         <div className="text-[#ff0000] text-[30px] font-bold">
           {" "}
           Uy tín của Nhật Phát Auto là sự kết hợp tổng hòa của thiết bị công nghệ hiện đại, quy trình chuẩn mực và kiến

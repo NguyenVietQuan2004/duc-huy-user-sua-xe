@@ -1,8 +1,8 @@
 import Link from "next/link";
-import ServiceDetail from "./service-details";
-import { dichvu, services } from "@/data";
 import Image from "next/image";
+import { dichvu, services } from "@/data";
 import ButtonClient from "./button-client";
+import ServiceDetail from "./service-details";
 type Params = Promise<{ tendichvu: string }>;
 
 export default async function DichVu({ params }: { params: Params }) {
@@ -19,7 +19,7 @@ export default async function DichVu({ params }: { params: Params }) {
             backgroundImage: "url(https://nhatphatauto.vn/wp-content/uploads/2024/06/Hero-GioiThieu.jpg)",
           }}
         />
-        <div className="relative max-w-[1140px] py-[120px] pt-[160px] lg:pt-[120px] mx-auto px-4 ">
+        <div className="relative max-w-[1140px] py-[120px] pt-[160px] h-[500px]  lg:pt-[120px] mx-auto px-4 ">
           <div className=" text-white max-w-[540px]">
             <div className="text-[18px]">CÂN CHỈNH ĐỘ CHỤM (GÓC LÁI) BÁNH XE</div>
             <div className="text-[36px] font-bold">Với tiêu chuẩn an toàn số 1 thế giới từ máy Hunter – USA</div>

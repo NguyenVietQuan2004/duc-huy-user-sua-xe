@@ -1,34 +1,11 @@
 "use client";
+import dynamic from "next/dynamic";
+import { Dichvu } from "@/type/dichvu";
 import { Button } from "@/components/ui/button";
 import useModalBooking from "@/hooks/use-model-booking";
-import { Dichvu } from "@/type/dichvu";
-import dynamic from "next/dynamic";
 
 const ClientSafeHTML = dynamic(() => import("./client-safe-html"), { ssr: false });
 
-// function injectImageRandomly(content: string, images?: string[], imgNames?: string[]) {
-//   if (!images?.length) return content;
-
-//   const lines = content.split("\n");
-
-//   if (!imgNames || imgNames.length !== images.length) {
-//     imgNames = new Array(images.length).fill("");
-//   }
-
-//   let modifiedLines = [...lines];
-
-//   images.forEach((imageUrl, i) => {
-//     const imgName = imgNames[i];
-
-//     const insertIndex = Math.floor(Math.random() * (modifiedLines.length + 1));
-
-//     const imageTag = `<div class="my-1"><img src="${imageUrl}" alt="image" class="w-full rounded-md shadow-md" /><div class="text-center font-light text-[18px] italic mt-4 ">${imgName}</div></div>`;
-
-//     modifiedLines.splice(insertIndex, 0, imageTag);
-//   });
-
-//   return modifiedLines.join("\n");
-// }
 function ServiceDetail({ dichvu }: { dichvu: Dichvu }) {
   const { setIsShowModelBooking } = useModalBooking();
   return (

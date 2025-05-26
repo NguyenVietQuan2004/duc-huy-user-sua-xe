@@ -1,11 +1,8 @@
-import Image from "next/image";
-import Link from "next/link";
-import { salesArr, sampleArrayBlog } from "@/data";
 import "swiper/css";
+import Link from "next/link";
 import "swiper/css/pagination";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
-import SlideKMCard from "@/components/slide-khuyenmai-card";
+import Image from "next/image";
+import { sampleArrayBlog } from "@/data";
 import { LinkToIcon } from "../../public/icon";
 function TuVanOtherCard() {
   return (

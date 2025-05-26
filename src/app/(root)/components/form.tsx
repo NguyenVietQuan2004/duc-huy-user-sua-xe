@@ -4,12 +4,12 @@ import React from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import { CloseIcon } from "../../../../public/icon";
 import { Checkbox } from "@/components/ui/checkbox";
 import { format, isToday, parseISO } from "date-fns";
+import useModalBooking from "@/hooks/use-model-booking";
 import { useForm, Controller, useWatch } from "react-hook-form";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { CloseIcon, XIcon } from "../../../public/icon";
-import useModalBooking from "@/hooks/use-model-booking";
 
 type FormValues = {
   name: string;
@@ -53,7 +53,6 @@ export default function Form({ hasCloseIcon }: { hasCloseIcon?: boolean }) {
   const now = new Date();
   const currentHour = now.getHours();
 
-  // Sinh giờ từ 8 đến 17, với ngày hôm nay thì chỉ hiện giờ >= giờ hiện tại
   const generateHourOptions = () => {
     const hours = [];
     for (let hour = 8; hour <= 17; hour++) {

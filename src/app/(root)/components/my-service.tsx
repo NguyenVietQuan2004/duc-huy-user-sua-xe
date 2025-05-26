@@ -1,7 +1,7 @@
-import Image from "next/image";
-import { LinkToIcon } from "../../../public/icon";
 import Link from "next/link";
+import Image from "next/image";
 import { services } from "@/data";
+import { LinkToIcon } from "../../../../public/icon";
 
 function MyService() {
   return (
@@ -13,7 +13,7 @@ function MyService() {
         }}
       />
       {/* Thêm nội dung hoặc một div trống để component hợp lệ */}
-      <div className="relative z-10  p-4 max-w-[1140px] mx-auto pt-[180px] pb-[250px] ">
+      <div className="relative z-10  p-4 max-w-[1140px] mx-auto pt-[180px] pb-20 lg:pb-[250px] ">
         <div className="text-[#124d9b] text-[36px] font-bold">DỊCH VỤ CỦA CHÚNG TÔI</div>
         <div className="text-[24px] font-light">Nhật Phát Auto cung cấp các dịch vụ với tiêu chuẩn quốc tế</div>
         <div className="grid grid-cols-1 lg:grid-cols-3  mt-20 ">
