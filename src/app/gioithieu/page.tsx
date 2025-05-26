@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import useModalBooking from "@/hooks/use-model-booking";
 import Image from "next/image";
@@ -146,9 +147,11 @@ function GioiThieu() {
         </div>
         <div>
           <div className="">
-            <img
+            <Image
               src="https://nhatphatauto.vn/wp-content/uploads/2024/05/Group-625656.png"
               alt="Ảnh 1"
+              width={800}
+              height={800}
               className=" rounded-lg object-cover w-full h-full"
             />
           </div>

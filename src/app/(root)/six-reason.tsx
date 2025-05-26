@@ -1,31 +1,5 @@
+import { SixReasonData } from "@/data";
 import Image from "next/image";
-
-const SixReasonData = [
-  {
-    image: "https://nhatphatauto.vn/wp-content/themes/AvantDG/assets/svg/like.svg",
-    text: "Dược đảm bảo chất lượng dịch vụ nhơ đội ngũ quan lý trịnh độ cao, giàu kinh nghiệm, voi đàu tàu là anh Vuong Ha (Ha Hunter) – chuyền gia hàng đầu vê lốp va các dich vụ liên quan tại Việt Nam.",
-  },
-  {
-    image: "https://nhatphatauto.vn/wp-content/themes/AvantDG/assets/svg/like.svg",
-    text: "Đội ngũ kỹ thuật viên dược đào tao chuyền môn theo tiêu chuẩn quốc tế của hãng đàu như HUNTER (MY) và Michelin (Pháp).",
-  },
-  {
-    image: "https://nhatphatauto.vn/wp-content/themes/AvantDG/assets/svg/like.svg",
-    text: "Cơ sở vật chất rồng rãi, hiên đai voi ngày đù dan thiết bị HUNTER nháp khâu chinh hăng, dat tiêu chuẩn cao nhát của Michelin Việt Nam va Hunter Việt Nam.",
-  },
-  {
-    image: "https://nhatphatauto.vn/wp-content/themes/AvantDG/assets/svg/like.svg",
-    text: "Tiêu chuẩn dịch vụ đàu ra cao nhát Việt Nam, hưong tới viếc nâng cao trải nghiệm tài xe cho khách hàng.",
-  },
-  {
-    image: "https://nhatphatauto.vn/wp-content/themes/AvantDG/assets/svg/like.svg",
-    text: "Các sản phẩm tại Nhật Phát Auto dược đảm bảo tinh hêu qua sư dung, nháp chinh hăng từ các trương hieu hàng đàu the gioi.",
-  },
-  {
-    image: "https://nhatphatauto.vn/wp-content/themes/AvantDG/assets/svg/like.svg",
-    text: "Quy trình hoạt động tinh gọn, nhân chong, tiên dung giup qua trinh trai nghiem dich vu hoan hao nhat, tur khâu tư vấn, tiên don va nhac nhó bảo dường định kỳ.",
-  },
-];
 
 function SixReason() {
   return (

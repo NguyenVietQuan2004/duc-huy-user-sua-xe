@@ -1,45 +1,8 @@
 import Image from "next/image";
 import { LinkToIcon } from "../../../public/icon";
 import Link from "next/link";
+import { services } from "@/data";
 
-const MyServiceData = [
-  {
-    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Frame-2.svg",
-    text: "THAY THẾ LỐP XE CHÍNH HÃNG",
-    linkTo: "/service/thaylop",
-    sub: "Cung cấp và thay thế lốp xe chính hãng chất lượng cao như Michelin, Bridgestone, Matrax...",
-  },
-  {
-    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group_2-6.svg",
-    text: "CÂN BĂNG ĐỒNG, ĐẠO LỐP XE",
-    linkTo: "/service/canbang",
-    sub: "Phát hiện mòn cân bằng xe, xử lý cân bằng trọng lượng lốp, làm lại lớp vỏ cao su.",
-  },
-  {
-    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group_3-1.svg",
-    text: "CÂN CHỈNH ĐỘ CHÙM HUNTER",
-    linkTo: "/service/canchinh",
-    sub: "Kiểm tra & khôi phục nguyên trạng gay lốp mòn không đều, lệch vọ lăng, nhào lái.",
-  },
-  {
-    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group_2-7.svg",
-    text: "LÁNG DÍA, THAY MÃ PHANH",
-    linkTo: "/service/langdia",
-    sub: "Xử lý tinh trạng khi phanh tao tiếng ồn, rung, hiếu suất kém, đảm bảo an toàn khi di chuyển.",
-  },
-  {
-    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group_2-1.svg",
-    text: "THAY DẦU XE, BẢO DƯỠNG NHANH",
-    linkTo: "/service/thaydauxe",
-    sub: "Bảo dưỡng, thay thế cho xe nhur dầu, nhớt, ác quy...bảng sản phẩm chính hãng.",
-  },
-  {
-    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Clip-path-group-3.svg",
-    text: "DỊCH VỤ CHĂM SÓC XE KHÁC",
-    linkTo: "/service/chamsoc",
-    sub: "Kiểm tra, phát hiện và cung cấp giải pháp chăm sóc xe bảng các sản phẩm chính hãng.",
-  },
-];
 function MyService() {
   return (
     <div className="relative w-full ">
@@ -54,10 +17,10 @@ function MyService() {
         <div className="text-[#124d9b] text-[36px] font-bold">DỊCH VỤ CỦA CHÚNG TÔI</div>
         <div className="text-[24px] font-light">Nhật Phát Auto cung cấp các dịch vụ với tiêu chuẩn quốc tế</div>
         <div className="grid grid-cols-1 lg:grid-cols-3  mt-20 ">
-          {MyServiceData.map((item, index) => {
+          {services.map((item, index) => {
             return (
               <Link
-                href={item.linkTo}
+                href={item.value}
                 key={index}
                 className={`
                 ${

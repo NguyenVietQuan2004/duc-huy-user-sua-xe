@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Form from "./form";
+import Image from "next/image";
 
 function Booking() {
   return (

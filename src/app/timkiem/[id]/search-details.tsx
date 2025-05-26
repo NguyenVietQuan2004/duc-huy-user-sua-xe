@@ -62,7 +62,7 @@ function injectImageRandomly(content: string, images?: string[], imgNames?: stri
     imgNames = new Array(images.length).fill("");
   }
 
-  let modifiedLines = [...lines];
+  const modifiedLines = [...lines];
 
   images.forEach((imageUrl, i) => {
     const imgName = imgNames[i];
@@ -77,7 +77,7 @@ function injectImageRandomly(content: string, images?: string[], imgNames?: stri
   return modifiedLines.join("\n");
 }
 
-function SearchDetails({ id }: { id: string }) {
+function SearchDetails({}: { id: string }) {
   const [blog, setBlogs] = useState<Blog>();
 
   useEffect(() => {

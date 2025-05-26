@@ -1,7 +1,7 @@
 "use client";
 import Form from "@/app/(root)/form";
 import useModalBooking from "@/hooks/use-model-booking";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 function ModelBooking() {
   const contentRef = useRef<HTMLDivElement>(null);
@@ -21,7 +21,6 @@ function ModelBooking() {
       setIsShowModelBooking(false);
     }
   };
-  console.log(isShowModelBooking);
   if (!isShowModelBooking) return;
   return (
     <div

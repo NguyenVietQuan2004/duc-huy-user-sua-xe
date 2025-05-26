@@ -1,6 +1,8 @@
 import SearchResults from "./article-item";
 
-export default async function SearchPage({ searchParams }: { searchParams: { query?: string } }) {
+type Params = Promise<{ query?: string }>;
+
+export default async function SearchPage({ searchParams }: { searchParams: Params }) {
   const { query } = await searchParams;
   const keyword = query?.trim() || "";
 

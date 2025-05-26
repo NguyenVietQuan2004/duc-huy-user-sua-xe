@@ -1,61 +1,10 @@
-// "use client";
-// import Image from "next/image";
-// import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-// import Autoplay from "embla-carousel-autoplay";
-// import { Swiper, SwiperSlide } from 'swiper/react';
-// const logos = [
-//   "https://nhatphatauto.vn/wp-content/uploads/2024/06/Castrol.jpg",
-//   "https://nhatphatauto.vn/wp-content/uploads/2024/06/TECH.png",
-//   "https://nhatphatauto.vn/wp-content/uploads/2024/06/ASUKI.png",
-//   "https://nhatphatauto.vn/wp-content/uploads/2024/06/LiquiMoly.jpg",
-//   "https://nhatphatauto.vn/wp-content/uploads/2024/05/image-116.png",
-//   "https://nhatphatauto.vn/wp-content/uploads/2024/06/GERMAN_ADLER.png",
-//   "https://nhatphatauto.vn/wp-content/uploads/2024/06/GERMAN_ADLER.png",
-//   "https://nhatphatauto.vn/wp-content/uploads/2024/06/MatraX.svg",
-//   "https://nhatphatauto.vn/wp-content/uploads/2024/06/varta-batteries.jpg",
-//   "https://nhatphatauto.vn/wp-content/uploads/2024/06/Bosch.png",
-// ];
-// function MyPartner() {
-//   return (
-//     <div className=" pb-16 max-w-[1140px] mx-auto">
-//       <div className="text-[36px] font-bold">ĐỐI TÁC CỦA CHÚNG TÔI</div>
-//       <div className="text-[24px] font-light mb-8">
-//         Nhật Phát Auto tự hào được cộng tác với nhiều thương hiệu hàng đầu thế giới trong ngành xe hơi
-//       </div>
-//       <Carousel
-//         plugins={[
-//           Autoplay({
-//             delay: 5000,
-//           }),
-//         ]}
-//         opts={{ loop: true }}
-//       >
-//         <CarouselContent className="-ml-2 flex items-center">
-//           {logos.map((item, index) => {
-//             return (
-//               <CarouselItem key={index} className="basis-1/5 pl-2 select-none ">
-//                 <Image alt="" width={192} height={700} className="object-cover  " src={item} />
-//               </CarouselItem>
-//             );
-//           })}
-//         </CarouselContent>
-//         <CarouselPrevious className="" />
-//         <CarouselNext className="" />
-//       </Carousel>
-
-//       <div className="flex overflow-auto"></div>
-//     </div>
-//   );
-// }
-
-// export default MyPartner;
 "use client";
-import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
+import Image from "next/image";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 const logos = [
   "https://nhatphatauto.vn/wp-content/uploads/2024/06/Castrol.jpg",

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { ClockIcon, MenuIcon, SaleIcon, SearchIcon, TablePriceIcon } from "../../../public/icon";
+import { ClockIcon, SaleIcon, SearchIcon, TablePriceIcon } from "../../../public/icon";
 import TablePrice from "./table-price";
 import { useState } from "react";
 import Link from "next/link";
@@ -19,10 +19,7 @@ const service = [
 function Header() {
   const [isShowTablePrice, setIsShowTablePricce] = useState(false);
   const [isShowSearchInput, setIsShowSearchInput] = useState(false);
-  const [isShowMenuMobile, setIsShowMenuMobile] = useState(false);
-  const handleShowMenuMobile = () => {
-    setIsShowMenuMobile((pre) => !pre);
-  };
+
   const handleShowTablePrice = () => {
     setIsShowTablePricce((pre) => !pre);
   };
@@ -115,7 +112,7 @@ function Header() {
           <Link href={"/tuvan"} className=" hover:text-[#FFBE27] hidden lg:block  cursor-pointer underline-animate">
             GÓC TƯ VẤN{" "}
           </Link>
-          <a href="/" className="relative  w-[216px] h-[65px] z-[7]">
+          <Link href="/" className="relative  w-[216px] h-[65px] z-[7]">
             <Image
               alt=""
               src="https://nhatphatauto.vn/wp-content/themes/AvantDG/assets/images/bg-logo.png"
@@ -130,7 +127,7 @@ function Header() {
               height={300}
               className="absolute z-3 top-[calc(30%+16px)] lg:top-[30%] left-1/2 -translate-x-1/2"
             />
-          </a>
+          </Link>
 
           <Link
             href={"/gioithieu"}
@@ -144,7 +141,7 @@ function Header() {
           </Link>
 
           {/* responsive */}
-          <div className="lg:hidden" onClick={handleShowMenuMobile}>
+          <div className="lg:hidden">
             {/* <MenuIcon /> */}
             <div>
               <MobileMenu />

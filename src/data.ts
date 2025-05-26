@@ -89,3 +89,99 @@ Liên hệ ngay với Nhật Phát Auto để có trải nghiệm lái hoàn h�
   created_at: new Date("2025-05-25T08:00:00Z"),
   updated_at: new Date("2025-05-25T12:00:00Z"),
 };
+export const services = [
+  {
+    key: "Thay thế lốp xe chính hãng",
+    text: "THAY THẾ LỐP XE CHÍNH HÃNG",
+    value: "/service/thaylop",
+    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Frame-2.svg",
+    sub: "Cung cấp và thay thế lốp xe chính hãng chất lượng cao như Michelin, Bridgestone, Matrax...",
+  },
+  {
+    key: "Cân bằng động, đảo lốp xe",
+    value: "/service/canbang",
+    text: "CÂN BĂNG ĐỒNG, ĐẠO LỐP XE",
+    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group_2-6.svg",
+    sub: "Phát hiện mòn cân bằng xe, xử lý cân bằng trọng lượng lốp, làm lại lớp vỏ cao su.",
+  },
+  {
+    key: "Cân chỉnh độ chụm Hunter",
+    value: "/service/canchinh",
+    text: "CÂN CHỈNH ĐỘ CHÙM HUNTER",
+    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group_3-1.svg",
+    sub: "Kiểm tra & khôi phục nguyên trạng gay lốp mòn không đều, lệch vọ lăng, nhào lái.",
+  },
+  {
+    key: "Láng đĩa, thay má phanh",
+    text: "LÁNG DÍA, THAY MÃ PHANH",
+    value: "/service/langdia",
+    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group_2-7.svg",
+    sub: "Xử lý tinh trạng khi phanh tao tiếng ồn, rung, hiếu suất kém, đảm bảo an toàn khi di chuyển.",
+  },
+  {
+    key: "Thay dầu xe, bảo dưỡng nhanh",
+    value: "/service/thaydauxe",
+    text: "THAY DẦU XE, BẢO DƯỠNG NHANH",
+    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group_2-1.svg",
+    sub: "Bảo dưỡng, thay thế cho xe nhur dầu, nhớt, ác quy...bảng sản phẩm chính hãng.",
+  },
+  {
+    key: "Dịch vụ chăm sóc xe khác",
+    value: "/service/chamsoc",
+    text: "DỊCH VỤ CHĂM SÓC XE KHÁC",
+    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Clip-path-group-3.svg",
+    sub: "Kiểm tra, phát hiện và cung cấp giải pháp chăm sóc xe bảng các sản phẩm chính hãng.",
+  },
+];
+export const sliderData = [
+  {
+    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Hero-01.png",
+    text: "10 năm chinh phục <br/> lòng tin khác hàng",
+    sub: "Hệ thống 3 trung tâm Michelin Nhật Phát chuyên thay thế lốp xe ô tô chính hãng và cung cấp dịch vụ cân bằng động, cân chỉnh độ chụm",
+    subImage: [
+      "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group-625623.png",
+      "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group-625624.png",
+    ],
+    button: "ĐẶT LỊCH HẸN",
+  },
+  {
+    image: "https://nhatphatauto.vn/wp-content/uploads/2024/06/TCG-M.jpg",
+    text: "Nhật Phật Thành Thái chuyến đi điểm",
+    sub: "Nhật Phật Thành Thái đã được chuyển đến địa điểm mới: 82 Trương Công Giai, Dịch Vọng, Cầu Giấy, Hà Nội (cách địa điểm cũ 50m)",
+    subImage: ["https://nhatphatauto.vn/wp-content/uploads/2024/07/NhatPhatAuto-Logo-Hero.png"],
+    button: "TÌM ĐƯỜNG",
+  },
+  {
+    image: "https://nhatphatauto.vn/wp-content/uploads/2024/06/TCG-D.jpg",
+    text: "Lớp MaTraX đã có mặt tại Nhật Phật Auto",
+    sub: `Thương hiệu Châu Âu"Em nguồn, em tài, em cả vị!"`,
+    subImage: ["https://nhatphatauto.vn/wp-content/uploads/2024/07/MatraX-Logo-White.png"],
+    button: "TÌM HIỂU THÊM",
+  },
+];
+export const SixReasonData = [
+  {
+    image: "https://nhatphatauto.vn/wp-content/themes/AvantDG/assets/svg/like.svg",
+    text: "Dược đảm bảo chất lượng dịch vụ nhơ đội ngũ quan lý trịnh độ cao, giàu kinh nghiệm, voi đàu tàu là anh Vuong Ha (Ha Hunter) – chuyền gia hàng đầu vê lốp va các dich vụ liên quan tại Việt Nam.",
+  },
+  {
+    image: "https://nhatphatauto.vn/wp-content/themes/AvantDG/assets/svg/like.svg",
+    text: "Đội ngũ kỹ thuật viên dược đào tao chuyền môn theo tiêu chuẩn quốc tế của hãng đàu như HUNTER (MY) và Michelin (Pháp).",
+  },
+  {
+    image: "https://nhatphatauto.vn/wp-content/themes/AvantDG/assets/svg/like.svg",
+    text: "Cơ sở vật chất rồng rãi, hiên đai voi ngày đù dan thiết bị HUNTER nháp khâu chinh hăng, dat tiêu chuẩn cao nhát của Michelin Việt Nam va Hunter Việt Nam.",
+  },
+  {
+    image: "https://nhatphatauto.vn/wp-content/themes/AvantDG/assets/svg/like.svg",
+    text: "Tiêu chuẩn dịch vụ đàu ra cao nhát Việt Nam, hưong tới viếc nâng cao trải nghiệm tài xe cho khách hàng.",
+  },
+  {
+    image: "https://nhatphatauto.vn/wp-content/themes/AvantDG/assets/svg/like.svg",
+    text: "Các sản phẩm tại Nhật Phát Auto dược đảm bảo tinh hêu qua sư dung, nháp chinh hăng từ các trương hieu hàng đàu the gioi.",
+  },
+  {
+    image: "https://nhatphatauto.vn/wp-content/themes/AvantDG/assets/svg/like.svg",
+    text: "Quy trình hoạt động tinh gọn, nhân chong, tiên dung giup qua trinh trai nghiem dich vu hoan hao nhat, tur khâu tư vấn, tiên don va nhac nhó bảo dường định kỳ.",
+  },
+];

@@ -1,43 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
 import ServiceDetail from "./service-details";
-import { Dichvu } from "@/type/dichvu";
-import { dichvu } from "@/data";
+import { dichvu, services } from "@/data";
+import Image from "next/image";
+type Params = Promise<{ tendichvu: string }>;
 
-const service = [
-  {
-    key: "Thay thế lốp xe chính hãng",
-    value: "/service/thaylop",
-    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Frame-2.svg",
-  },
-  {
-    key: "Cân bằng động, đảo lốp xe",
-    value: "/service/canbang",
-    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group_2-6.svg",
-  },
-  {
-    key: "Cân chỉnh độ chụm Hunter",
-    value: "/service/canchinh",
-    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group_3-1.svg",
-  },
-  {
-    key: "Láng đĩa, thay má phanh",
-    value: "/service/langdia",
-    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group_2-7.svg",
-  },
-  {
-    key: "Thay dầu xe, bảo dưỡng nhanh",
-    value: "/service/thaydauxe",
-    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group_2-1.svg",
-  },
-  {
-    key: "Dịch vụ chăm sóc xe khác",
-    value: "/service/chamsoc",
-    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Clip-path-group-3.svg",
-  },
-];
-
-export default async function DichVu({ params }: { params: { tendichvu: string } }) {
+export default async function DichVu({ params }: { params: Params }) {
   const { tendichvu } = await params;
   console.log(tendichvu);
   // goi api lay dich vu theo ten
@@ -69,7 +36,7 @@ export default async function DichVu({ params }: { params: { tendichvu: string }
             <div className="bg-white  rounded-2xl p-8 border min-w-[370px] shadow-md w-full max-w-xs text-nowrap ">
               <h3 className="text-[#d51921] text-lg font-bold mb-4 uppercase">Dịch vụ khác</h3>
               <ul className="flex flex-col divide-y text-[18px]">
-                {service.map((item) => (
+                {services.map((item) => (
                   <li
                     key={item.key}
                     className={`flex items-center hover:opacity-50 transition-all duration-300 gap-2 py-3 ${
@@ -77,7 +44,7 @@ export default async function DichVu({ params }: { params: { tendichvu: string }
                     }`}
                   >
                     <Link href={item.value} className="flex items-center gap-2">
-                      <img src={item.image} alt="icon" className="w-5 h-5" />
+                      <Image width={100} height={100} src={item.image} alt="icon" className="w-5 h-5" />
                       <span>{item.key}</span>
                     </Link>
                   </li>

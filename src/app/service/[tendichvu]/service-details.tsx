@@ -30,27 +30,9 @@ const ClientSafeHTML = dynamic(() => import("./client-safe-html"), { ssr: false 
 //   return modifiedLines.join("\n");
 // }
 function ServiceDetail({ dichvu }: { dichvu: Dichvu }) {
-  const { isShowModelBooking, setIsShowModelBooking } = useModalBooking();
+  const { setIsShowModelBooking } = useModalBooking();
   return (
     <div className="text-lg  font-light  px-4  -mt-[500px]">
-      {/* <Image
-        alt=""
-        src={"https://nhatphatauto.vn/wp-content/uploads/2024/05/Group-625622-1.svg"}
-        width={255}
-        height={100}
-        className="mb-3"
-      />
-      <div className="text-4xl mb-7 font-semibold">{dichvu.name}</div> */}
-
-      {/* {dichvu?.content && (
-        <div
-          className="text-lg"
-          style={{ whiteSpace: "pre-wrap" }}
-          dangerouslySetInnerHTML={{
-            __html: injectImageRandomly(dichvu.content, dichvu.images),
-          }}
-        />
-      )} */}
       {dichvu?.content && <ClientSafeHTML content={dichvu.content} images={dichvu.images} />}
 
       <Button
