@@ -12,10 +12,19 @@ const compat = new FlatCompat({
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
 
-  // Add overrides or custom rules here
+  {
+    files: ["**/*.ts", "**/*.tsx"], // Áp dụng riêng cho file TypeScript
+    rules: {
+      // Tắt rule từ plugin typescript-eslint
+      "@typescript-eslint/no-unused-vars": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+    },
+  },
+
   {
     rules: {
       "react/no-unescaped-entities": "off",
+      "no-unused-vars": "off", // tắt luôn cho JS thường
     },
   },
 ];

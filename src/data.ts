@@ -1,139 +1,171 @@
-import { Blog } from "./type/blog";
-import { Dichvu } from "./type/dichvu";
+// import { Blog } from "./type/blog";
+// import { Service } from "./type/service";
+// export const content = `<ul>
+// 	<li><strong>Hi chữ n&agrave;y in đậm c&oacute; dấu ở đầu</strong></li>
+// </ul>
 
-export const salesArr = [
-  {
-    img: "https://nhatphatauto.vn/wp-content/uploads/2025/04/25T04-04-NhatPhat-Post-QuaTang-1200x1200-02.jpg",
-    title: "MUA 4 LỐP MICHELIN: Nhận giá sập sàn, cùng ngàn quà tặng",
-    date: "14/04/2025",
-    subtitle:
-      "Chương trình: 15/04/2025 tới hết ngày 15/05/2025 hoặc đến khi hết quà. Địa điểm: Tất cả trung tâm thuộc hệ thống Nhật Phát Auto...",
-  },
-  {
-    img: "https://nhatphatauto.vn/wp-content/uploads/2025/04/25T04-04-NhatPhat-Post-QuaTang-1200x1200-02.jpg",
-    title: "MUA 5 LỐP MICHELIN: Nhận giá sập sàn, cùng ngàn quà tặng",
-    date: "14/04/2025",
-    subtitle:
-      "Chương trình: 15/04/2025 tới hết ngày 15/05/2025 hoặc đến khi hết quà. Địa điểm: Tất cả trung tâm thuộc hệ thống Nhật Phát Auto...",
-  },
-  {
-    img: "https://nhatphatauto.vn/wp-content/uploads/2025/04/25T04-04-NhatPhat-Post-QuaTang-1200x1200-02.jpg",
-    title: "MUA 6 LỐP MICHELIN: Nhận giá sập sàn, cùng ngàn quà tặng",
-    date: "14/04/2025",
-    subtitle:
-      "Chương trình: 15/04/2025 tới hết ngày 15/05/2025 hoặc đến khi hết quà. Địa điểm: Tất cả trung tâm thuộc hệ thống Nhật Phát Auto...",
-  },
-];
-export const advicesArr = [
-  {
-    img: "https://nhatphatauto.vn/wp-content/uploads/2025/02/25T02-02-NhatPhat-Post-5LoaiDau-1200x1200-01.jpg",
-    title: "5 loan thay thế định kỳ",
-    date: "14/04/2025",
-    subtitle: "Dầu nhớt ô tô giúp xe ảm bảo an toàn...",
-  },
-  {
-    img: "https://nhatphatauto.vn/wp-content/uploads/2025/02/25T02-02-NhatPhat-Post-5LoaiDau-1200x1200-01.jpg",
-    title: "11 loại dầu nhớt ô tô quan trọng và mốc thời gian thay thế định kỳ",
-    date: "14/04/2025",
-    subtitle: "Dầu nhớt ô tô giúp xe vận hành mượt mà, bảo vệ động cơ, hệ thống truyền động và đảm bảo an toàn...",
-  },
-  {
-    img: "https://nhatphatauto.vn/wp-content/uploads/2025/02/25T02-02-NhatPhat-Post-5LoaiDau-1200x1200-01.jpg",
-    title: "21 loại dầu nhớt ô tô quan trọng và mốc thời gian thay thế định kỳ",
-    date: "14/04/2025",
-    subtitle: "Dầu nhớt ô tô giúp xe vận hành mượt mà, bảo vệ động cơ, hệ thống truyền động và đảm bảo an toàn...",
-  },
-  {
-    img: "https://nhatphatauto.vn/wp-content/uploads/2025/02/25T02-02-NhatPhat-Post-5LoaiDau-1200x1200-01.jpg",
-    title: "6 loại dầu nhớt ô tô quan trọng và mốc thời gian thay thế định kỳ",
-    date: "14/04/2025",
-    subtitle: "Dầu nhớt ô tô giúp xe vận hành mượt mà, bảo vệ động cơ, hệ thống truyền động và đảm bảo an toàn...",
-  },
-  {
-    img: "https://nhatphatauto.vn/wp-content/uploads/2025/02/25T02-02-NhatPhat-Post-5LoaiDau-1200x1200-01.jpg",
-    title: "7 loại dầu nhớt ô tô quan trọng và mốc thời gian thay thế định kỳ",
-    date: "14/04/2025",
-    subtitle: "Dầu nhớt ô tô giúp xe vận hành mượt mà, bảo vệ động cơ, hệ thống truyền động và đảm bảo an toàn...",
-  },
-];
+// <p><strong>TRƯỜNG ĐẠI HỌC C&Ocirc;NG NGHỆ TH&Ocirc;NG TIN</strong><br />
+// <strong>KHOA C&Ocirc;NG NGHỆ PHẦN MỀM</strong></p>
 
-export const dichvu: Dichvu = {
-  _id: "1",
-  name: "bai-viet-so-1",
-  content: `<strong class='font-semibold'>Thay thế lốp xe với chất lượng chuyên môn đạt chuẩn quốc tế</strong>
+// <p>&lt;div style=&quot;text-align: center;&quot;&gt;&lt;h1&gt;B&Aacute;O C&Aacute;O TỔNG HỢP&lt;/h1&gt;&lt;/div&gt;</p>
 
-Nhật Phát Auto vinh dự đạt tiêu chuẩn cao nhất trong hệ thống xếp hạng Car Sevice của Michelin Việt Nam – thương hiệu lốp xe số 1 thế giới. Đó được coi như một sự khẳng định về chất lượng dịch vụ hàng đầu. Đồng thời, kỹ thuật viên của Nhật Phát Auto được đào tạo về kiến thức và kỹ thuật bởi chuyên gia của Hunter Việt Nam – thương hiệu về căn chỉnh bánh xe số 1 thế giới .
+// <hr />
+// <p><strong>Sinh vi&ecirc;n thực hiện</strong>: <em>Nguyễn Văn A</em><br />
+// <strong>M&atilde; số sinh vi&ecirc;n</strong>: 12345678<br />
+// <strong>Lớp</strong>: SE1501<br />
+// <strong>M&ocirc;n học</strong>: Thiết kế v&agrave; ph&aacute;t triển phần mềm<br />
+// <strong>GV hướng dẫn</strong>: <strong>ThS. Trần Văn B</strong><br />
+// <strong>Ng&agrave;y nộp</strong>: 30/05/2025</p>
 
-<strong class='font-semibold'>Đại lý chính thức của nhiều thương hiệu hàng đầu</strong>
-Hỗ trợ cho quá trình thay thế lốp xe tại Nhật Phát Auto là hệ thống các thiết bị Hunter nhập khẩu chính hãng từ Mỹ
+// <hr />
+// <p><strong>I. Giới thiệu chung</strong></p>
 
-Nhật Phát Auto là hệ thống trung tâm lốp xe uy tín hàng đầu tại Hà Nội. Vì vậy, chúng tôi cũng là đại lý chiến lược của những thương hiệu lốp hàng đầu như Michelin, Bridgestone, Pirelli, Yokohama, Goodyear, MatraX, Continental.
+// <p>Trong b&aacute;o c&aacute;o n&agrave;y, ch&uacute;ng t&ocirc;i sẽ tr&igrave;nh b&agrave;y về qu&aacute; tr&igrave;nh <strong>ph&acirc;n t&iacute;ch, thiết kế v&agrave; triển khai</strong> hệ thống <strong>quản l&yacute; b&aacute;n h&agrave;ng trực tuyến</strong>. Dự &aacute;n được ph&aacute;t triển bằng ng&ocirc;n ngữ JavaScript, kết hợp với <strong>Node.js</strong> v&agrave; <strong>React</strong>.</p>
 
-Tại Nhật Phát Auto, quý khách sẽ được tư vấn chính xác loại lốp phù hợp dựa theo mẫu xe, nhu cầu sử dụng với đa dạng mức giá khác nhau. Các sản phẩm lốp của chúng tôi đều được kiểm tra kỹ càng ở khâu đầu vào, đồng thời đảm bảo ngày sản xuất gần nhất để tối ưu quá trình sử dụng cho quý khách.
+// <p>🔍 <em>Ch&uacute; &yacute;</em>: B&aacute;o c&aacute;o sử dụng dữ liệu giả định, kh&ocirc;ng đại diện cho hệ thống thực tế.</p>
 
-Tối ưu hiệu suất và an toàn cho bánh xe
+// <hr />
+// <p><strong>II. Mục ti&ecirc;u dự &aacute;n</strong></p>
 
-Hỗ trợ cho quá trình thay thế lốp xe tại Nhật Phát Auto là dàn thiết bị Hunter nhập khẩu chính hãng từ Mỹ, bao gồm Hunter TCX59 và Hunter Road Force® Elite.
+// <ol>
+// 	<li>Tạo hệ thống đơn giản, dễ mở rộng.</li>
+// 	<li>Hỗ trợ quản l&yacute; sản phẩm, người d&ugrave;ng, đơn h&agrave;ng.</li>
+// 	<li>&Aacute;p dụng kiến thức:
+// 	<ul style="list-style-type:circle">
+// 		<li><strong>Database</strong> (MongoDB)</li>
+// 		<li><strong>API</strong> (RESTful)</li>
+// 		<li><strong>Frontend</strong> (Next.js)</li>
+// 	</ul>
+// 	</li>
+// </ol>
 
-Theo đó, máy ra vào lốp Hunter TCX59 có khả năng xử lý được nhiều loại và kích thước lốp, an toàn tuyệt đối cho lốp, cảm biến TPMS và la-zăng. Nhờ đó lốp mới sẽ được hoạt động tối ưu nhất hiệu năng.
+// <hr />
+// <p><strong>III. M&ocirc; tả chức năng ch&iacute;nh</strong></p>
 
-Ngoài ra, khi thay lốp mới sẽ dẫn đến tình trạng mất cân bằng động bánh xe. Chính vì vậy, Nhật Phát Auto sử dụng dòng máy cân bằng động Hunter Road Force® Elite để thực hiện cân chỉnh bánh xe để đạt trạng thái cân bằng tốt nhất trước khi lắp ráp trở lại lên xe.
+// <table border="1">
+// 	<thead>
+// 		<tr>
+// 			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black">
+// 			<p><strong>STT</strong></p>
+// 			</td>
+// 			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black">
+// 			<p><strong>Chức năng</strong></p>
+// 			</td>
+// 			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black">
+// 			<p><strong>M&ocirc; tả</strong></p>
+// 			</td>
+// 		</tr>
+// 	</thead>
+// 	<tbody>
+// 		<tr>
+// 			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black">
+// 			<p>1</p>
+// 			</td>
+// 			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black">
+// 			<p>Quản l&yacute; sản phẩm</p>
+// 			</td>
+// 			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black">
+// 			<p>Th&ecirc;m/sửa/x&oacute;a sản phẩm</p>
+// 			</td>
+// 		</tr>
+// 		<tr>
+// 			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black">
+// 			<p>2</p>
+// 			</td>
+// 			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black">
+// 			<p>Quản l&yacute; đơn h&agrave;ng</p>
+// 			</td>
+// 			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black">
+// 			<p>Theo d&otilde;i, x&aacute;c nhận, huỷ đơn h&agrave;ng</p>
+// 			</td>
+// 		</tr>
+// 		<tr>
+// 			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black">
+// 			<p>3</p>
+// 			</td>
+// 			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black">
+// 			<p>Thống k&ecirc;</p>
+// 			</td>
+// 			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black">
+// 			<p>Doanh thu theo th&aacute;ng</p>
+// 			</td>
+// 		</tr>
+// 	</tbody>
+// </table>
 
-Đồng thời, Nhật Phát Auto hoạt động dưới sự quản lý – vận hành của anh Vương Hà (Hà Hunter) chuyên gia hàng đầu Việt Nam về lốp và cân chỉnh Hunter, được đào tạo bài bản tại Mỹ sẽ giúp những chiếc xe của quý khách hàng hoạt động một cách tối ưu nhất!
+// <hr />
+// <p><strong>IV. H&igrave;nh ảnh giao diện (minh họa)</strong></p>
 
-Liên hệ ngay với Nhật Phát Auto để có trải nghiệm lái hoàn hảo nhất!`,
-  images: [
-    "https://nhatphatauto.vn/wp-content/uploads/2025/04/25T04-05-NhatPhat-Post-BaoDuong-1200x675-02.jpg",
-    "https://nhatphatauto.vn/wp-content/uploads/2025/04/25T04-05-NhatPhat-Post-BaoDuong-1200x675-02.jpg",
-  ],
-  author_id: 1,
-  created_at: new Date("2025-05-25T08:00:00Z"),
-  updated_at: new Date("2025-05-25T12:00:00Z"),
-};
-export const services = [
-  {
-    key: "Thay thế lốp xe chính hãng",
-    text: "THAY THẾ LỐP XE CHÍNH HÃNG",
-    value: "/service/thaylop",
-    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Frame-2.svg",
-    sub: "Cung cấp và thay thế lốp xe chính hãng chất lượng cao như Michelin, Bridgestone, Matrax...",
-  },
-  {
-    key: "Cân bằng động, đảo lốp xe",
-    value: "/service/canbang",
-    text: "CÂN BĂNG ĐỒNG, ĐẠO LỐP XE",
-    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group_2-6.svg",
-    sub: "Phát hiện mòn cân bằng xe, xử lý cân bằng trọng lượng lốp, làm lại lớp vỏ cao su.",
-  },
-  {
-    key: "Cân chỉnh độ chụm Hunter",
-    value: "/service/canchinh",
-    text: "CÂN CHỈNH ĐỘ CHÙM HUNTER",
-    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group_3-1.svg",
-    sub: "Kiểm tra & khôi phục nguyên trạng gay lốp mòn không đều, lệch vọ lăng, nhào lái.",
-  },
-  {
-    key: "Láng đĩa, thay má phanh",
-    text: "LÁNG DÍA, THAY MÃ PHANH",
-    value: "/service/langdia",
-    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group_2-7.svg",
-    sub: "Xử lý tinh trạng khi phanh tao tiếng ồn, rung, hiếu suất kém, đảm bảo an toàn khi di chuyển.",
-  },
-  {
-    key: "Thay dầu xe, bảo dưỡng nhanh",
-    value: "/service/thaydauxe",
-    text: "THAY DẦU XE, BẢO DƯỠNG NHANH",
-    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group_2-1.svg",
-    sub: "Bảo dưỡng, thay thế cho xe nhur dầu, nhớt, ác quy...bảng sản phẩm chính hãng.",
-  },
-  {
-    key: "Dịch vụ chăm sóc xe khác",
-    value: "/service/chamsoc",
-    text: "DỊCH VỤ CHĂM SÓC XE KHÁC",
-    image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Clip-path-group-3.svg",
-    sub: "Kiểm tra, phát hiện và cung cấp giải pháp chăm sóc xe bảng các sản phẩm chính hãng.",
-  },
-];
+// <hr />
+// <p><strong>V. Kết luận</strong></p>
+
+// <p>Dự &aacute;n đ&atilde; đạt được <strong>90% y&ecirc;u cầu ban đầu</strong>. Tuy c&ograve;n một số hạn chế về UI, nhưng hệ thống hoạt động ổn định. Chi tiết m&atilde; nguồn xem tại:<br />
+// 🔗 <a href="https://github.com/user/project" target="_new">https://github.com/user/project</a></p>
+
+// <hr />
+// <p><strong>Từ kh&oacute;a: <em>E-Commerce, Node.js, React, MongoDB</em><br />
+// K&yacute; tự đặc biệt thử nghiệm: &copy; &trade; </strong><strong>✓</strong><strong> </strong><strong>★</strong><strong> </strong><strong>&rArr;</strong><br />
+// <strong>Highlight v&iacute; dụ: </strong><strong>Hệ thống cần bảo mật &lt;== rất quan trọng!</strong><br />
+// <strong>Ngắt trang ở đ&acirc;y để chia file</strong></p>
+
+// <p>&nbsp;</p>
+// `;
+// export const serviceDetail: Service = {
+//   _id: "1",
+//   name: "bai-viet-so-1",
+//   content,
+//   images: [
+//     "https://nhatphatauto.vn/wp-content/uploads/2025/04/25T04-05-NhatPhat-Post-BaoDuong-1200x675-02.jpg",
+//     "https://nhatphatauto.vn/wp-content/uploads/2025/04/25T04-05-NhatPhat-Post-BaoDuong-1200x675-02.jpg",
+//   ],
+//   author_id: 1,
+//   created_at: new Date("2025-05-25T08:00:00Z"),
+//   updated_at: new Date("2025-05-25T12:00:00Z"),
+// };
+// export const services = [
+//   {
+//     key: "Thay thế lốp xe chính hãng",
+//     text: "THAY THẾ LỐP XE CHÍNH HÃNG",
+//     value: "/service/thaylop",
+//     image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Frame-2.svg",
+//     sub: "Cung cấp và thay thế lốp xe chính hãng chất lượng cao như Michelin, Bridgestone, Matrax...",
+//   },
+//   {
+//     key: "Cân bằng động, đảo lốp xe",
+//     value: "/service/canbang",
+//     text: "CÂN BĂNG ĐỒNG, ĐẠO LỐP XE",
+//     image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group_2-6.svg",
+//     sub: "Phát hiện mòn cân bằng xe, xử lý cân bằng trọng lượng lốp, làm lại lớp vỏ cao su.",
+//   },
+//   {
+//     key: "Cân chỉnh độ chụm Hunter",
+//     value: "/service/canchinh",
+//     text: "CÂN CHỈNH ĐỘ CHÙM HUNTER",
+//     image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group_3-1.svg",
+//     sub: "Kiểm tra & khôi phục nguyên trạng gay lốp mòn không đều, lệch vọ lăng, nhào lái.",
+//   },
+//   {
+//     key: "Láng đĩa, thay má phanh",
+//     text: "LÁNG DÍA, THAY MÃ PHANH",
+//     value: "/service/langdia",
+//     image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group_2-7.svg",
+//     sub: "Xử lý tinh trạng khi phanh tao tiếng ồn, rung, hiếu suất kém, đảm bảo an toàn khi di chuyển.",
+//   },
+//   {
+//     key: "Thay dầu xe, bảo dưỡng nhanh",
+//     value: "/service/thaydauxe",
+//     text: "THAY DẦU XE, BẢO DƯỠNG NHANH",
+//     image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group_2-1.svg",
+//     sub: "Bảo dưỡng, thay thế cho xe nhur dầu, nhớt, ác quy...bảng sản phẩm chính hãng.",
+//   },
+//   {
+//     key: "Dịch vụ chăm sóc xe khác",
+//     value: "/service/chamsoc",
+//     text: "DỊCH VỤ CHĂM SÓC XE KHÁC",
+//     image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Clip-path-group-3.svg",
+//     sub: "Kiểm tra, phát hiện và cung cấp giải pháp chăm sóc xe bảng các sản phẩm chính hãng.",
+//   },
+// ];
 export const sliderData = [
   {
     image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Hero-01.png",
@@ -144,6 +176,7 @@ export const sliderData = [
       "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group-625624.png",
     ],
     button: "ĐẶT LỊCH HẸN",
+    linkTo: "booking",
   },
   {
     image: "https://nhatphatauto.vn/wp-content/uploads/2024/06/TCG-M.jpg",
@@ -151,6 +184,7 @@ export const sliderData = [
     sub: "Nhật Phật Thành Thái đã được chuyển đến địa điểm mới: 82 Trương Công Giai, Dịch Vọng, Cầu Giấy, Hà Nội (cách địa điểm cũ 50m)",
     subImage: ["https://nhatphatauto.vn/wp-content/uploads/2024/07/NhatPhatAuto-Logo-Hero.png"],
     button: "TÌM ĐƯỜNG",
+    linkTo: "/contact",
   },
   {
     image: "https://nhatphatauto.vn/wp-content/uploads/2024/06/TCG-D.jpg",
@@ -158,6 +192,7 @@ export const sliderData = [
     sub: `Thương hiệu Châu Âu"Em nguồn, em tài, em cả vị!"`,
     subImage: ["https://nhatphatauto.vn/wp-content/uploads/2024/07/MatraX-Logo-White.png"],
     button: "TÌM HIỂU THÊM",
+    linkTo: "/introduce",
   },
 ];
 export const SixReasonData = [
@@ -187,59 +222,33 @@ export const SixReasonData = [
   },
 ];
 
-export const blogSample: Blog = {
-  _id: "1",
-  title:
-    "Bài viết số 1 Bài viết số 1 Bài viết số 1  Bài viết số 1  Bài viết số 1  Bài viết số 1  Bài viết số 1  Bài viết số 1  Bài viết số 1  Bài viết số 1  Bài viết số 1 ",
-  name: "bai-viet-so-1",
-  content: `Thời hạn Chương trình: 15/04/2025 tới hết ngày 15/05/2025 hoặc đến khi hết quà.
-Địa điểm: Tất cả trung tâm thuộc hệ thống Nhật Phát Auto.
-Chương trình giảm giá lốp Michelin hấp dẫn nhất đầu năm 2025.
-Chương trình giảm giá lốp Michelin hấp dẫn nhất đầu năm 2025.
-1️⃣0️⃣ giây để tìm ra địa chỉ thay lốp Michelin HOT nhất Hà Nội lúc này!!! 🔥
-———-
-🕵️ Bác tài cần điều gì khi mua lốp Michelin? 🔜 Nhật Phát Auto có đầy đủ, không thiếu gì!!!
-𝑮𝒊𝒂́? Mức giá lốp hấp dẫn bậc nhất thị trường lúc này!
-𝑸𝒖𝒂̀? Tùy chọn 1 trong các quà tặng hữu ích chính hãng Michelin, gồm: Giá đỡ điện thoại kèm sạc không dây, ghế du lịch, tai nghe không dây, máy hút bụi, túi đeo chéo.
-𝑻𝒊𝒆̣̂𝒏 𝒊́𝒄𝒉? Miễn phí lắp đặt và cân bằng động bằng máy Hunter
-𝑻𝒂𝒚 𝒏𝒈𝒉𝒆̂̀ 𝒄𝒂𝒐? Thực hiện tại garage đạt tiêu chuẩn Car Service – cao nhất của Michelin.
-𝑮𝒊𝒂̉𝒎 𝒈𝒊𝒂́ 𝒅𝒊̣𝒄𝒉 𝒗𝒖̣? Giảm ngay 50% phí chỉnh độ chụm bằng máy Hunter.
-———-
-🌟️ Lưu ý, chương trình chỉ áp dụng cho khách hàng thay <strong class='font-bold'> 4 lốp Michelin </strong>.
-🛑 Chỉ có tại Nhật Phát Auto trong thời gian từ 15/4 – 15/5/2025 hoặc đến khi hết quà.
-↪️ Thời hạn ngắn, quà không nhiều! Vì vậy, hãy nhanh tay đặt lịch ngay tới Nhật Phát Auto
-———-
-🔜 Liên hệ ngay với Nhật Phát Auto để được tư vấn đầy đủ và chi tiết nhất!
-Messenger: m.me/490157697746228
-Zalo: https://zalo.me/nhatphatauto
+// export const blogSample: Blog = {
+//   _id: "1",
+//   title:
+//     "Bài viết số 1 Bài viết số 1 Bài viết số 1  Bài viết số 1  Bài viết số 1  Bài viết số 1  Bài viết số 1  Bài viết số 1  Bài viết số 1  Bài viết số 1  Bài viết số 1 ",
+//   name: "Tin khuyến mãi",
+//   content,
+//   images: [
+//     "https://nhatphatauto.vn/wp-content/uploads/2025/04/25T04-05-NhatPhat-Post-BaoDuong-1200x675-02.jpg",
+//     "https://nhatphatauto.vn/wp-content/uploads/2025/04/25T04-05-NhatPhat-Post-BaoDuong-1200x675-02.jpg",
+//   ],
+//   images_name: ["Đây là ảnh 1", "Đây là ảnh 2"],
+//   author_id: 1,
+//   created_at: new Date("2025-05-25T08:00:00Z"),
+//   updated_at: new Date("2025-05-25T12:00:00Z"),
+// };
 
-Hoặc đăng ký theo form thông tin ngay bên dưới bài viết.
-———-
-𝗡𝗵𝗮̣̂𝘁 𝗣𝗵𝗮́𝘁 𝗔𝘂𝘁𝗼
-☑️ Trung tâm Trương Công Giai – 82 Trương Công Giai, Dịch Vọng, Cầu Giấy, Hà Nội.
-☑️ Trung tâm Trần Kim Xuyến – 22 Trần Kim Xuyến, Yên Hoà, Cầu Giấy, Hà Nội.
-☑️ Trung tâm Kiêu Kỵ – T53 Làng nghề tập trung Kiêu Kỵ, Gia Lâm, Hà Nội (Cách Vincom Mega Mall Ocean Park chỉ 2km).`,
-  images: [
-    "https://nhatphatauto.vn/wp-content/uploads/2025/04/25T04-05-NhatPhat-Post-BaoDuong-1200x675-02.jpg",
-    "https://nhatphatauto.vn/wp-content/uploads/2025/04/25T04-05-NhatPhat-Post-BaoDuong-1200x675-02.jpg",
-  ],
-  images_name: ["Đây là ảnh 1", "Đây là ảnh 2"],
-  author_id: 1,
-  created_at: new Date("2025-05-25T08:00:00Z"),
-  updated_at: new Date("2025-05-25T12:00:00Z"),
-};
-
-export const sampleArrayBlog = Array.from({ length: 23 }).map((_, i) => ({
-  _id: `${i + 1}`,
-  title: `Bài viết số ${i + 1}`,
-  name: `bai-viet-so-${i + 1}`,
-  content: `Nội dung mô tả cho bài viết số ${i + 1}. Đây là ví dụ mẫu.`,
-  images: ["https://nhatphatauto.vn/wp-content/uploads/2025/05/25T04-01-Brembo-Video-NghiHe-C-D-01-0-00-22-09.jpg"],
-  images_name: [],
-  author_id: 1,
-  created_at: new Date(),
-  updated_at: new Date(),
-}));
+// export const sampleArrayBlog = Array.from({ length: 23 }).map((_, i) => ({
+//   _id: `${i + 1}`,
+//   title: `Bài viết số ${i + 1}`,
+//   name: `bai-viet-so-${i + 1}`,
+//   content,
+//   images: ["https://nhatphatauto.vn/wp-content/uploads/2025/05/25T04-01-Brembo-Video-NghiHe-C-D-01-0-00-22-09.jpg"],
+//   images_name: [],
+//   author_id: 1,
+//   created_at: new Date(),
+//   updated_at: new Date(),
+// }));
 
 export const dataTablePriceArr = [
   {

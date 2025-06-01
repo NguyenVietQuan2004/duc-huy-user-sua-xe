@@ -1,15 +1,16 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { services } from "@/data";
 import { Menu } from "lucide-react";
 import SearchForm from "./search-input";
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Service } from "@/type/service";
+import { useAppSelector } from "@/store/hook";
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
-
+  const services = useAppSelector((state) => state.service.services);
   const handleClose = () => setOpen(false);
 
   return (
@@ -30,8 +31,13 @@ export default function MobileMenu() {
               <AccordionTrigger className="text-left">DỊCH VỤ</AccordionTrigger>
               <AccordionContent className="pl-4 space-y-2 ">
                 {services.map((item) => (
-                  <Link key={item.key} href={item.value} className="block py-1" onClick={handleClose}>
-                    • {item.key}
+                  <Link
+                    key={item._id}
+                    href={`/service/${item._id}`}
+                    className="line-clamp-1 py-1"
+                    onClick={handleClose}
+                  >
+                    • {item.name}
                   </Link>
                 ))}
               </AccordionContent>
@@ -39,23 +45,23 @@ export default function MobileMenu() {
           </Accordion>
 
           <div className="mt-4 space-y-3 text-sm">
-            <Link href="/tuvan" className="pt-3 block" onClick={handleClose}>
+            <Link href="/advice" className="pt-3 block" onClick={handleClose}>
               GÓC TƯ VẤN
             </Link>
-            <Link href="/gioithieu" className="border-t pt-3 block" onClick={handleClose}>
+            <Link href="/introduce" className="border-t pt-3 block" onClick={handleClose}>
               GIỚI THIỆU
             </Link>
-            <Link href="/lienhe" className="border-t pt-3 block" onClick={handleClose}>
+            <Link href="/contact" className="border-t pt-3 block" onClick={handleClose}>
               LIÊN HỆ
             </Link>
-            <Link href="/chuongtrinhkm" className="border-t pt-3 block" onClick={handleClose}>
+            <Link href="/sale" className="border-t pt-3 block" onClick={handleClose}>
               CHƯƠNG TRÌNH KHUYẾN MẠI
             </Link>
           </div>
 
-          <div className="mt-6 relative">
+          {/* <div className="mt-6 relative">
             <SearchForm onClick={handleClose} />
-          </div>
+          </div> */}
         </SheetContent>
       </Sheet>
     </div>

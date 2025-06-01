@@ -1,7 +1,8 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
-import { services } from "@/data";
 import { EmailIcon, FacebookIcon, InstagramIcon, LinkedIcon, PhoneIcon, XIcon, YoutubeIcon } from "../../public/icon";
+import { useAppSelector } from "@/store/hook";
 
 const centers = [
   {
@@ -19,6 +20,8 @@ const centers = [
 ];
 
 function Footer() {
+  const services = useAppSelector((state) => state.service.services);
+  const handleOnclick = () => {};
   return (
     <div className="bg-[#242424] pt-16 lg:pt-[100px] pb-[64px] text-white ">
       <div className="max-w-[1140px] mx-auto">
@@ -65,8 +68,10 @@ function Footer() {
             <ul className="flex flex-col gap-3 mt-4 text-start ml-5 font-light">
               {services.map((item) => {
                 return (
-                  <li key={item.key} className="list-disc hover:opacity-70">
-                    <Link href={""}>{item.key}</Link>
+                  <li key={item._id} className="list-disc hover:opacity-70">
+                    <Link href={`/service/${item._id}`} className="line-clamp-1">
+                      {item.name}
+                    </Link>
                   </li>
                 );
               })}
@@ -96,11 +101,11 @@ function Footer() {
         <div className="border-t border-[#D51921] px-4  py-4 pt-6 lg:py-0 mt-8 lg:pt-4 flex justify-between items-center">
           <div className="font-light">© 2024 Nhat Phat Auto Co., Ltd. giữ bản quyền.</div>
           <div className="hidden items-center gap-3  lg:flex">
-            <Link href={""} className="hover:text-[#d51921] font-light">
+            <Link href={"#"} onClick={handleOnclick} className="hover:text-[#d51921] font-light">
               Bảng giá Dịch vụ
             </Link>
             <div>|</div>
-            <Link href={""} className="hover:text-[#d51921] font-light">
+            <Link href={"/sale"} className="hover:text-[#d51921] font-light">
               {" "}
               Chương trình Khuyến mại
             </Link>

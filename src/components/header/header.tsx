@@ -1,25 +1,37 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MobileMenu from "./menu-mobile";
 import TablePrice from "./table-price";
 import SearchForm from "./search-input";
 import { ClockIcon, SaleIcon, SearchIcon, TablePriceIcon } from "../../../public/icon";
-
-const service = [
-  { key: "Thay thế lốp xe chính hãng", value: "/service/thaylop" },
-  { key: "Cân bằng động, đảo lốp xe", value: "/service/canbang" },
-  { key: "Cân chỉnh độ chụm Hunter", value: "/service/canchinh" },
-  { key: "Láng đĩa, thay má phanh", value: "/service/langdia" },
-  { key: "Thay dầu xe, bảo dưỡng nhanh", value: "/service/thaydauxe" },
-  { key: "Dịch vụ chăm sóc xe khác", value: "/service/chamsoc" },
-];
+import { Service } from "@/type/service";
+import { serviceApi } from "@/api-request/serviceAPI";
+import { useAppDispatch } from "@/store/hook";
+import { setServices } from "@/store/slices/service-slice";
+// const service = [
+//   { key: "Thay thế lốp xe chính hãng", value: "/service/thaylop" },
+//   { key: "Cân bằng động, đảo lốp xe", value: "/service/canbang" },
+//   { key: "Cân chỉnh độ chụm Hunter", value: "/service/canchinh" },
+//   { key: "Láng đĩa, thay má phanh", value: "/service/langdia" },
+//   { key: "Thay dầu xe, bảo dưỡng nhanh", value: "/service/thaydauxe" },
+//   { key: "Dịch vụ chăm sóc xe khác", value: "/service/chamsoc" },
+// ];
 
 function Header() {
   const [isShowTablePrice, setIsShowTablePricce] = useState(false);
   const [isShowSearchInput, setIsShowSearchInput] = useState(false);
-
+  const [listServices, setListServices] = useState<Service[]>();
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    const fetchAPI = async () => {
+      const listServices = await serviceApi.getAllservices({ limit: 100, page: 1 });
+      dispatch(setServices(listServices));
+      setListServices(listServices);
+    };
+    fetchAPI();
+  }, []);
   const handleShowTablePrice = () => {
     setIsShowTablePricce((pre) => !pre);
   };
@@ -49,21 +61,19 @@ function Header() {
             </div>
           </div>
           <div className="flex items-center gap-7">
-            <Link
-              href={"/chuongtrinhkm"}
-              className="flex gap-3 cursor-pointer hover:text-[#D51921] transition-all duration-150"
-            >
+            <Link href={"/sale"} className="flex gap-3 cursor-pointer hover:text-[#D51921] transition-all duration-150">
               <SaleIcon />
               <span>Chương trình Khuyến mại</span>
             </Link>
-            <div className="w-[0.5px] h-[20px] bg-white"></div>
-            <div className="flex gap-3 relative cursor-pointer hover:text-[#D51921] transition-all duration-150">
+            {/* <div className="w-[0.5px] h-[20px] bg-white"></div> */}
+            <div></div>
+            {/* <div className="flex gap-3 relative cursor-pointer hover:text-[#D51921] transition-all duration-150">
               <SearchIcon />
               <span onClick={handleOpenSearchInput} className="select-none">
                 Tìm kiếm
               </span>
               {isShowSearchInput && <SearchForm onClick={handleOpenSearchInput} />}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -93,20 +103,21 @@ function Header() {
     group-hover:scale-100 group-hover:visible transition-all duration-200 
     text-white shadow-[4px_4px_15px_0px_#00000040]"
             >
-              {service.map((item) => {
+              {listServices?.map((item) => {
                 return (
-                  <Link
-                    className="block hover:text-[#D51921] transition-all duration-200 py-3 font-light border-b border-white last:border-transparent"
-                    href={item.value}
-                    key={item.value}
-                  >
-                    {item.key}
-                  </Link>
+                  <div key={item._id} className="py-3">
+                    <Link
+                      className="line-clamp-1 overflow-hidden  max-w-full hover:text-[#D51921] transition-all duration-200 font-light border-b border-white last:border-transparent"
+                      href={`/service/${item._id}`}
+                    >
+                      {item.name}
+                    </Link>
+                  </div>
                 );
               })}
             </div>
           </div>
-          <Link href={"/tuvan"} className=" hover:text-[#FFBE27] hidden lg:block  cursor-pointer underline-animate">
+          <Link href={"/advice"} className=" hover:text-[#FFBE27] hidden lg:block  cursor-pointer underline-animate">
             GÓC TƯ VẤN{" "}
           </Link>
           <Link href="/" className="relative  w-[216px] h-[65px] z-[7]">
@@ -127,13 +138,13 @@ function Header() {
           </Link>
 
           <Link
-            href={"/gioithieu"}
+            href={"/introduce"}
             className=" hover:text-[#FFBE27] hidden lg:block cursor-pointer underline-animate
           "
           >
             GIỚI THIỆU{" "}
           </Link>
-          <Link href={"/lienhe"} className=" hover:text-[#FFBE27] hidden lg:block cursor-pointer underline-animate">
+          <Link href={"/contact"} className=" hover:text-[#FFBE27] hidden lg:block cursor-pointer underline-animate">
             LIÊN HỆ
           </Link>
 

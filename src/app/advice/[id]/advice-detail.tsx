@@ -1,0 +1,53 @@
+"use client";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import { Advice } from "@/type cu/advice";
+import { useEffect, useState } from "react";
+import SlideSaleCard from "@/components/slide-sale-card";
+import AdviceOtherCard from "@/components/advice-other-card";
+import { blogApi } from "@/api-request/blogApi";
+import { formatDateToDDMMYYYY } from "@/lib/utils";
+
+function AdviceDetail({ id }: { id: string }) {
+  const [advice, setAdvice] = useState<Advice>();
+
+  useEffect(() => {
+    const fetchAPI = async () => {
+      const advice = await blogApi.getBlogById({ blogId: id });
+      setAdvice(advice);
+    };
+    fetchAPI();
+  }, [id]);
+  console.log(advice);
+  return (
+    <div className="max-w-[1200px] mx-auto py-[100px] px-4">
+      <div className="grid grid-cols-10 gap-10">
+        <div className="px-4 lg:px-0 pt-20 lg:pt-0 col-span-12 lg:col-span-7">
+          <div className="text-[36px] font-light">{advice?.title}</div>
+          <div className="text-[14px] flex justify-between font-light my-4">
+            <div>{advice?.name}</div>
+            <div>{formatDateToDDMMYYYY(advice?.created_at.toString())}</div>
+          </div>
+
+          {advice?.content && (
+            <div
+              className="text-lg overflow-hidden text-wrap"
+              style={{ whiteSpace: "pre-wrap" }}
+              dangerouslySetInnerHTML={{
+                __html: advice.content,
+              }}
+            />
+          )}
+        </div>
+
+        <div className="hidden lg:block col-span-3">
+          <SlideSaleCard />
+          <AdviceOtherCard />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default AdviceDetail;

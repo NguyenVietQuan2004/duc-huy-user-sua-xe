@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer";
 import ModelBooking from "@/components/model-booking";
+import { Providers } from "./provider";
 
 const kanit = Kanit({
   subsets: ["latin"],
@@ -23,10 +24,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body className={kanit.className}>
-        <Header />
-        {children}
-        <Footer />
-        <ModelBooking />
+        <Providers>
+          <Header />
+
+          {children}
+          <Footer />
+          <ModelBooking />
+        </Providers>
       </body>
     </html>
   );

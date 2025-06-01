@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
-import Form from "@/app/(root)/components/form";
+import Form from "@/app/(root)/_components/form";
 import useModalBooking from "@/hooks/use-model-booking";
 
 function ModelBooking() {

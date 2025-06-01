@@ -1,10 +1,10 @@
 import { sliderData } from "@/data";
-import Booking from "./components/booking";
-import MyPartner from "./components/my-partner";
-import MyService from "./components/my-service";
-import SixReason from "./components/six-reason";
-import HomePageClient from "./components/slider";
-import AdviceSale from "./components/advice-sales";
+import Booking from "./_components/booking";
+import MyPartner from "./_components/my-partner";
+import MyService from "./_components/my-service";
+import SixReason from "./_components/six-reason";
+import HomePageClient from "./_components/slider";
+import AdviceSale from "./_components/advice-sales";
 
 function Root() {
   return (

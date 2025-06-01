@@ -13,7 +13,7 @@ export default function SearchForm({ onClick }: { onClick?: () => void }) {
     e.preventDefault();
     const trimmed = query.trim();
     if (trimmed) {
-      router.push(`/timkiem?query=${trimmed}`);
+      router.push(`/search?query=${trimmed}`);
       if (onClick) {
         onClick();
       }
