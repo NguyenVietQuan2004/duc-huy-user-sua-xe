@@ -27,6 +27,7 @@ function Header() {
   useEffect(() => {
     const fetchAPI = async () => {
       const listServices = await serviceApi.getAllservices({ limit: 100, page: 1 });
+      console.log(listServices);
       dispatch(setServices(listServices));
       setListServices(listServices);
     };

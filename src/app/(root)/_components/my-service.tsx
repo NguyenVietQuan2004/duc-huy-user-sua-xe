@@ -29,7 +29,7 @@ function MyService() {
         <div className="text-[#124d9b] text-[36px] font-bold">DỊCH VỤ CỦA CHÚNG TÔI</div>
         <div className="text-[24px] font-light">Nhật Phát Auto cung cấp các dịch vụ với tiêu chuẩn quốc tế</div>
         <div className="grid grid-cols-1 lg:grid-cols-3  mt-20 ">
-          {services.map((item, index) => {
+          {services?.map((item, index) => {
             return (
               <Link
                 href={item._id}

@@ -26,7 +26,7 @@ function SaleClient() {
   useEffect(() => {
     const fetchAPI = async () => {
       const listPromotions = await saleApi.getAllSales({ limit: 100, page: 1 });
-      setPromotionList([...listPromotions]);
+      setPromotionList(listPromotions.data);
       console.log(listPromotions);
     };
     fetchAPI();

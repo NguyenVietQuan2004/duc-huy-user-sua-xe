@@ -30,7 +30,7 @@ export default function MobileMenu() {
             <AccordionItem value="services">
               <AccordionTrigger className="text-left">DỊCH VỤ</AccordionTrigger>
               <AccordionContent className="pl-4 space-y-2 ">
-                {services.map((item) => (
+                {services?.map((item) => (
                   <Link
                     key={item._id}
                     href={`/service/${item._id}`}

@@ -17,7 +17,7 @@ function AdviceSale() {
   useEffect(() => {
     const fetchAPI = async () => {
       const listAdvices = await blogApi.getAllBlogs({ limit: 5, page: 1 });
-      setAdviceList([...listAdvices]);
+      setAdviceList(listAdvices.data);
     };
     fetchAPI();
   }, []);

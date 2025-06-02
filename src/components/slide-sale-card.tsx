@@ -17,7 +17,7 @@ function SlideSaleCard() {
   useEffect(() => {
     const fetchAPI = async () => {
       const sales = await saleApi.getAllSales({ limit: 8, page: 1 });
-      setSales(sales);
+      setSales(sales.data);
     };
     fetchAPI();
   }, []);

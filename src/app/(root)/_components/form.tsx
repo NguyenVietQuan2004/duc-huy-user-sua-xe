@@ -182,7 +182,7 @@ export default function Form({ hasCloseIcon }: { hasCloseIcon?: boolean }) {
           name="services"
           render={({ field }) => (
             <div className="grid grid-cols-2 gap-2">
-              {servicesOptions.map(({ name: label, _id: value }) => (
+              {servicesOptions?.map(({ name: label, _id: value }) => (
                 <label key={value} className="flex items-center space-x-2 cursor-pointer">
                   <Checkbox
                     checked={field.value.includes(value)}

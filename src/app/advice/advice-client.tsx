@@ -25,8 +25,7 @@ export default function AdviceClient() {
   useEffect(() => {
     const fetchAPI = async () => {
       const listAdvices = await blogApi.getAllBlogs({ limit: 100, page: 1 });
-      setAdviceList([...listAdvices]);
-      console.log(listAdvices);
+      setAdviceList(listAdvices.data);
     };
     fetchAPI();
   }, [currentPage]);

@@ -66,7 +66,7 @@ function Footer() {
           <div className="col-span-4 hidden lg:block">
             <div className="font-bold">DỊCH VỤ CỦA NHẬT PHÁT AUTO</div>
             <ul className="flex flex-col gap-3 mt-4 text-start ml-5 font-light">
-              {services.map((item) => {
+              {services?.map((item) => {
                 return (
                   <li key={item._id} className="list-disc hover:opacity-70">
                     <Link href={`/service/${item._id}`} className="line-clamp-1">
