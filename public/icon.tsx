@@ -493,8 +493,8 @@ export const ZaloIcon = () => {
         fill="#FDFEFE"
       ></path>
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M5.93196 1.25565C3.05143 1.25565 0.715815 3.72351 0.715815 6.76901V34.231C0.715815 37.2765 3.05143 39.7444 5.93196 39.7444H34.068C36.9486 39.7444 39.2842 37.2765 39.2842 34.231V6.76901C39.2842 3.72351 36.9486 1.25565 34.068 1.25565H5.93196ZM0 6.76901C0 3.30702 2.6553 0.5 5.93196 0.5H34.068C37.3447 0.5 40 3.30702 40 6.76901V34.231C40 37.693 37.3447 40.5 34.068 40.5H5.93196C2.6553 40.5 0 37.693 0 34.231V6.76901Z"
         fill="#005BE0"
       ></path>
@@ -506,14 +506,14 @@ export const MessIcon = () => {
   return (
     <svg height="28px" width="28px" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M20.0002 0.5C8.73252 0.5 0 8.75361 0 19.9007C0 25.7317 2.39034 30.77 6.28179 34.2509C6.60773 34.5447 6.80492 34.9512 6.82102 35.3898L6.92969 38.9472C6.96586 40.082 8.13689 40.8184 9.17518 40.3637L13.143 38.6132C13.481 38.4643 13.8553 38.4361 14.2095 38.5327C16.0324 39.0357 17.9761 39.3013 20.0002 39.3013C31.268 39.3013 40.0005 31.0477 40.0005 19.9007C40.0005 8.75361 31.268 0.5 20.0002 0.5Z"
         fill="url(#paint0_linear_957_24)"
       ></path>
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M7.99204 25.5748L13.8673 16.2547C14.8009 14.7739 16.805 14.4036 18.2054 15.454L22.8775 18.959C23.3082 19.281 23.8957 19.277 24.3222 18.955L30.6321 14.1662C31.4732 13.5264 32.5758 14.5364 32.0084 15.4298L26.1372 24.7459C25.2035 26.2267 23.1995 26.597 21.7991 25.5467L17.127 22.0415C16.6964 21.7197 16.1089 21.7236 15.6823 22.0456L9.36831 26.8384C8.52728 27.4782 7.42461 26.4681 7.99204 25.5748Z"
         fill="white"
       ></path>
@@ -526,8 +526,8 @@ export const MessIcon = () => {
           y2="40.5005"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#00B2FF"></stop>
-          <stop offset="1" stop-color="#006AFF"></stop>
+          <stop stopColor="#00B2FF"></stop>
+          <stop offset="1" stopColor="#006AFF"></stop>
         </linearGradient>
       </defs>
     </svg>
@@ -554,9 +554,9 @@ export const PhoneRedIcon = () => {
           y2="40.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#E45B61"></stop>
-          <stop offset="0.0001" stop-color="#E45B61"></stop>
-          <stop offset="1" stop-color="#D51921"></stop>
+          <stop stopColor="#E45B61"></stop>
+          <stop offset="0.0001" stopColor="#E45B61"></stop>
+          <stop offset="1" stopColor="#D51921"></stop>
         </linearGradient>
       </defs>
     </svg>

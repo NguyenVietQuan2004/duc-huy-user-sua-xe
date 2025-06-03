@@ -13,6 +13,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { FormValues } from "@/type/appointment";
 import { appointmentApi } from "@/api-request/appointment";
 import { useAppSelector } from "@/store/hook";
+import { toast } from "sonner";
 
 const servicesOptions = [
   { label: "Thay thế lốp xe", value: "tire_replacement" },
@@ -70,6 +71,7 @@ export default function Form({ hasCloseIcon }: { hasCloseIcon?: boolean }) {
       const payload = { ...data, status: "pending" };
       console.log(payload);
       const res = await appointmentApi.createAppointment({ body: payload });
+      toast.success("Đặt lịch thành công");
       console.log(res);
     } catch (error) {
       console.log(error);

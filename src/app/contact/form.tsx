@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { contactApi } from "@/api-request/contactAPI";
+import { toast } from "sonner";
 
 type FormData = {
   full_name: string;
@@ -23,8 +24,12 @@ export default function ContactForm() {
   const onSubmit = async (data: FormData) => {
     console.log(data);
     // Gửi dữ liệu tại đây
-    const response = await contactApi.createContact({ body: data });
-    console.log(response);
+    try {
+      const response = await contactApi.createContact({ body: data });
+      toast.success("Gửi thông tin liên hệ thành công");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

@@ -7,6 +7,7 @@ import ModelBooking from "@/components/model-booking";
 import { Providers } from "./provider";
 import Social from "@/components/social";
 import ScrollToTopButton from "@/components/scroll-to-top";
+import { Toaster } from "@/components/ui/sonner";
 
 const kanit = Kanit({
   subsets: ["latin"],
@@ -34,6 +35,7 @@ export default function RootLayout({
           <ModelBooking />
           <Social />
           <ScrollToTopButton />
+          <Toaster />
         </Providers>
       </body>
     </html>

@@ -78,7 +78,7 @@ export const SixReasonData = [
 //   _id: "1",
 //   title:
 //     "Bài viết số 1 Bài viết số 1 Bài viết số 1  Bài viết số 1  Bài viết số 1  Bài viết số 1  Bài viết số 1  Bài viết số 1  Bài viết số 1  Bài viết số 1  Bài viết số 1 ",
-//   name: "Tin khuyến mãi",
+//   name: "Tin khuyến mại",
 //   content,
 //   images: [
 //     "https://nhatphatauto.vn/wp-content/uploads/2025/04/25T04-05-NhatPhat-Post-BaoDuong-1200x675-02.jpg",
