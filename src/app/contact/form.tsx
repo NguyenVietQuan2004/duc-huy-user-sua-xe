@@ -26,9 +26,25 @@ export default function ContactForm() {
     // Gửi dữ liệu tại đây
     try {
       const response = await contactApi.createContact({ body: data });
-      toast.success("Gửi thông tin liên hệ thành công");
+
+      toast.success("Gửi thông tin liên hệ thành công!", {
+        style: {
+          backgroundColor: "#e6fffa",
+          color: "#1c4532",
+          border: "1px solid #38b2ac",
+        },
+        className: "custom-success-toast",
+      });
     } catch (error) {
       console.log(error);
+      toast.error("Đã có lỗi xảy ra!", {
+        style: {
+          backgroundColor: "#fff5f5", // nền đỏ nhạt
+          color: "#c53030", // chữ đỏ đậm
+          border: "1px solid #feb2b2", // viền hồng nhạt
+        },
+        className: "custom-error-toast",
+      });
     }
   };
 

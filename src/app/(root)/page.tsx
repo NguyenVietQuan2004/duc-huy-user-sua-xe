@@ -1,4 +1,3 @@
-import { sliderData } from "@/data";
 import Booking from "./_components/booking";
 import MyPartner from "./_components/my-partner";
 import MyService from "./_components/my-service";
@@ -9,7 +8,7 @@ import AdviceSale from "./_components/advice-sales";
 function Root() {
   return (
     <div>
-      <HomePageClient sliderData={sliderData} />
+      <HomePageClient />
       <Booking />
       <MyService />
       <SixReason />

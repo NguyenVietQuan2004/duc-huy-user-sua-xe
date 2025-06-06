@@ -6,7 +6,7 @@ import Autoplay from "embla-carousel-autoplay";
 import useModalBooking from "@/hooks/use-model-booking";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
-
+import { sliderData } from "@/data";
 type SlideItem = {
   image: string;
   text: string;
@@ -16,7 +16,7 @@ type SlideItem = {
   linkTo: string;
 };
 
-function Slider({ sliderData }: { sliderData: SlideItem[] }) {
+function Slider() {
   const { setIsShowModelBooking } = useModalBooking();
   const router = useRouter();
   return (
@@ -42,11 +42,12 @@ function Slider({ sliderData }: { sliderData: SlideItem[] }) {
                 />
 
                 <div className="relative flex flex-col  lg:flex-row px-3 mx-0 lg:mx-[200px] items-center select-none">
-                  <div className="flex-1 flex gap-4 lg:gap-12 flex-col items-center ">
+                  {/* <div className="flex-1 flex gap-4 lg:gap-12 flex-col items-center ">
                     {item.subImage.map((img, idx) => {
                       return <Image key={idx} alt="" src={img} width={200} height={300} />;
                     })}
-                  </div>
+                  </div> */}
+                  <div className="flex-1 flex gap-4 lg:gap-12 flex-col items-center "></div>
                   <div className="flex-1 text-center lg:text-right">
                     {
                       <div
@@ -56,7 +57,7 @@ function Slider({ sliderData }: { sliderData: SlideItem[] }) {
                     }
 
                     <div className="text-[24px] font-light text-white">{item.sub}</div>
-                    <Button
+                    {/* <Button
                       onClick={() => {
                         if (item.linkTo === "booking") {
                           setIsShowModelBooking(true);
@@ -71,7 +72,7 @@ function Slider({ sliderData }: { sliderData: SlideItem[] }) {
                       })}
                     >
                       {item.button}
-                    </Button>
+                    </Button> */}
                   </div>
                 </div>
               </CarouselItem>

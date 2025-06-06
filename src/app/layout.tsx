@@ -35,7 +35,7 @@ export default function RootLayout({
           <ModelBooking />
           <Social />
           <ScrollToTopButton />
-          <Toaster />
+          <Toaster position="top-right" />
         </Providers>
       </body>
     </html>

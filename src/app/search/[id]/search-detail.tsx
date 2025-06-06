@@ -32,8 +32,11 @@ function SearchDetails({}: { id: string }) {
             <div
               className="text-lg"
               style={{ whiteSpace: "pre-wrap" }}
+              // dangerouslySetInnerHTML={{
+              //   __html: injectImageRandomly(blog.content, blog.images, blog.images_name),
+              // }}
               dangerouslySetInnerHTML={{
-                __html: injectImageRandomly(blog.content, blog.images, blog.images_name),
+                __html: blog.content,
               }}
             />
           )}
