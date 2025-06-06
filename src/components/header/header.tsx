@@ -64,7 +64,7 @@ function Header() {
           <div className="flex items-center gap-7">
             <Link href={"/sale"} className="flex gap-3 cursor-pointer hover:text-[#D51921] transition-all duration-150">
               <SaleIcon />
-              <span>Chương trình Khuyến mại</span>
+              <span>Chương trình Khuyến mãi</span>
             </Link>
             {/* <div className="w-[0.5px] h-[20px] bg-white"></div> */}
             <div></div>

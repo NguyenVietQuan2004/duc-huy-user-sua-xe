@@ -107,7 +107,7 @@ function Footer() {
             <div>|</div>
             <Link href={"/sale"} className="hover:text-[#d51921] font-light">
               {" "}
-              Chương trình Khuyến mại
+              Chương trình Khuyến mãi
             </Link>
           </div>
         </div>
