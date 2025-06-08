@@ -60,7 +60,7 @@ function Footer() {
                 <div className="flex items-center gap-4  hover:opacity-80 cursor-pointer" key={item._id}>
                   {/* <EmailIcon /> */}
 
-                  <span className="line-clamp-1">aaww{item.address}aa</span>
+                  <span className="line-clamp-1">{item.address}</span>
                 </div>
               );
             })}
@@ -113,7 +113,7 @@ function Footer() {
                     src={"https://nhatphatauto.vn/wp-content/themes/AvantDG/assets/svg/map.svg"}
                   />
                   <div className="max-w-full">
-                    <span className="font-bold line-clamp-2 text-wrap break-words max-w-full">{item.name}</span>
+                    <span className="font-semibold line-clamp-2 text-wrap break-words max-w-full">{item.name}</span>
                     {/* <span className="font-light">{item.address}</span> */}
                   </div>
                 </Link>
