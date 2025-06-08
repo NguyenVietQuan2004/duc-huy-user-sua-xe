@@ -1,9 +1,12 @@
+"use client";
 import Image from "next/image";
 import { Button } from "../ui/button";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { dataTablePriceArr } from "@/data";
 import { CloseIcon } from "../../../public/icon";
 import useModalBooking from "@/hooks/use-model-booking";
+import { Logo } from "@/type/logo";
+import { homeApi } from "@/api-request/homeAPI";
 
 function TablePrice({ onClick, isShow }: { onClick: () => void; isShow: boolean }) {
   const contentRef = useRef<HTMLDivElement>(null);
@@ -15,6 +18,7 @@ function TablePrice({ onClick, isShow }: { onClick: () => void; isShow: boolean 
     }
   };
   // Chặn scroll khi mở overlay
+
   useEffect(() => {
     if (isShow) {
       // Lưu trạng thái overflow cũ (nếu có)
@@ -25,6 +29,17 @@ function TablePrice({ onClick, isShow }: { onClick: () => void; isShow: boolean 
       };
     }
   }, [isShow]);
+
+  const [logo, setLogo] = useState<Logo>();
+
+  useEffect(() => {
+    const fetchAPI = async () => {
+      const data = await homeApi.getLogo();
+      setLogo(data);
+    };
+    fetchAPI();
+  }, []);
+
   return (
     <div
       onClick={handleOverlayClick}
@@ -38,7 +53,7 @@ function TablePrice({ onClick, isShow }: { onClick: () => void; isShow: boolean 
       >
         <div className="flex justify-center relative">
           <div className="relative w-[216px] h-[65px] ">
-            <Image
+            {/* <Image
               alt=""
               src="https://nhatphatauto.vn/wp-content/themes/AvantDG/assets/images/bg-logo.png"
               width={216}
@@ -51,7 +66,20 @@ function TablePrice({ onClick, isShow }: { onClick: () => void; isShow: boolean 
               width={160}
               height={300}
               className="absolute h-auto z-3 top-[30%] object-cover left-1/2 -translate-x-1/2"
-            />
+            /> */}
+
+            {logo?.images.length === 2 && (
+              <>
+                <Image alt="" src={logo.images[0]} width={216} height={300} className="absolute z-2 top-0" />
+                <Image
+                  alt=""
+                  src={logo.images[1]}
+                  width={160}
+                  height={300}
+                  className="absolute h-auto z-3 top-[30%] object-cover left-1/2 -translate-x-1/2"
+                />
+              </>
+            )}
           </div>
           <div
             onClick={onClick}

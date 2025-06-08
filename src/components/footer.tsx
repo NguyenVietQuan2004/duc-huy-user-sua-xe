@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { Center } from "@/type/center";
 import { homeApi } from "@/api-request/homeAPI";
 import { Address } from "@/type/address";
+import { Logo } from "@/type/logo";
 
 const centers = [
   {
@@ -29,31 +30,28 @@ function Footer() {
 
   const [centers, setCenter] = useState<Center[]>();
   const [addresses, setAddresses] = useState<Address[]>();
+  const [logo, setLogo] = useState<Logo>();
 
   useEffect(() => {
     const fetchAPI = async () => {
       const centers = await homeApi.getCenters();
       const addresses = await homeApi.getAddresses();
-      console.log("aaaaaaaaaaaaaa", addresses);
+      const logo = await homeApi.getLogo();
+      setLogo(logo);
       setAddresses(addresses);
       setCenter(centers);
     };
     fetchAPI();
   }, []);
-
   return (
     <div className="bg-[#242424] pt-16 lg:pt-[100px] px-2 lg:px-10 overflow-hidden pb-[64px] text-white ">
       <div className="max-w-[1140px] mx-auto">
         <div className="grid gap-3 px-4   [grid-template-columns:repeat(15,1fr)]">
           <div className="cols-[repeat(15,_1fr)] lg:col-span-5 flex flex-col gap-6">
             <div>
-              <Image
-                alt=""
-                width={164}
-                height={80}
-                src={"https://nhatphatauto.vn/wp-content/uploads/2024/05/Group-625622.svg"}
-                className="object-cover "
-              />
+              {logo?.images.length && (
+                <Image alt="" width={164} height={80} src={logo.images[1]} className="object-cover " />
+              )}
             </div>
             {addresses?.map((item: Address) => {
               return (
