@@ -27,8 +27,9 @@ function Slider() {
 
   useEffect(() => {
     const fetchAPI = async () => {
-      const data = await homeApi.getBanner();
-      console.log("aaaaaaaaaaaaaa", data);
+      const response = await homeApi.getBanner();
+      const data = response[0];
+      console.log("slide", response);
       setBanner(data);
     };
     fetchAPI();

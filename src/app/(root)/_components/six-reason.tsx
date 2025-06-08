@@ -21,8 +21,8 @@ function SixReason() {
   useEffect(() => {
     const fetchAPI = async () => {
       const data = await homeApi.getReason();
-      console.log("bbbbbbbbbbb", data);
-      setReason(data[0]);
+      console.log("reson", data);
+      setReason(data);
     };
     fetchAPI();
   }, []);
