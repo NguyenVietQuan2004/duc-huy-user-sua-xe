@@ -47,6 +47,7 @@ export const sliderData = [
     // linkTo: "/introduce",
   },
 ];
+export const reasonIcon = "https://nhatphatauto.vn/wp-content/themes/AvantDG/assets/svg/like.svg";
 export const SixReasonData = [
   {
     image: "https://nhatphatauto.vn/wp-content/themes/AvantDG/assets/svg/like.svg",

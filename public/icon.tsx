@@ -239,7 +239,14 @@ export const PhoneIcon = () => {
 };
 export const EmailIcon = () => {
   return (
-    <svg height="24px" width="24px" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      height="24px"
+      width="24px"
+      className="!min-w-6"
+      viewBox="0 0 24 25"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         d="M2 12.408C2 8.63672 2 6.7511 3.17157 5.57953C4.34315 4.40796 6.22876 4.40796 10 4.40796H14C17.7712 4.40796 19.6569 4.40796 20.8284 5.57953C22 6.7511 22 8.63672 22 12.408C22 16.1792 22 18.0648 20.8284 19.2364C19.6569 20.408 17.7712 20.408 14 20.408H10C6.22876 20.408 4.34315 20.408 3.17157 19.2364C2 18.0648 2 16.1792 2 12.408Z"
         stroke="white"

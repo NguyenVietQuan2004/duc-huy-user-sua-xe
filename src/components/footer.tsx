@@ -3,6 +3,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { EmailIcon, FacebookIcon, InstagramIcon, LinkedIcon, PhoneIcon, XIcon, YoutubeIcon } from "../../public/icon";
 import { useAppSelector } from "@/store/hook";
+import { useEffect, useState } from "react";
+import { Center } from "@/type/center";
+import { homeApi } from "@/api-request/homeAPI";
+import { Address } from "@/type/address";
 
 const centers = [
   {
@@ -22,6 +26,21 @@ const centers = [
 function Footer() {
   const services = useAppSelector((state) => state.service.services);
   const handleOnclick = () => {};
+
+  const [centers, setCenter] = useState<Center[]>();
+  const [addresses, setAddresses] = useState<Address[]>();
+
+  useEffect(() => {
+    const fetchAPI = async () => {
+      const centers = await homeApi.getCenters();
+      const addresses = await homeApi.getAddresses();
+      console.log("aaaaaaaaaaaaaa", addresses);
+      setAddresses(addresses);
+      setCenter(centers);
+    };
+    fetchAPI();
+  }, []);
+
   return (
     <div className="bg-[#242424] pt-16 lg:pt-[100px] pb-[64px] text-white ">
       <div className="max-w-[1140px] mx-auto">
@@ -36,12 +55,16 @@ function Footer() {
                 className="object-cover "
               />
             </div>
-            <div className="flex items-center gap-4 hover:opacity-80 cursor-pointer">
-              <PhoneIcon /> 0763948610
-            </div>
-            <div className="flex items-center gap-4 hover:opacity-80 cursor-pointer">
-              <EmailIcon /> hange@gmail.com
-            </div>
+            {addresses?.map((item: Address) => {
+              return (
+                <div className="flex items-center gap-4  hover:opacity-80 cursor-pointer" key={item._id}>
+                  {/* <EmailIcon /> */}
+
+                  <span className="line-clamp-1">aaww{item.address}aa</span>
+                </div>
+              );
+            })}
+
             <div className="flex gap-6">
               <Link href={""} className="hover:opacity-80">
                 {" "}
@@ -80,9 +103,9 @@ function Footer() {
           <div className="col-span-6 hidden lg:block">
             <div className="font-bold ">HỆ THỐNG CÁC TRUNG TÂM DỊCH VỤ NHẬT PHÁT AUTO</div>
 
-            {centers.map((item) => {
+            {centers?.map((item) => {
               return (
-                <Link key={item.name} href={""} className="flex hover:opacity-70 items-start mt-4 gap-3">
+                <Link key={item._id} href={""} className="flex hover:opacity-70 items-start mt-4 gap-3">
                   <Image
                     alt=""
                     width={20}
@@ -90,8 +113,8 @@ function Footer() {
                     src={"https://nhatphatauto.vn/wp-content/themes/AvantDG/assets/svg/map.svg"}
                   />
                   <div>
-                    <span className="font-bold">{item.name}</span>
-                    <span className="font-light">{item.address}</span>
+                    <span className="font-bold line-clamp-2">{item.name}</span>
+                    {/* <span className="font-light">{item.address}</span> */}
                   </div>
                 </Link>
               );

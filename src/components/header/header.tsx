@@ -10,6 +10,8 @@ import { Service } from "@/type/service";
 import { serviceApi } from "@/api-request/serviceAPI";
 import { useAppDispatch } from "@/store/hook";
 import { setServices } from "@/store/slices/service-slice";
+import { Logo } from "@/type/logo";
+import { homeApi } from "@/api-request/homeAPI";
 // const service = [
 //   { key: "Thay thế lốp xe chính hãng", value: "/service/thaylop" },
 //   { key: "Cân bằng động, đảo lốp xe", value: "/service/canbang" },
@@ -39,6 +41,18 @@ function Header() {
   const handleOpenSearchInput = () => {
     setIsShowSearchInput((pre) => !pre);
   };
+
+  const [logo, setLogo] = useState<Logo>();
+
+  useEffect(() => {
+    const fetchAPI = async () => {
+      const data = await homeApi.getLogo();
+      console.log("cccccccccccccccccc", data);
+      setLogo(data);
+    };
+    fetchAPI();
+  }, []);
+
   return (
     <div className="text-white">
       {/*  */}
@@ -122,20 +136,19 @@ function Header() {
             GÓC TƯ VẤN{" "}
           </Link>
           <Link href="/" className="relative  w-[216px] h-[65px] z-[7]">
-            <Image
-              alt=""
-              src="https://nhatphatauto.vn/wp-content/themes/AvantDG/assets/images/bg-logo.png"
-              width={216}
-              height={300}
-              className="absolute z-2 top-4 lg:top-0"
-            />
-            <Image
-              alt=""
-              src="https://nhatphatauto.vn/wp-content/uploads/2024/05/Group-625622.svg"
-              width={160}
-              height={300}
-              className="absolute  h-auto z-3 object-cover top-[calc(30%+16px)] lg:top-[30%] left-1/2 -translate-x-1/2"
-            />
+            {/* o day */}
+            {logo?.images.length === 2 && (
+              <>
+                <Image alt="" src={logo.images[0]} width={216} height={300} className="absolute z-2 top-4 lg:top-0" />
+                <Image
+                  alt=""
+                  src={logo.images[1]}
+                  width={160}
+                  height={300}
+                  className="absolute  h-auto z-3 object-cover top-[calc(30%+16px)] lg:top-[30%] left-1/2 -translate-x-1/2"
+                />
+              </>
+            )}
           </Link>
 
           <Link
