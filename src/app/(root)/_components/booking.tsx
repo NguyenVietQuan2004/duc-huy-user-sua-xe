@@ -30,7 +30,7 @@ function Booking() {
         <Form centers={centers} />
       </div>
 
-      <div className="flex-1 text-lg font-light mt-16 lg:mt-28">
+      <div className="flex-1 text-lg items-center flex lg:block flex-col font-light mt-16 lg:mt-28">
         {content?.images.length && <Image alt="" src={content?.images[0]} width={255} height={100} className="mb-3" />}
         <div className="text-4xl mb-7 line-clamp-3 font-semibold">{content?.title}</div>
         <div className="mb-4">{content?.content}</div>

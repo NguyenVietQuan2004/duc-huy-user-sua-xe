@@ -135,18 +135,24 @@ function Header() {
           <Link href={"/advice"} className=" hover:text-[#FFBE27] hidden lg:block  cursor-pointer underline-animate">
             GÓC TƯ VẤN{" "}
           </Link>
-          <Link href="/" className="relative  w-[216px] h-[65px] z-[7]">
+          <Link href="/" className="relative w-32 z-10  lg:w-[216px] h-[65px] ">
             {/* o day */}
             {logo?.images.length === 2 && (
               <>
-                <Image alt="" src={logo.images[0]} width={216} height={300} className="absolute z-2 top-4 lg:top-0" />
+                <Image
+                  alt=""
+                  src={logo.images[0]}
+                  width={216}
+                  height={300}
+                  className="absolute w-32 lg:w-full z-2 top-0 lg:top-0"
+                />
                 <Image
                   alt=""
                   src={logo.images[1]}
                   width={160}
                   height={300}
                   // className="absolute  h-auto z-3 object-cover top-[calc(30%+16px)] lg:top-[30%] left-1/2 -translate-x-1/2"
-                  className="absolute  z-3 object-cover inset-0 w-full"
+                  className="absolute w-32  z-3 object-cover inset-0 lg:w-full"
                 />
               </>
             )}

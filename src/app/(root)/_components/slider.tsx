@@ -49,7 +49,7 @@ function Slider() {
             return (
               <CarouselItem
                 key={index}
-                className="relative flex flex-col justify-center  lg:h-[680px] pt-24   lg:pt-[130px] pb-20 lg:pb-[240px]"
+                className="relative flex flex-col justify-center h-screen lg:h-[680px] pt-24   lg:pt-[130px] pb-20 lg:pb-[240px]"
               >
                 <div
                   className="absolute inset-0 bg-cover bg-center lg:h-[600px] "
