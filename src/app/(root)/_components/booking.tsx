@@ -5,13 +5,17 @@ import Form from "./form";
 import Image from "next/image";
 import { ContentAppointmentType } from "@/type/content-appointment";
 import { homeApi } from "@/api-request/homeAPI";
+import { Center } from "@/type/center";
 
 function Booking() {
   const [content, setContent] = useState<ContentAppointmentType>();
+  const [centers, setcenters] = useState<Center[]>();
 
   useEffect(() => {
     const fetchAPI = async () => {
       const data = await homeApi.getContentAppointment();
+      const centers = await homeApi.getCenters();
+      setcenters(centers);
       setContent(data[0]);
     };
     fetchAPI();
@@ -23,7 +27,7 @@ function Booking() {
       lg:-top-[200px] mt-8 lg:mt-0"
     >
       <div className="flex-1   h-[100vh] border-[#08080808]  bg-[#]">
-        <Form />
+        <Form centers={centers} />
       </div>
 
       <div className="flex-1 text-lg font-light mt-16 lg:mt-28">

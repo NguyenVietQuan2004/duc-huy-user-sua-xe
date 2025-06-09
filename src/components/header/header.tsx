@@ -145,7 +145,8 @@ function Header() {
                   src={logo.images[1]}
                   width={160}
                   height={300}
-                  className="absolute  h-auto z-3 object-cover top-[calc(30%+16px)] lg:top-[30%] left-1/2 -translate-x-1/2"
+                  // className="absolute  h-auto z-3 object-cover top-[calc(30%+16px)] lg:top-[30%] left-1/2 -translate-x-1/2"
+                  className="absolute  z-3 object-cover inset-0 w-full"
                 />
               </>
             )}

@@ -4,8 +4,9 @@ import MyService from "./_components/my-service";
 import SixReason from "./_components/six-reason";
 import HomePageClient from "./_components/slider";
 import AdviceSale from "./_components/advice-sales";
+import { homeApi } from "@/api-request/homeAPI";
 
-function Root() {
+async function Root() {
   return (
     <div>
       <HomePageClient />
