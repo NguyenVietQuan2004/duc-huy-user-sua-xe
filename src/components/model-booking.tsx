@@ -1,11 +1,23 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Form from "@/app/(root)/_components/form";
 import useModalBooking from "@/hooks/use-model-booking";
+import { Center } from "@/type/center";
+import { homeApi } from "@/api-request/homeAPI";
 
 function ModelBooking() {
   const contentRef = useRef<HTMLDivElement>(null);
   const { isShowModelBooking, setIsShowModelBooking } = useModalBooking();
+
+  const [centers, setcenters] = useState<Center[]>();
+
+  useEffect(() => {
+    const fetchAPI = async () => {
+      const centers = await homeApi.getCenters();
+      setcenters(centers);
+    };
+    fetchAPI();
+  }, []);
 
   useEffect(() => {
     if (isShowModelBooking) {
@@ -28,7 +40,7 @@ function ModelBooking() {
       className="fixed z-[999] inset-0 flex justify-center items-center bg-black bg-opacity-70"
     >
       <div ref={contentRef}>
-        <Form hasCloseIcon={true} />
+        <Form hasCloseIcon={true} centers={centers} />
       </div>
     </div>
   );
