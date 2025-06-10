@@ -19,7 +19,6 @@ function AdviceDetail({ id }: { id: string }) {
     };
     fetchAPI();
   }, [id]);
-  console.log(advice);
   return (
     <div className="max-w-[1200px] mx-auto py-[100px] px-4">
       <div className="grid grid-cols-10 gap-10">

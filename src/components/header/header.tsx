@@ -29,7 +29,6 @@ function Header() {
   useEffect(() => {
     const fetchAPI = async () => {
       const listServices = await serviceApi.getAllservices({ limit: 100, page: 1 });
-      console.log(listServices);
       dispatch(setServices(listServices));
       setListServices(listServices);
     };
@@ -47,7 +46,6 @@ function Header() {
   useEffect(() => {
     const fetchAPI = async () => {
       const data = await homeApi.getLogo();
-      console.log("cccccccccccccccccc", data);
       setLogo(data);
     };
     fetchAPI();

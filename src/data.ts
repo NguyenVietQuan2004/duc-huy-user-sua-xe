@@ -114,7 +114,7 @@ export const dataTablePriceArr = [
     image: "https://nhatphatauto.vn/wp-content/uploads/2024/05/Group_2-6.svg",
   },
   {
-    key: "CHỈNH ĐỘ CHỤM (GỐC LÁI)",
+    key: "CHỈNH ĐỘ CHỤM (GÓC LÁI)",
     value: [
       { "Loại xe": "Xe phổ thông", "Đơn vị tính": "Xe", "Đơn giá": "600.000đ" },
       { "Loại xe": "Crossover, SUV", "Đơn vị tính": "Xe", "Đơn giá": "800.000đ" },

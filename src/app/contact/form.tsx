@@ -22,7 +22,6 @@ export default function ContactForm() {
   } = useForm<FormData>();
 
   const onSubmit = async (data: FormData) => {
-    console.log(data);
     // Gửi dữ liệu tại đây
     try {
       const response = await contactApi.createContact({ body: data });
@@ -36,7 +35,6 @@ export default function ContactForm() {
         className: "custom-success-toast",
       });
     } catch (error) {
-      console.log(error);
       toast.error("Đã có lỗi xảy ra!", {
         style: {
           backgroundColor: "#fff5f5", // nền đỏ nhạt

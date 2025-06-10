@@ -16,7 +16,6 @@ function ServiceClient({ serviceId }: { serviceId: string }) {
     const fetchAPI = async () => {
       const service = await serviceApi.getServiceById({ serviceId });
       setService(service);
-      console.log(service);
     };
     fetchAPI();
   }, [serviceId]);

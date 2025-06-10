@@ -27,13 +27,11 @@ function SaleClient() {
     const fetchAPI = async () => {
       const listPromotions = await saleApi.getAllSales({ limit: 100, page: 1 });
       setPromotionList(listPromotions.data);
-      console.log(listPromotions);
     };
     fetchAPI();
   }, [currentPage]);
 
   const handlePageChange = (page: number) => {
-    console.log("Chuyển tới trang:", page);
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };

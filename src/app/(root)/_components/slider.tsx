@@ -29,7 +29,6 @@ function Slider() {
     const fetchAPI = async () => {
       const response = await homeApi.getBanner();
       const data = response[0];
-      console.log("slide", response);
       setBanner(data);
     };
     fetchAPI();

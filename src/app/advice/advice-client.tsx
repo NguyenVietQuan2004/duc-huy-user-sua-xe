@@ -31,7 +31,6 @@ export default function AdviceClient() {
   }, [currentPage]);
 
   const handlePageChange = (page: number) => {
-    console.log("Chuyển tới trang:", page);
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -60,7 +59,6 @@ export default function AdviceClient() {
       <div className="max-w-[1100px] px-4  mx-auto  text-[18px] py-20 flex flex-col gap-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {currentItems?.map((advice) => {
-            console.log(advice);
             const date = new Date(advice.created_at); // hoặc updated_at
             const day = date.getDate();
             const month = date.getMonth() + 1; // Tháng trong JS bắt đầu từ 0
