@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import { serviceApi } from "@/api-request/serviceAPI";
 import { useAppSelector } from "@/store/hook";
 import { Service } from "@/type/service";
+import { servicesIcon } from "@/data";
+import Image from "next/image";
 
 function ServiceClient({ serviceId }: { serviceId: string }) {
   const [service, setService] = useState<Service>();
@@ -45,7 +47,7 @@ function ServiceClient({ serviceId }: { serviceId: string }) {
             <div className="bg-white  rounded-2xl p-8 border min-w-[370px] shadow-md w-full max-w-xs text-nowrap ">
               <h3 className="text-[#d51921] text-lg font-bold mb-4 uppercase">Dịch vụ khác</h3>
               <ul className="flex flex-col divide-y text-[18px] ">
-                {listService.map((item) => (
+                {listService.map((item, index) => (
                   <li
                     key={item._id}
                     className={`flex items-center hover:opacity-50 transition-all duration-300 gap-2 py-3 ${
@@ -54,7 +56,17 @@ function ServiceClient({ serviceId }: { serviceId: string }) {
                   >
                     <Link href={`/service/${item._id}`} className="flex items-center gap-2">
                       {/* <Image width={100} height={100} src={item.image} alt="icon" className="w-5 h-5" /> */}
-                      icon service
+                      {servicesIcon.length ? (
+                        <Image
+                          alt=""
+                          width={80}
+                          height={80}
+                          src={servicesIcon[index % 6].image}
+                          className="max-w-6 max-h-6 group-hover:animate-shake"
+                        />
+                      ) : (
+                        <div>icon</div>
+                      )}
                       <span className="line-clamp-1 max-w-full text-wrap">{item.name}</span>
                     </Link>
                   </li>

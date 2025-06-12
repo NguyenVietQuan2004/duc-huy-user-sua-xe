@@ -5,7 +5,6 @@ import { LinkToIcon } from "../../../../public/icon";
 import { useInView } from "react-intersection-observer";
 import { useAppSelector } from "@/store/hook";
 import { stripHtml } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 import { servicesIcon } from "@/data";
 
 function MyService() {
@@ -64,7 +63,6 @@ function MyService() {
                   ) : (
                     <div>icon</div>
                   )}
-                  icon
                   <div className="font-bold line-clamp-3 text-[22px] lg:h-[100px]">{item.name}</div>
                   {/* <div>{item.content}</div> */}
                   <div
