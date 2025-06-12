@@ -33,27 +33,13 @@ function ChuongtrinhKMDetail({ id }: { id: string }) {
             <div
               className="text-lg overflow-hidden text-wrap"
               style={{ whiteSpace: "pre-wrap" }}
-              // dangerouslySetInnerHTML={{
-              //   __html: injectImageRandomly(sale.content, sale.images, sale.images_name),
-              // }}
               dangerouslySetInnerHTML={{
                 __html: sale.content,
               }}
             />
           )}
-
-          {/* {sale?.content && (
-            <div
-              className="text-lg overflow-hidden text-wrap"
-              style={{ whiteSpace: "pre-wrap" }}
-              dangerouslySetInnerHTML={{
-                __html: sale.content,
-              }}
-            />
-          )} */}
         </div>
 
-        {/* Sidebar */}
         <div className="hidden lg:block col-span-3">
           <AdviceOtherCard />
         </div>

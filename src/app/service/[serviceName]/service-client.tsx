@@ -1,16 +1,14 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import ButtonClient from "./_components/button-client";
 import ServiceDetail from "./_components/service-details";
 import { useEffect, useState } from "react";
 import { serviceApi } from "@/api-request/serviceAPI";
-import { useAppDispatch, useAppSelector } from "@/store/hook";
+import { useAppSelector } from "@/store/hook";
 import { Service } from "@/type/service";
 
 function ServiceClient({ serviceId }: { serviceId: string }) {
   const [service, setService] = useState<Service>();
-  // const listService = useAppDispatch(state => state.service.)
   const listService: Service[] = useAppSelector((state) => state.service.services);
   useEffect(() => {
     const fetchAPI = async () => {

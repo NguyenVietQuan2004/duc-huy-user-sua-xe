@@ -6,15 +6,12 @@ import { Blog } from "@/type/blog";
 import { useEffect, useState } from "react";
 import SlideSaleCard from "@/components/slide-sale-card";
 import AdviceOtherCard from "@/components/advice-other-card";
-import { injectImageRandomly } from "@/lib/utils";
 
 function SearchDetails({}: { id: string }) {
   const [blog, setBlogs] = useState<Blog>();
 
   useEffect(() => {
-    const fetchAPI = async () => {
-      // setBlogs(blogSample);
-    };
+    const fetchAPI = async () => {};
     fetchAPI();
   }, []);
 
@@ -32,27 +29,13 @@ function SearchDetails({}: { id: string }) {
             <div
               className="text-lg"
               style={{ whiteSpace: "pre-wrap" }}
-              // dangerouslySetInnerHTML={{
-              //   __html: injectImageRandomly(blog.content, blog.images, blog.images_name),
-              // }}
               dangerouslySetInnerHTML={{
                 __html: blog.content,
               }}
             />
           )}
-
-          {/* {blog?.content && (
-            <div
-              className="text-lg overflow-hidden text-wrap"
-              style={{ whiteSpace: "pre-wrap" }}
-              dangerouslySetInnerHTML={{
-                __html: blog.content,
-              }}
-            />
-          )} */}
         </div>
 
-        {/* Sidebar */}
         <div className="hidden lg:block col-span-4">
           <SlideSaleCard />
           <AdviceOtherCard />

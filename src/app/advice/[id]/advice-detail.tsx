@@ -2,15 +2,15 @@
 
 import "swiper/css";
 import "swiper/css/pagination";
-import { Advice } from "@/type cu/advice";
 import { useEffect, useState } from "react";
 import SlideSaleCard from "@/components/slide-sale-card";
 import AdviceOtherCard from "@/components/advice-other-card";
 import { blogApi } from "@/api-request/blogApi";
 import { formatDateToDDMMYYYY } from "@/lib/utils";
+import { Blog } from "@/type/blog";
 
 function AdviceDetail({ id }: { id: string }) {
-  const [advice, setAdvice] = useState<Advice>();
+  const [advice, setAdvice] = useState<Blog>();
 
   useEffect(() => {
     const fetchAPI = async () => {

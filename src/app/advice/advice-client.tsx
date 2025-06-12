@@ -16,15 +16,21 @@ import {
 import { Blog } from "@/type/blog";
 import { blogApi } from "@/api-request/blogApi";
 import { stripHtml } from "@/lib/utils";
+import { posterApi } from "@/api-request/posterAPI";
 
 const ITEMS_PER_PAGE = 9;
 export default function AdviceClient() {
   const [currentPage, setCurrentPage] = useState(1);
   const [adviceList, setAdviceList] = useState<Blog[]>();
   const totalPages = adviceList ? Math.ceil(adviceList.length / ITEMS_PER_PAGE) : 0;
+
+  const [img, setImg] = useState<string>();
+
   useEffect(() => {
     const fetchAPI = async () => {
       const listAdvices = await blogApi.getAllBlogs({ limit: 100, page: 1 });
+      const poster = await posterApi.getPoster();
+      setImg(poster.images_advise);
       setAdviceList(listAdvices.data);
     };
     fetchAPI();
@@ -41,12 +47,14 @@ export default function AdviceClient() {
     <div>
       {/* Banner */}
       <div className="relative">
-        <div
-          className="absolute inset-0 bg-cover bg-center h-[500px] "
-          style={{
-            backgroundImage: "url(https://nhatphatauto.vn/wp-content/uploads/2024/06/Hero-GocTuVan.jpg)",
-          }}
-        />
+        {img && (
+          <div
+            className="absolute inset-0 bg-cover bg-center h-[500px] "
+            style={{
+              backgroundImage: `url(${img || "https://nhatphatauto.vn/wp-content/uploads/2024/06/Hero-GioiThieu.jpg"})`,
+            }}
+          />
+        )}
         <div className="relative max-w-[1140px] py-[120px] pt-[160px] h-[500px] lg:pt-[120px] mx-auto px-4 ">
           <div className=" text-white max-w-[540px]">
             <div className="text-[18px]">GÓC TƯ VẤN</div>
@@ -93,9 +101,6 @@ export default function AdviceClient() {
                     <div className="text-[14px] py-1 border-t text-gray-600 font-light text-nowrap">tháng {month}</div>
                     <div className="text-[14px] pt-1 border-t text-gray-500 font-light">{year}</div>
                   </div>
-                  {/* <div className="text-sm text-gray-700 leading-snug  line-clamp-4 group-hover:text-[#d51921] transition-all duration-200">
-                    {advice.content}
-                  </div> */}
 
                   <div
                     className=" text-sm text-gray-700 leading-snug  line-clamp-4 group-hover:text-[#d51921] transition-all duration-200"

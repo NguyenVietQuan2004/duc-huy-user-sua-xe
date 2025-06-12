@@ -1,16 +1,30 @@
+"use client";
+import { useEffect, useState } from "react";
 import ContactForm from "./form";
+import { posterApi } from "@/api-request/posterAPI";
 
 function Introduce() {
+  const [img, setImg] = useState<string>();
+  useEffect(() => {
+    const fetchAPI = async () => {
+      const poster = await posterApi.getPoster();
+      setImg(poster.images_contact);
+    };
+    fetchAPI();
+  }, []);
+
   return (
     <div>
       {/* Banner */}
       <div className="relative">
-        <div
-          className="absolute inset-0 bg-cover bg-center h-[500px] "
-          style={{
-            backgroundImage: "url(https://nhatphatauto.vn/wp-content/uploads/2024/06/Hero-GioiThieu.jpg)",
-          }}
-        />
+        {img && (
+          <div
+            className="absolute inset-0 bg-cover bg-center h-[500px] "
+            style={{
+              backgroundImage: `url(${img || "https://nhatphatauto.vn/wp-content/uploads/2024/06/Hero-GioiThieu.jpg"})`,
+            }}
+          />
+        )}
         <div className="relative max-w-[1140px] py-[120px] h-[500px] pt-[160px] lg:pt-[120px] mx-auto px-4 ">
           <div className=" text-white max-w-[540px]">
             <div className="text-[18px]">LIÊN HỆ</div>

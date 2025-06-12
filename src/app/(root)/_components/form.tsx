@@ -11,7 +11,7 @@ import useModalBooking from "@/hooks/use-model-booking";
 import { useForm, Controller, useWatch } from "react-hook-form";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { FormValues } from "@/type/appointment";
-import { appointmentApi } from "@/api-request/appointment";
+import { appointmentApi } from "@/api-request/appointmentAPI";
 import { useAppSelector } from "@/store/hook";
 import { toast } from "sonner";
 import { Center } from "@/type/center";
