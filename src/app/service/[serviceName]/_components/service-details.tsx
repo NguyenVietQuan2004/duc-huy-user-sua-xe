@@ -32,11 +32,11 @@ function ServiceDetail({ service }: { service: Service | undefined }) {
                     <div className="col-span-4">
                       <Image alt="" width={500} height={500} src={img} className="w-full h-full object-cover rounded" />
                     </div>
-                    <div className="col-span-4 indent-8">{text}</div>
+                    <div className="col-span-4 indent-16 text-justify">{text}</div>
                   </>
                 ) : (
                   <>
-                    <div className="col-span-4 indent-8">{text}</div>
+                    <div className="col-span-4 indent-16 text-justify">{text}</div>
                     <div className="col-span-4 h-full">
                       <Image alt="" width={500} height={500} src={img} className="w-full h-full object-cover rounded" />
                     </div>
