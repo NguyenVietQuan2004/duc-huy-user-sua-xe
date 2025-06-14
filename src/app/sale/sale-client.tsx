@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { LinkToIcon } from "../../../public/icon";
 import { saleApi } from "@/api-request/saleAPI";
 import { stripHtml } from "@/lib/utils";
+import { posterApi } from "@/api-request/posterAPI";
 
 const ITEMS_PER_PAGE = 9;
 
@@ -23,9 +24,12 @@ function SaleClient() {
   const [currentPage, setCurrentPage] = useState(1);
   const [promotionsList, setPromotionList] = useState<Sale[]>();
   const totalPages = promotionsList ? Math.ceil(promotionsList.length / ITEMS_PER_PAGE) : 0;
+  const [img, setImg] = useState();
   useEffect(() => {
     const fetchAPI = async () => {
       const listPromotions = await saleApi.getAllSales({ limit: 100, page: 1 });
+      const poster = await posterApi.getPoster();
+      setImg(poster.images_promotion);
       setPromotionList(listPromotions.data);
     };
     fetchAPI();
@@ -43,12 +47,14 @@ function SaleClient() {
     <div>
       {/* Banner */}
       <div className="relative">
-        <div
-          className="absolute inset-0 bg-cover bg-center h-[500px] "
-          style={{
-            backgroundImage: "url(https://nhatphatauto.vn/wp-content/uploads/2024/06/Hero-GioiThieu.jpg)",
-          }}
-        />
+        {img && (
+          <div
+            className="absolute inset-0 bg-cover bg-center h-[500px] "
+            style={{
+              backgroundImage: `url(${img || "https://nhatphatauto.vn/wp-content/uploads/2024/06/Hero-GioiThieu.jpg"})`,
+            }}
+          />
+        )}
         <div className=" relative max-w-[1140px] py-[120px] h-[500px] pt-[160px] lg:pt-[120px] mx-auto px-4 ">
           <div className=" text-white max-w-[540px]">
             <div className="text-[18px]">TIN KHUYẾN MẠI</div>

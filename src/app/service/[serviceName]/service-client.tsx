@@ -8,13 +8,19 @@ import { useAppSelector } from "@/store/hook";
 import { Service } from "@/type/service";
 import { servicesIcon } from "@/data";
 import Image from "next/image";
+import { posterApi } from "@/api-request/posterAPI";
 
 function ServiceClient({ serviceId }: { serviceId: string }) {
   const [service, setService] = useState<Service>();
   const listService: Service[] = useAppSelector((state) => state.service.services);
+
+  const [img, setImg] = useState();
+
   useEffect(() => {
     const fetchAPI = async () => {
       const service = await serviceApi.getServiceById({ serviceId });
+      const poster = await posterApi.getPoster();
+      setImg(poster.images_service);
       setService(service);
     };
     fetchAPI();
@@ -23,12 +29,14 @@ function ServiceClient({ serviceId }: { serviceId: string }) {
     <div>
       {/* Banner */}
       <div className="relative">
-        <div
-          className="absolute inset-0 bg-cover bg-center h-[500px] "
-          style={{
-            backgroundImage: "url(https://nhatphatauto.vn/wp-content/uploads/2024/06/Hero-GioiThieu.jpg)",
-          }}
-        />
+        {img && (
+          <div
+            className="absolute inset-0 bg-cover bg-center h-[500px] "
+            style={{
+              backgroundImage: `url(${img || "https://nhatphatauto.vn/wp-content/uploads/2024/06/Hero-GioiThieu.jpg"})`,
+            }}
+          />
+        )}
         <div className="relative max-w-[1140px] py-[120px] pt-[160px] h-[500px]  lg:pt-[120px] mx-auto px-4 ">
           <div className=" text-white max-w-[540px]">
             <div className="text-[18px]">CÂN CHỈNH ĐỘ CHỤM (GÓC LÁI) BÁNH XE</div>

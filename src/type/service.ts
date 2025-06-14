@@ -3,6 +3,8 @@ export type Service = {
   name: string;
   content: string;
   price: string;
+  extra_images?: string[];
+  extra_images_text?: string[];
   images: string[]; // assuming multiple image URLs
   author_id: string;
   created_at: Date; // or Date if you're using Date objects

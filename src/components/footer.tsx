@@ -9,21 +9,6 @@ import { homeApi } from "@/api-request/homeAPI";
 import { Address } from "@/type/address";
 import { Logo } from "@/type/logo";
 
-const centers = [
-  {
-    name: "Trung tâm Trương Công Giai: ",
-    address: "82 Trương Công Giai, Dịch Vọng, Cầu Giấy, Hà Nội.",
-  },
-  {
-    name: "Trung tâm Trần Kim Xuyến: ",
-    address: "22 Trần Kim Xuyến, Yên Hoà, Cầu Giấy, Hà Nội.",
-  },
-  {
-    name: "Trung tâm Kiêu Kỵ: ",
-    address: "T53 Làng nghề tập trung Kiêu Kỵ, Gia Lâm, Hà Nội (cách TTTM Vincom Mega Mall – Ocean Park 2km)",
-  },
-];
-
 function Footer() {
   const services = useAppSelector((state) => state.service.services);
   const handleOnclick = () => {};
@@ -119,7 +104,7 @@ function Footer() {
             })}
           </div>
         </div>
-        <div className="border-t border-[#D51921] px-4  py-4 pt-6 lg:py-0 mt-8 lg:pt-4 flex justify-between items-center">
+        {/* <div className="border-t border-[#D51921] px-4  py-4 pt-6 lg:py-0 mt-8 lg:pt-4 flex justify-between items-center">
           <div className="font-light">© 2024 Nhat Phat Auto Co., Ltd. giữ bản quyền.</div>
           <div className="hidden items-center gap-3  lg:flex">
             <Link href={"#"} onClick={handleOnclick} className="hover:text-[#d51921] font-light">
@@ -131,7 +116,7 @@ function Footer() {
               Chương trình Khuyến mãi
             </Link>
           </div>
-        </div>
+         </div> */}
       </div>
     </div>
   );
