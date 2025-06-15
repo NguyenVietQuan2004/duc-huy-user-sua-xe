@@ -83,7 +83,7 @@ function MyService() {
               if (index > 2) return null;
               return (
                 <Link
-                  href={item._id}
+                  href={`/service/${item._id}`}
                   key={index}
                   className={` group
                py-[15px] hover:text-[#D51921] text-center px-10 flex flex-col gap-4 items-center               }
