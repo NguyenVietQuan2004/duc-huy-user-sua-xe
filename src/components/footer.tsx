@@ -70,7 +70,7 @@ function Footer() {
             </div>
           </div>
           <div className="col-span-4 hidden lg:block">
-            <div className="font-bold">DỊCH VỤ CỦA NHẬT PHÁT AUTO</div>
+            <div className="font-bold">DỊCH VỤ CỦA TRUNG TÂM BMB CAR CARE</div>
             <ul className="flex flex-col gap-3 mt-4 text-start ml-5 font-light">
               {services?.map((item) => {
                 return (
@@ -84,7 +84,7 @@ function Footer() {
             </ul>
           </div>
           <div className="col-span-6 hidden lg:block">
-            <div className="font-bold ">HỆ THỐNG CÁC TRUNG TÂM DỊCH VỤ NHẬT PHÁT AUTO</div>
+            <div className="font-bold ">HỆ THỐNG CÁC TRUNG TÂM DỊCH VỤ TRUNG TÂM BMB CAR CARE</div>
 
             {centers?.map((item) => {
               return (

@@ -28,7 +28,9 @@ function Introduce() {
         <div className="relative max-w-[1140px] py-[120px] h-[500px] pt-[160px] lg:pt-[120px] mx-auto px-4 ">
           <div className=" text-white max-w-[540px]">
             <div className="text-[18px]">LIÊN HỆ</div>
-            <div className="text-[36px] font-bold">Nếu có câu hỏi, đừng ngần ngại liên hệ với Nhật Phát Auto</div>
+            <div className="text-[36px] font-bold">
+              Nếu có câu hỏi, đừng ngần ngại liên hệ với Trung tâm BMB Car Care
+            </div>
           </div>
         </div>
       </div>
@@ -75,7 +77,7 @@ function Introduce() {
           {/* Right - Contact Form */}
           <div>
             <h2 className="text-[#124D9B] text-4xl leading-[48px] font-bold mb-6">
-              ĐỂ LẠI LỜI NHẮN CHO <br /> NHẬT PHÁT AUTO
+              ĐỂ LẠI LỜI NHẮN CHO <br /> TRUNG TÂM BMB CAR CARE
             </h2>
             <ContactForm />
           </div>

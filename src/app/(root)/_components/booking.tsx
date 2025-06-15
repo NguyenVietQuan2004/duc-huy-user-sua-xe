@@ -6,11 +6,12 @@ import Image from "next/image";
 import { ContentAppointmentType } from "@/type/content-appointment";
 import { homeApi } from "@/api-request/homeAPI";
 import { Center } from "@/type/center";
+import useModalBooking from "@/hooks/use-model-booking";
 
 function Booking() {
   const [content, setContent] = useState<ContentAppointmentType>();
   const [centers, setcenters] = useState<Center[]>();
-
+  const { isShowModelBooking } = useModalBooking();
   useEffect(() => {
     const fetchAPI = async () => {
       const data = await homeApi.getContentAppointment();
@@ -27,7 +28,7 @@ function Booking() {
       lg:-top-[200px] mt-8 lg:mt-0"
     >
       <div className="flex-1   h-[100vh] border-[#08080808]  bg-[#]">
-        <Form centers={centers} />
+        {!isShowModelBooking && <Form centers={centers} />}
       </div>
 
       <div className="flex-1 text-lg items-center flex lg:block flex-col font-light mt-16 lg:mt-28">

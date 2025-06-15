@@ -20,7 +20,7 @@ export default function Form({ hasCloseIcon, centers }: { hasCloseIcon?: boolean
   const { setIsShowModelBooking } = useModalBooking();
   const servicesOptions = useAppSelector((state) => state.service.services);
   const [isLoading, setIsLoading] = useState(false);
-
+  console.log("fksdjfidosjisojfidosjio", centers);
   const {
     register,
     handleSubmit,
@@ -165,7 +165,7 @@ export default function Form({ hasCloseIcon, centers }: { hasCloseIcon?: boolean
                 <SelectTrigger className="w-full bg-white">
                   <SelectValue placeholder="Chọn giờ" />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="z-[1000]">
                   {generateHourOptions().map((hour) => {
                     const timeStr = hour.toString().padStart(2, "0") + ":00";
                     return (
@@ -216,7 +216,7 @@ export default function Form({ hasCloseIcon, centers }: { hasCloseIcon?: boolean
       </fieldset>
 
       <div className="mb-6">
-        <Label htmlFor="center">Lựa chọn Trung tâm Nhật Phát Auto:</Label>
+        <Label htmlFor="center">Lựa chọn Trung tâm Trung tâm BMB Car Care:</Label>
         <Controller
           control={control}
           name="center"
@@ -225,7 +225,7 @@ export default function Form({ hasCloseIcon, centers }: { hasCloseIcon?: boolean
               <SelectTrigger className="w-full bg-white">
                 <SelectValue placeholder="Chọn trung tâm" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="z-[1000]">
                 {centers?.map((center: Center) => (
                   <SelectItem key={center._id} value={center.name}>
                     {center.name}
@@ -242,7 +242,7 @@ export default function Form({ hasCloseIcon, centers }: { hasCloseIcon?: boolean
         disabled={isLoading}
         className="w-full bg-[#d51921] text-white font-semibold py-5 rounded hover:bg-white hover:text-[#d51921] border border-transparent hover:border-[#d51921]"
       >
-        {isLoading ? "ĐANG GỬI..." : "ĐẶT LỊCH HẸN TỚI NHẬT PHÁT AUTO"}
+        {isLoading ? "ĐANG GỬI..." : "ĐẶT LỊCH HẸN TỚI TRUNG TÂM BMB CAR CARE"}
       </Button>
     </form>
   );

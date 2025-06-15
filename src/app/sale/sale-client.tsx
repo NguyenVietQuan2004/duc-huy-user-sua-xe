@@ -58,7 +58,9 @@ function SaleClient() {
         <div className=" relative max-w-[1140px] py-[120px] h-[500px] pt-[160px] lg:pt-[120px] mx-auto px-4 ">
           <div className=" text-white max-w-[540px]">
             <div className="text-[18px]">TIN KHUYẾN MẠI</div>
-            <div className="text-[36px] font-bold text-wrap">Ưu đãi đặc biệt từ Nhật Phát Auto cùng các đối tác</div>
+            <div className="text-[36px] font-bold text-wrap">
+              Ưu đãi đặc biệt từ Trung tâm BMB Car Carecùng các đối tác
+            </div>
           </div>
         </div>
       </div>

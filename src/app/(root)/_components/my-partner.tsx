@@ -25,7 +25,7 @@ function MyPartner() {
     <div className="pb-16 max-w-[1140px] px-4  mx-auto">
       <div className="text-[36px] font-bold">ĐỐI TÁC CỦA CHÚNG TÔI</div>
       <div className="text-[24px] font-light mb-8">
-        Nhật Phát Auto tự hào được cộng tác với nhiều thương hiệu hàng đầu thế giới trong ngành xe hơi
+        Trung tâm BMB Car Caretự hào được cộng tác với nhiều thương hiệu hàng đầu thế giới trong ngành xe hơi
       </div>
 
       <Swiper

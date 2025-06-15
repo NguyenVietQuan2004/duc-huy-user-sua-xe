@@ -46,12 +46,12 @@ function ServiceClient({ serviceId }: { serviceId: string }) {
       </div>
 
       {/* List */}
-      <div className="max-w-[1140px] mx-auto text-[18px] lg:pt-60 px-4 lg:px-0 py-20 pt-30 flex flex-col gap-8">
+      <div className="max-w-[1140px]  mx-auto text-[18px] lg:pt-60 px-4 lg:px-0 py-20 pt-30 flex flex-col gap-8">
         <div
           className="flex flex-row-reverse  justify-between items-start gap-10 relative  z-[8] 
       lg:-top-[300px]"
         >
-          <div className="  hidden lg:flex justify-end items-start h-[100vh] border-[#08080808]  bg-[#]">
+          <div className="  hidden lg:flex justify-end items-start  border-[#08080808]  bg-[#]">
             <div className="bg-white  rounded-2xl p-8 border min-w-[370px] shadow-md w-full max-w-xs text-nowrap ">
               <h3 className="text-[#d51921] text-lg font-bold mb-4 uppercase">Dịch vụ khác</h3>
               <ul className="flex flex-col divide-y text-[18px] ">
@@ -87,9 +87,9 @@ function ServiceClient({ serviceId }: { serviceId: string }) {
             </div>
           </div>
 
-          <div className="lg:relative z-10  lg:mt-[200px]">
-            <div className="text-4xl mb-7 font-semibold text-[#d51921]">{service?.name}</div>
-            <div className="font-normal"> {service?.price}</div>
+          <div className="lg:relative z-10  lg:mt-[100px] ">
+            <div className="text-4xl mb-7 font-semibold text-[#d51921] line-clamp-5">{service?.name}</div>
+            <div className="font-normal break-words text-wrap "> {service?.price}</div>
           </div>
         </div>
         <ServiceDetail service={service} />

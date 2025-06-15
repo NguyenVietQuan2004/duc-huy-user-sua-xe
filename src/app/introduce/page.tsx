@@ -35,7 +35,7 @@ function Introduce() {
         )}
         <div className="relative max-w-[1140px] py-[120px] pt-[160px] h-[500px] lg:pt-[120px] mx-auto px-4 ">
           <div className=" text-white max-w-[540px] h-[189px]">
-            <div className="text-[18px]">GIỚI THIỆU VỀ NHẬT PHÁT AUTO</div>
+            <div className="text-[18px]">GIỚI THIỆU VỀ TRUNG TÂM BMB CAR CARE</div>
             <div className="text-[36px] font-bold">Công nghệ đỉnh cao mang lại uy tín & chất lượng vượt trội</div>
           </div>
         </div>
@@ -61,7 +61,7 @@ function Introduce() {
             type="submit"
             className="w-[460px]  bg-[#d51921] border border-transparent transition-all duration-500 hover:border-[#d51921]  text-white font-semibold py-7 rounded hover:bg-white hover:text-[#d51921] "
           >
-            ĐẶT LỊCH HẸN TỚI NHẬT PHÁT AUTO
+            ĐẶT LỊCH HẸN TỚI TRUNG TÂM BMB CAR CARE
           </Button>
         </div>
       </div>

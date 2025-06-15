@@ -132,7 +132,7 @@ function TablePrice({ onClick, isShow }: { onClick: () => void; isShow: boolean 
           variant={"outline"}
           className="w-full bg-[#d51921] text-white hover:bg-white hover:text-[#d51921] border border-transparent hover:border-[#d51921] transition-all duration-300 "
         >
-          ĐẶT LỊCH HẸN TỚI NHẬT PHÁT AUTO
+          ĐẶT LỊCH HẸN TỚI TRUNG TÂM BMB CAR CARE
         </Button>
       </div>
     </div>

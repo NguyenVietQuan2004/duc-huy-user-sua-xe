@@ -33,6 +33,7 @@ function ModelBooking() {
       setIsShowModelBooking(false);
     }
   };
+
   if (!isShowModelBooking) return;
   return (
     <div

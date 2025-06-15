@@ -67,7 +67,7 @@ export const SixReasonData = [
   },
   {
     image: "https://nhatphatauto.vn/wp-content/themes/AvantDG/assets/svg/like.svg",
-    text: "Các sản phẩm tại Nhật Phát Auto dược đảm bảo tinh hêu qua sư dung, nháp chinh hăng từ các trương hieu hàng đàu the gioi.",
+    text: "Các sản phẩm tại Trung tâm BMB Car Caredược đảm bảo tinh hêu qua sư dung, nháp chinh hăng từ các trương hieu hàng đàu the gioi.",
   },
   {
     image: "https://nhatphatauto.vn/wp-content/themes/AvantDG/assets/svg/like.svg",
