@@ -131,7 +131,7 @@ function Header() {
             </div>
           </div>
           <Link href={"/advice"} className=" hover:text-[#FFBE27] hidden lg:block  cursor-pointer underline-animate">
-            Tin tức{" "}
+            TIN TỨC{" "}
           </Link>
           <Link href="/" className="relative w-32 z-10  lg:w-[216px] h-[65px] ">
             {/* o day */}
