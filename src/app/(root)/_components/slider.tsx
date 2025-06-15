@@ -56,10 +56,10 @@ function Slider() {
 
                 <div className="relative flex flex-col  lg:flex-row px-3 mx-0 lg:mx-[200px] items-center select-none">
                   <div className="flex-1 flex gap-4 lg:gap-12 flex-col items-center "></div>
-                  <div className="flex-1 text-center lg:text-right">
+                  <div className="flex-1 text-center lg:text-right flex lg:block flex-col items-center">
                     {
                       <div
-                        className="font-bold text-[40px] text-white break-words max-w-[50vw] line-clamp-3 text-wrap"
+                        className="font-bold text-[40px]  text-white break-words max-w-[50vw] line-clamp-3 text-wrap"
                         dangerouslySetInnerHTML={{ __html: banner.title[index] }}
                       />
                     }
