@@ -35,7 +35,7 @@ function MyService() {
               if (index > 5) return null;
               return (
                 <Link
-                  href={item._id}
+                  href={`/service/${item._id}`}
                   key={index}
                   className={` group
                 ${
