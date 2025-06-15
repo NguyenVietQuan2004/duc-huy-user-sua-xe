@@ -10,7 +10,7 @@ function ModelBooking() {
   const { isShowModelBooking, setIsShowModelBooking } = useModalBooking();
 
   const [centers, setcenters] = useState<Center[]>();
-
+  const [isSelectOpen, setIsSelectOpen] = useState(false);
   useEffect(() => {
     const fetchAPI = async () => {
       const centers = await homeApi.getCenters();
@@ -29,7 +29,9 @@ function ModelBooking() {
     }
   }, [isShowModelBooking]);
   const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (isSelectOpen) return;
     if (contentRef.current && !contentRef.current.contains(e.target as Node)) {
+      console.log("fdojdsoi");
       setIsShowModelBooking(false);
     }
   };
@@ -41,7 +43,7 @@ function ModelBooking() {
       className="fixed z-[999] inset-0 flex justify-center items-center bg-black bg-opacity-70"
     >
       <div ref={contentRef}>
-        <Form hasCloseIcon={true} centers={centers} />
+        <Form hasCloseIcon={true} centers={centers} setIsSelectOpen={setIsSelectOpen} />
       </div>
     </div>
   );

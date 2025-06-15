@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -16,11 +16,21 @@ import { useAppSelector } from "@/store/hook";
 import { toast } from "sonner";
 import { Center } from "@/type/center";
 
-export default function Form({ hasCloseIcon, centers }: { hasCloseIcon?: boolean; centers: Center[] | undefined }) {
+export default function Form({
+  hasCloseIcon,
+  centers,
+  setIsSelectOpen,
+}: {
+  hasCloseIcon?: boolean;
+  centers: Center[] | undefined;
+  setIsSelectOpen?: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   const { setIsShowModelBooking } = useModalBooking();
   const servicesOptions = useAppSelector((state) => state.service.services);
   const [isLoading, setIsLoading] = useState(false);
-  console.log("fksdjfidosjisojfidosjio", centers);
+  const selectTriggerRef = useRef<HTMLButtonElement | null>(null); // Ref để lấy kích thước SelectTrigger
+  const [selectWidth, setSelectWidth] = useState<string | undefined>(undefined); // State để lưu chiều rộng
+
   const {
     register,
     handleSubmit,
@@ -43,6 +53,20 @@ export default function Form({ hasCloseIcon, centers }: { hasCloseIcon?: boolean
   const selectedDate = useWatch({ control, name: "expected_date" });
   const now = new Date();
   const currentHour = now.getHours();
+
+  // Tính toán chiều rộng của SelectTrigger khi component mount hoặc thay đổi kích thước
+  useEffect(() => {
+    const updateWidth = () => {
+      if (selectTriggerRef.current) {
+        const width = selectTriggerRef.current.offsetWidth;
+        setSelectWidth(`${width}px`);
+      }
+    };
+
+    updateWidth(); // Tính ngay khi mount
+    window.addEventListener("resize", updateWidth); // Cập nhật khi resize
+    return () => window.removeEventListener("resize", updateWidth); // Cleanup
+  }, []);
 
   const generateHourOptions = () => {
     const hours = [];
@@ -76,9 +100,9 @@ export default function Form({ hasCloseIcon, centers }: { hasCloseIcon?: boolean
       console.error(error);
       toast.error("Đã có lỗi xảy ra!", {
         style: {
-          backgroundColor: "#fff5f5", // nền đỏ nhạt
-          color: "#c53030", // chữ đỏ đậm
-          border: "1px solid #feb2b2", // viền hồng nhạt
+          backgroundColor: "#fff5f5",
+          color: "#c53030",
+          border: "1px solid #feb2b2",
         },
         className: "custom-error-toast",
       });
@@ -161,11 +185,18 @@ export default function Form({ hasCloseIcon, centers }: { hasCloseIcon?: boolean
             control={control}
             name="expected_time"
             render={({ field }) => (
-              <Select onValueChange={field.onChange} value={field.value}>
+              <Select
+                onValueChange={field.onChange}
+                value={field.value}
+                onOpenChange={(open) => setIsSelectOpen?.(open)}
+              >
                 <SelectTrigger className="w-full bg-white">
                   <SelectValue placeholder="Chọn giờ" />
                 </SelectTrigger>
-                <SelectContent className="z-[1000]">
+                <SelectContent
+                  className="z-[1000]"
+                  style={{ width: selectWidth }} // Áp dụng chiều rộng động
+                >
                   {generateHourOptions().map((hour) => {
                     const timeStr = hour.toString().padStart(2, "0") + ":00";
                     return (
@@ -216,18 +247,32 @@ export default function Form({ hasCloseIcon, centers }: { hasCloseIcon?: boolean
       </fieldset>
 
       <div className="mb-6">
-        <Label htmlFor="center">Lựa chọn Trung tâm Trung tâm BMB Car Care:</Label>
+        <Label htmlFor="center">Lựa chọn Trung tâm BMB Car Care:</Label>
         <Controller
           control={control}
           name="center"
           render={({ field }) => (
-            <Select onValueChange={field.onChange} value={field.value}>
-              <SelectTrigger className="w-full bg-white">
-                <SelectValue placeholder="Chọn trung tâm" />
+            <Select onValueChange={field.onChange} value={field.value} onOpenChange={(open) => setIsSelectOpen?.(open)}>
+              <SelectTrigger
+                ref={selectTriggerRef} // Gắn ref để lấy kích thước
+                className="cc ba no overflow-hidden"
+                style={{ width: selectWidth }} // Áp dụng chiều rộng động
+              >
+                <SelectValue
+                  className="!text-ellipsis !overflow-hidden !max-w-6 block aaaaaaaaaaaaaaaaaaaaaaaaaaa !whitespace-nowrap" // Áp dụng trực tiếp lên SelectValue
+                  placeholder="Chọn trung tâm"
+                />
               </SelectTrigger>
-              <SelectContent className="z-[1000]">
+              <SelectContent
+                className="z-[1000]"
+                style={{ width: selectWidth }} // Áp dụng chiều rộng động
+              >
                 {centers?.map((center: Center) => (
-                  <SelectItem key={center._id} value={center.name}>
+                  <SelectItem
+                    key={center._id}
+                    value={center.name}
+                    className="text-ellipsis overflow-hidden text-wrap break-words" // Xử lý văn bản dài
+                  >
                     {center.name}
                   </SelectItem>
                 ))}

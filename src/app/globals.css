@@ -12,6 +12,7 @@
 .text-start-css > * {
   text-align: start !important;
 }
+
 @media (min-width: 1024px) {
   .lg-webkit-clamp-2 {
     display: -webkit-box;
