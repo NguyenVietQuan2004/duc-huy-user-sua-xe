@@ -77,7 +77,7 @@ function ServiceDetail({ service }: { service: Service | undefined }) {
           variant={"outline"}
           type="submit"
           onClick={() => setIsShowModelBooking(true)}
-          className="w-full mt-6 bg-[#d51921] border border-transparent transition-all duration-500 hover:border-[#d51921]  text-white font-semibold py-5 rounded hover:bg-white hover:text-[#d51921] "
+          className="w-full mt-6 bg-[#f6ab35] border border-transparent transition-all duration-500 hover:border-[#f6ab35]  text-white font-semibold py-5 rounded hover:bg-white hover:text-[#f6ab35] "
         >
           ĐẶT LỊCH HẸN TỚI TRUNG TÂM BMB CAR CARE
         </Button>

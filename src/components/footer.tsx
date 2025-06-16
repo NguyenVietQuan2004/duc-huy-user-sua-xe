@@ -34,9 +34,15 @@ function Footer() {
         <div className="grid gap-3 px-4   [grid-template-columns:repeat(15,1fr)]">
           <div className="cols-[repeat(15,_1fr)] lg:col-span-5 flex flex-col gap-6">
             <div>
-              {logo?.images.length && (
-                <Image alt="" width={164} height={80} src={logo.images[1]} className="object-cover " />
-              )}
+              <Image
+                alt=""
+                width={164}
+                height={80}
+                src={
+                  "https://res.cloudinary.com/dbuerrrqv/image/upload/v1750091661/moto-automate/banner-images-1750091660869-1.png"
+                }
+                className="object-cover "
+              />
             </div>
             {addresses?.map((item: Address) => {
               return (
@@ -104,14 +110,14 @@ function Footer() {
             })}
           </div>
         </div>
-        {/* <div className="border-t border-[#D51921] px-4  py-4 pt-6 lg:py-0 mt-8 lg:pt-4 flex justify-between items-center">
+        {/* <div className="border-t border-[#f6ab35] px-4  py-4 pt-6 lg:py-0 mt-8 lg:pt-4 flex justify-between items-center">
           <div className="font-light">© 2024 Nhat Phat Auto Co., Ltd. giữ bản quyền.</div>
           <div className="hidden items-center gap-3  lg:flex">
-            <Link href={"#"} onClick={handleOnclick} className="hover:text-[#d51921] font-light">
+            <Link href={"#"} onClick={handleOnclick} className="hover:text-[#f6ab35] font-light">
               Bảng giá Dịch vụ
             </Link>
             <div>|</div>
-            <Link href={"/sale"} className="hover:text-[#d51921] font-light">
+            <Link href={"/sale"} className="hover:text-[#f6ab35] font-light">
               {" "}
               Chương trình Khuyến mãi
             </Link>

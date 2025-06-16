@@ -22,7 +22,7 @@ export default function ScrollToTopButton() {
     visible && (
       <button
         onClick={scrollToTop}
-        className="fixed bottom-2 left-2 hover:opacity-75 cursor-pointer w-10 h-10 bg-red-600 text-white flex flex-col items-center justify-center rounded shadow-lg hover:bg-red-700 transition-colors"
+        className="fixed bottom-2 left-2 hover:opacity-75 cursor-pointer w-10 h-10  bg-[#f6ab35] text-white flex flex-col items-center justify-center rounded shadow-lg hover:bg-opacity-80 transition-colors"
       >
         <ChevronUp className="w-5 h-5 -mb-3" />
         <ChevronUp className="w-5 h-5" />

@@ -57,7 +57,7 @@ export default function AdviceClient() {
         )}
         <div className="relative max-w-[1140px] py-[120px] pt-[160px] h-[500px] lg:pt-[120px] mx-auto px-4 ">
           <div className=" text-white max-w-[540px]">
-            <div className="text-[18px]">GÓC TƯ VẤN</div>
+            <div className="text-[18px]">TIN TỨC</div>
             <div className="text-[36px] font-bold">Kiến thức cho những hành trình an toàn trên mọi cung đường</div>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function AdviceClient() {
                 key={advice._id}
                 className="border group  p-4 flex flex-col shadow-md"
               >
-                <h2 className="text-[24px] font-light h-[108px] line-clamp-3 mb-2 group-hover:text-[#d51921]">
+                <h2 className="text-[24px] font-light h-[108px] line-clamp-3 mb-2 group-hover:text-[#f6ab35]">
                   {advice.title}
                 </h2>
                 <div className="w-full rounded-sm relative mb-4 overflow-hidden">
@@ -103,7 +103,7 @@ export default function AdviceClient() {
                   </div>
 
                   <div
-                    className=" text-sm text-gray-700 leading-snug  line-clamp-4 group-hover:text-[#d51921] transition-all duration-200"
+                    className=" text-sm text-gray-700 leading-snug  line-clamp-4 group-hover:text-[#f6ab35] transition-all duration-200"
                     dangerouslySetInnerHTML={{ __html: stripHtml(advice.content) }}
                   />
                 </div>

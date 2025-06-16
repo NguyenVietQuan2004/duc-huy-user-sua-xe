@@ -49,7 +49,7 @@ function MyService() {
                   index === 4 ? "border border-transparent border-t-black lg:border-black  lg:border-b-transparent" : ""
                 }
                     ${index === 5 ? "border-t lg:border-t-transparent" : ""}
-                border-black py-[15px] hover:text-[#D51921] text-center px-10 flex flex-col gap-4 items-center
+                border-black py-[15px] hover:text-[#f6ab35] text-center px-10 flex flex-col gap-4 items-center
               `}
                 >
                   {servicesIcon.length ? (
@@ -86,7 +86,7 @@ function MyService() {
                   href={`/service/${item._id}`}
                   key={index}
                   className={` group
-               py-[15px] hover:text-[#D51921] text-center px-10 flex flex-col gap-4 items-center               }
+               py-[15px] hover:text-[#f6ab35] text-center px-10 flex flex-col gap-4 items-center               }
                `}
                 >
                   {servicesIcon.length ? (

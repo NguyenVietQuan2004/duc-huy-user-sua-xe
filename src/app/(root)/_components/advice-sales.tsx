@@ -34,7 +34,7 @@ function AdviceSale() {
         {/* SALE SECTION */}
         <SlideKM />
         {/* ADVICE SECTION - Sửa giống SALE SECTION */}
-        <div className="bg-white overflow-hidden hover:text-[#d51921] shadow-[4px_4px_15px_0px_rgba(0,0,0,0.15)] border border-[#d9d9d9] rounded-sm">
+        <div className="bg-white overflow-hidden hover:text-[#f6ab35] shadow-[4px_4px_15px_0px_rgba(0,0,0,0.15)] border border-[#d9d9d9] rounded-sm">
           <div className="py-5 px-8 flex items-center gap-5">
             <Image
               alt=""
@@ -43,7 +43,7 @@ function AdviceSale() {
               className="object-cover"
               src="https://nhatphatauto.vn/wp-content/uploads/2024/05/Group-625627-1.svg"
             />
-            <span className="text-[24px] text-[#124d9b] font-bold">GÓC TƯ VẤN</span>
+            <span className="text-[24px] text-[#124d9b] font-bold">TIN TỨC</span>
           </div>
 
           <Swiper

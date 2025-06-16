@@ -128,7 +128,7 @@
 //         </button>
 //       )}
 
-//       <h2 className="text-red-700 font-bold text-xl mb-4 border-b border-red-700 pb-2">ĐẶT LỊCH HẸN NGAY</h2>
+//       <h2 className="text-[#f6ab35] font-bold text-xl mb-4 border-b border-red-700 pb-2">ĐẶT LỊCH HẸN NGAY</h2>
 
 //       <div className="mb-4">
 //         <Label htmlFor="full_name">Họ và tên:</Label>
@@ -285,7 +285,7 @@
 //       <Button
 //         type="submit"
 //         disabled={isLoading}
-//         className="w-full bg-[#d51921] text-white font-semibold py-5 rounded hover:bg-white hover:text-[#d51921] border border-transparent hover:border-[#d51921]"
+//         className="w-full bg-[#f6ab35] text-white font-semibold py-5 rounded hover:bg-white hover:text-[#f6ab35] border border-transparent hover:border-[#f6ab35]"
 //       >
 //         {isLoading ? "ĐANG GỬI..." : "ĐẶT LỊCH HẸN TỚI TRUNG TÂM BMB CAR CARE"}
 //       </Button>
@@ -443,7 +443,7 @@ export default function Form({
         </button>
       )}
 
-      <h2 className="text-red-700 font-bold text-xl mb-4 border-b border-red-700 pb-2">ĐẶT LỊCH HẸN NGAY</h2>
+      <h2 className="text-[#f6ab35] font-bold text-xl mb-4 border-b border-red-700 pb-2">ĐẶT LỊCH HẸN NGAY</h2>
 
       <div className="mb-4">
         <Label htmlFor="full_name">Họ và tên:</Label>
@@ -593,7 +593,7 @@ export default function Form({
       <Button
         type="submit"
         disabled={isLoading}
-        className="w-full bg-[#d51921] text-white font-semibold py-5 rounded hover:bg-white hover:text-[#d51921] border border-transparent hover:border-[#d51921]"
+        className="w-full bg-[#f6ab35] text-white font-semibold py-5 rounded hover:bg-white hover:text-[#f6ab35] border border-transparent hover:border-[#f6ab35]"
       >
         {isLoading ? "ĐANG GỬI..." : "ĐẶT LỊCH HẸN TỚI TRUNG TÂM BMB CAR CARE"}
       </Button>

@@ -41,16 +41,22 @@ function Introduce() {
           {/* Left - Maps & Addresses */}
           <div className="flex flex-col gap-8">
             <div>
-              <h3 className="font-bold">Nhật Phát – Trương Công Giai</h3>
-              <p>82 Trương Công Giai, Dịch Vọng, Cầu Giấy, Hà Nội</p>
-              <iframe
+              <h3 className="font-bold">BMB Garage – Trung Tâm Chăm Sóc Xe</h3>
+              <p>21 Đường Phú Thuận, Phường Tân Phú, Quận 7, TP. Hồ Chí Minh</p>
+              {/* <iframe
                 className="w-full h-[200px] mt-2"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.527112333342!2d105.78313931540277!3d21.01117109387771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab43c6fd109f%3A0x69fa285f8a9d4917!2zTmjDoCBQaMOhdCAtIFRyxrDGoW5nIENvbmcgR2lh!5e0!3m2!1svi!2s!4v1686487495243!5m2!1svi!2s"
+                loading="lazy"
+              ></iframe> */}
+
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.056640960699!2d106.73078149999999!3d10.7301149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175254fc81ab34d%3A0xc416f38314923c3a!2sBMB%20Garage!5e0!3m2!1svi!2s!4v1750091279481!5m2!1svi!2s"
+                className="w-full h-[200px] mt-2"
                 loading="lazy"
               ></iframe>
             </div>
 
-            <div>
+            {/* <div>
               <h3 className="font-bold">Nhật Phát – Trần Kim Xuyến</h3>
               <p>22 Trần Kim Xuyến, Yên Hoà, Cầu Giấy, Hà Nội</p>
               <iframe
@@ -71,7 +77,7 @@ function Introduce() {
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.839243365009!2d105.9646932154019!3d20.96279399431756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135b14dd10a189f%3A0x58901ec98fa367ab!2zTmjDoCBQaMOhdCAtIEtpw6p1IEvDrQ!5e0!3m2!1svi!2s!4v1686487596895!5m2!1svi!2s"
                 loading="lazy"
               ></iframe>
-            </div>
+            </div> */}
           </div>
 
           {/* Right - Contact Form */}

@@ -77,7 +77,7 @@ function SaleClient() {
               <Link
                 href={`/sale/${promo._id}`}
                 key={promo._id}
-                className="border rounded-sm group hover:text-[#d51921] p-4 flex flex-col shadow-md"
+                className="border rounded-sm group hover:text-[#f6ab35] p-4 flex flex-col shadow-md"
               >
                 <h2 className="text-[24px] font-light h-[108px] line-clamp-3 mb-2">{promo.title}</h2>
                 <div className="w-full  relative mb-4 rounded-lg  overflow-hidden">
@@ -102,7 +102,7 @@ function SaleClient() {
                     <div className="text-[14px] pt-1 border-t text-gray-500 font-light">{year}</div>
                   </div>
                   <div
-                    className=" text-sm text-gray-700 leading-snug  line-clamp-4 group-hover:text-[#d51921] transition-all duration-200"
+                    className=" text-sm text-gray-700 leading-snug  line-clamp-4 group-hover:text-[#f6ab35] transition-all duration-200"
                     dangerouslySetInnerHTML={{ __html: stripHtml(promo.content) }}
                   />
                 </div>

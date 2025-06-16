@@ -46,7 +46,7 @@ export default function MobileMenu() {
 
           <div className="mt-4 space-y-3 text-sm">
             <Link href="/advice" className="pt-3 block" onClick={handleClose}>
-              GÓC TƯ VẤN
+              TIN TỨC
             </Link>
             <Link href="/introduce" className="border-t pt-3 block" onClick={handleClose}>
               GIỚI THIỆU
