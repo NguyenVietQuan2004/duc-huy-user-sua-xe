@@ -16,9 +16,9 @@ function SearchDetails({}: { id: string }) {
   }, []);
 
   return (
-    <div className="max-w-[1200px] mx-auto py-[100px] px-4 ">
+    <div className="max-w-[1200px] mx-auto py-[100px] lg:px-4 ">
       <div className="grid grid-cols-12 gap-10">
-        <div className="px-4 lg:px-0 pt-20 lg:pt-0 col-span-12 lg:col-span-8">
+        <div className="px-4 lg:px-0 pt-20 lg:pt-0 col-span-10 lg:col-span-8">
           <div className="text-[36px] font-light">{blog?.title}</div>
           <div className="text-[14px] flex justify-between font-light my-4">
             <div>{blog?.name}</div>

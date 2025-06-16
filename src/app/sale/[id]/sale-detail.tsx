@@ -20,9 +20,9 @@ function ChuongtrinhKMDetail({ id }: { id: string }) {
   }, []);
 
   return (
-    <div className="max-w-[1200px] mx-auto py-[100px] px-4  ">
+    <div className="max-w-[1200px] mx-auto py-[100px] lg:px-4  ">
       <div className="grid grid-cols-10 gap-10">
-        <div className="px-4 lg:px-0 pt-20 lg:pt-0 col-span-12 lg:col-span-7">
+        <div className="px-4 lg:px-0 pt-20 lg:pt-0 col-span-10 lg:col-span-7">
           <div className="text-[36px] font-light">{sale?.title}</div>
           <div className="text-[14px] flex justify-between font-light my-4">
             <div>{sale?.name}</div>

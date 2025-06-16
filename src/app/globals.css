@@ -19,6 +19,9 @@
     max-width: 280px;
   }
 }
+img {
+  max-width: 100%;
+}
 @media (min-width: 1024px) {
   .lg-webkit-clamp-2 {
     display: -webkit-box;
