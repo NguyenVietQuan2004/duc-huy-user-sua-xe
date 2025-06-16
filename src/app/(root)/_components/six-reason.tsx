@@ -37,7 +37,7 @@ function SixReason() {
         } duration-300 lg:relative`}
       >
         {reason?.images?.length && (
-          <Image alt="" width={500} height={500} src={reason.images[0]} className="w-full h-full" />
+          <Image alt="" width={500} height={500} src={reason.images[0]} className="w-full h-full object-cover" />
         )}
       </div>
       <div
