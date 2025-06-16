@@ -13,6 +13,12 @@
   text-align: start !important;
 }
 
+@media (max-width: 500px) {
+  .custom-select > * {
+    display: block !important;
+    max-width: 280px;
+  }
+}
 @media (min-width: 1024px) {
   .lg-webkit-clamp-2 {
     display: -webkit-box;

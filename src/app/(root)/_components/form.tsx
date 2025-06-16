@@ -429,7 +429,7 @@ export default function Form({
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className={`max-w-[510px] relative ${
+      className={`max-w-full sm:w-auto sm:max-w-[510px] relative ${
         hasCloseIcon && "max-h-[100vh]"
       } lg:max-h-[3000px] overflow-auto mx-auto bg-[#F4F6F7] p-10 px-6 lg:px-10 rounded-xl shadow-md`}
     >
@@ -568,8 +568,11 @@ export default function Form({
           name="center"
           render={({ field }) => (
             <Select onValueChange={field.onChange} value={field.value} onOpenChange={(open) => setIsSelectOpen?.(open)}>
-              <SelectTrigger ref={selectTriggerRef} className="w-full bg-white">
-                <SelectValue className="text-ellipsis overflow-hidden whitespace-nowrap" placeholder="Chọn trung tâm" />
+              <SelectTrigger ref={selectTriggerRef} className=" custom-select bg-white ">
+                <SelectValue
+                  className="text-ellipsis  overflow-hidden break-words text-wrap"
+                  placeholder="Chọn trung tâm"
+                />
               </SelectTrigger>
               <SelectContent className="z-[1000]" style={{ width: selectWidth }}>
                 {centers?.map((center: Center) => (
