@@ -31,7 +31,7 @@ function AdviceDetail({ id }: { id: string }) {
 
           {advice?.content && (
             <div
-              className="text-lg max-w-full overflow-hidden text-wrap"
+              className="text-lg max-w-full overflow-hidden font text-wrap"
               dangerouslySetInnerHTML={{
                 __html: advice.content,
               }}
