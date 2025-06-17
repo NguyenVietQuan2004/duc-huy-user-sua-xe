@@ -47,7 +47,6 @@ function Introduce() {
         {intro?.content && (
           <div
             className="text-lg overflow-hidden text-wrap"
-            style={{ whiteSpace: "pre-wrap" }}
             dangerouslySetInnerHTML={{
               __html: intro.content,
             }}

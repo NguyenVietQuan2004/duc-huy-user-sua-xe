@@ -65,13 +65,7 @@ function ServiceDetail({ service }: { service: Service | undefined }) {
       <div className="mt-6">
         {/* {service?.content && <ClientSafeHTML content={service.content} images={service.images} />} */}
 
-        {service?.content && (
-          <div
-            className="text-lg"
-            style={{ whiteSpace: "pre-wrap" }}
-            dangerouslySetInnerHTML={{ __html: service?.content }}
-          />
-        )}
+        {service?.content && <div className="text-lg" dangerouslySetInnerHTML={{ __html: service?.content }} />}
 
         <Button
           variant={"outline"}

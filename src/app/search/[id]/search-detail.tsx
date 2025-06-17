@@ -28,7 +28,6 @@ function SearchDetails({}: { id: string }) {
           {blog?.content && (
             <div
               className="text-lg"
-              style={{ whiteSpace: "pre-wrap" }}
               dangerouslySetInnerHTML={{
                 __html: blog.content,
               }}

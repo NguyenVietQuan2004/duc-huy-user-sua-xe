@@ -55,7 +55,6 @@ export default function SearchResults({ keyword }: { keyword: string }) {
 
           <div
             className="text-lg line-clamp-3"
-            style={{ whiteSpace: "pre-wrap" }}
             dangerouslySetInnerHTML={{
               __html: injectImageRandomly(item.content, item.images, item.images_name),
             }}

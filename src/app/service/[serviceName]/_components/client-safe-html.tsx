@@ -31,5 +31,5 @@ export default function ClientSafeHTML({
     setHtml(modifiedLines.join("\n"));
   }, [content, images, imgNames]);
 
-  return <div className="text-lg" style={{ whiteSpace: "pre-wrap" }} dangerouslySetInnerHTML={{ __html: html }} />;
+  return <div className="text-lg" dangerouslySetInnerHTML={{ __html: html }} />;
 }

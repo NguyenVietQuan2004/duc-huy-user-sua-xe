@@ -32,7 +32,6 @@ function AdviceDetail({ id }: { id: string }) {
           {advice?.content && (
             <div
               className="text-lg max-w-full overflow-hidden text-wrap"
-              style={{ whiteSpace: "pre-wrap" }}
               dangerouslySetInnerHTML={{
                 __html: advice.content,
               }}
