@@ -16,7 +16,6 @@ const kanit = Kanit({
 
 export const metadata: Metadata = {
   title: "BMBCAR",
-  // description: "DucHuy App",
 };
 
 export default function RootLayout({

@@ -42,7 +42,7 @@ function Introduce() {
       </div>
 
       <div className="max-w-[1140px] px-4  mx-auto text-[18px] font-light py-10 [min-width:500px]:pt-40   flex flex-col gap-6">
-        <div className="text-[#f6ab35] text-[30px] font-bold line-clamp-3"> {intro?.title}</div>
+        <div className="text-[#f8ab34] text-[30px] font-bold line-clamp-3"> {intro?.title}</div>
         <div className="text-[18px] font-bold line-clamp-3">{intro?.name}</div>
         {intro?.content && (
           <div
@@ -59,7 +59,7 @@ function Introduce() {
             onClick={() => setIsShowModelBooking(true)}
             variant={"outline"}
             type="submit"
-            className="w-[460px]  bg-[#f6ab35] border border-transparent transition-all duration-500 hover:border-[#f6ab35]  text-white font-semibold py-7 rounded hover:bg-white hover:text-[#f6ab35] "
+            className="w-[460px]  bg-[#f8ab34] border border-transparent transition-all duration-500 hover:border-[#f8ab34]  text-white font-semibold py-7 rounded hover:bg-white hover:text-[#f8ab34] "
           >
             ĐẶT LỊCH HẸN TỚI TRUNG TÂM BMB CAR CARE
           </Button>

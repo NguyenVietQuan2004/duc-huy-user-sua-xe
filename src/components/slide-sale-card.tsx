@@ -23,7 +23,7 @@ function SlideSaleCard() {
   }, []);
 
   return (
-    <div className="bg-white overflow-hidden hover:text-[#f6ab35] shadow-[4px_4px_15px_0px_rgba(0,0,0,0.15)] border border-[#d9d9d9] rounded-sm">
+    <div className="bg-white overflow-hidden hover:text-[#f8ab34] shadow-[4px_4px_15px_0px_rgba(0,0,0,0.15)] border border-[#d9d9d9] rounded-sm">
       <div className="py-5 px-8 flex items-center gap-5">
         <Image
           alt=""
@@ -32,7 +32,7 @@ function SlideSaleCard() {
           className="object-cover"
           src="https://nhatphatauto.vn/wp-content/uploads/2024/05/Group-625627.svg"
         />
-        <span className="text-[24px] text-[#f6ab35] font-bold">TIN KHUYẾN MẠI</span>
+        <span className="text-[24px] text-[#f8ab34] font-bold">TIN KHUYẾN MẠI</span>
       </div>
 
       <Swiper

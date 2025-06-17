@@ -53,13 +53,13 @@ function ServiceClient({ serviceId }: { serviceId: string }) {
         >
           <div className="  hidden lg:flex justify-end items-start  border-[#08080808]  bg-[#]">
             <div className="bg-white  rounded-2xl p-8 border min-w-[370px] shadow-md w-full max-w-xs text-nowrap ">
-              <h3 className="text-[#f6ab35] text-lg font-bold mb-4 uppercase">Dịch vụ khác</h3>
+              <h3 className="text-[#f8ab34] text-lg font-bold mb-4 uppercase">Dịch vụ khác</h3>
               <ul className="flex flex-col divide-y text-[18px] ">
                 {listService.map((item, index) => (
                   <li
                     key={item._id}
                     className={`flex items-center hover:opacity-50 transition-all duration-300 gap-2 py-3 ${
-                      serviceId === item._id ? "text-[#f6ab35]" : ""
+                      serviceId === item._id ? "text-[#f8ab34]" : ""
                     }`}
                   >
                     <Link href={`/service/${item._id}`} className="flex items-center gap-2">
@@ -81,14 +81,14 @@ function ServiceClient({ serviceId }: { serviceId: string }) {
                 ))}
               </ul>
 
-              <div className="h-[1px] bg-[#f6ab35] my-4" />
+              <div className="h-[1px] bg-[#f8ab34] my-4" />
 
               <ButtonClient />
             </div>
           </div>
 
           <div className="lg:relative z-10  lg:mt-[100px] ">
-            <div className="text-4xl mb-7 font-semibold text-[#f6ab35] line-clamp-5">{service?.name}</div>
+            <div className="text-4xl mb-7 font-semibold text-[#f8ab34] line-clamp-5">{service?.name}</div>
             <div className="font-normal break-words text-wrap "> {service?.price}</div>
           </div>
         </div>

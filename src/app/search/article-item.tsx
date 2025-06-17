@@ -44,12 +44,12 @@ export default function SearchResults({ keyword }: { keyword: string }) {
         <Link
           href={`/search/${item._id}`}
           key={item._id}
-          className="border-t block group hover:!text-[#f6ab35] transition-all duration-300 pt-4"
+          className="border-t block group hover:!text-[#f8ab34] transition-all duration-300 pt-4"
         >
-          <h3 className="text-xl font-semibold group-hover:!text-[#f6ab35] transition-all duration-300">
+          <h3 className="text-xl font-semibold group-hover:!text-[#f8ab34] transition-all duration-300">
             {item.title}
           </h3>
-          {/* <p className="text-[14px] text-muted-foreground mt-1 group-hover:!text-[#f6ab35] transition-all duration-300">
+          {/* <p className="text-[14px] text-muted-foreground mt-1 group-hover:!text-[#f8ab34] transition-all duration-300">
             {item.content}
           </p> */}
 

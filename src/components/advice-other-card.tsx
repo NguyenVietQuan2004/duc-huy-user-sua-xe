@@ -66,7 +66,7 @@ function AdviceOtherCard() {
             <div className="flex-1">
               <div className="flex justify-between items-center mt-2">
                 <span className="text-xs text-gray-500">{formatDateToDDMMYYYY(item.created_at.toString())}</span>
-                <LinkToIcon strokeColor="#f6ab35" />
+                <LinkToIcon strokeColor="#f8ab34" />
               </div>
             </div>
           </Link>

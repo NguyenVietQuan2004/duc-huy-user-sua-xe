@@ -110,14 +110,14 @@ function Footer() {
             })}
           </div>
         </div>
-        {/* <div className="border-t border-[#f6ab35] px-4  py-4 pt-6 lg:py-0 mt-8 lg:pt-4 flex justify-between items-center">
+        {/* <div className="border-t border-[#f8ab34] px-4  py-4 pt-6 lg:py-0 mt-8 lg:pt-4 flex justify-between items-center">
           <div className="font-light">© 2024 Nhat Phat Auto Co., Ltd. giữ bản quyền.</div>
           <div className="hidden items-center gap-3  lg:flex">
-            <Link href={"#"} onClick={handleOnclick} className="hover:text-[#f6ab35] font-light">
+            <Link href={"#"} onClick={handleOnclick} className="hover:text-[#f8ab34] font-light">
               Bảng giá Dịch vụ
             </Link>
             <div>|</div>
-            <Link href={"/sale"} className="hover:text-[#f6ab35] font-light">
+            <Link href={"/sale"} className="hover:text-[#f8ab34] font-light">
               {" "}
               Chương trình Khuyến mãi
             </Link>

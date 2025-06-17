@@ -67,20 +67,20 @@ function Header() {
             <div className="w-[0.5px] h-[20px] bg-white"></div>
             <div
               onClick={handleShowTablePrice}
-              className="flex gap-3 cursor-pointer hover:text-[#f6ab35] transition-all duration-150"
+              className="flex gap-3 cursor-pointer hover:text-[#f8ab34] transition-all duration-150"
             >
               <TablePriceIcon />
               <span>Bảng giá dịch vụ</span>
             </div>
           </div>
           <div className="flex items-center gap-7">
-            <Link href={"/sale"} className="flex gap-3 cursor-pointer hover:text-[#f6ab35] transition-all duration-150">
+            <Link href={"/sale"} className="flex gap-3 cursor-pointer hover:text-[#f8ab34] transition-all duration-150">
               <SaleIcon />
               <span>Chương trình Khuyến mãi</span>
             </Link>
             {/* <div className="w-[0.5px] h-[20px] bg-white"></div> */}
             <div></div>
-            {/* <div className="flex gap-3 relative cursor-pointer hover:text-[#f6ab35] transition-all duration-150">
+            {/* <div className="flex gap-3 relative cursor-pointer hover:text-[#f8ab34] transition-all duration-150">
               <SearchIcon />
               <span onClick={handleOpenSearchInput} className="select-none">
                 Tìm kiếm
@@ -95,7 +95,7 @@ function Header() {
         <div className="max-w-[900px] px-4  select-none h-[65px] items-center flex justify-between font-semibold text-lg mx-auto">
           <div
             onClick={handleShowTablePrice}
-            className="flex gap-3 lg:hidden px-2 lg:px-0 cursor-pointer hover:text-[#f6ab35] transition-all duration-150"
+            className="flex gap-3 lg:hidden px-2 lg:px-0 cursor-pointer hover:text-[#f8ab34] transition-all duration-150"
           >
             <TablePriceIcon />
             <span className="hidden lg:block">Bảng giá dịch vụ</span>
@@ -120,7 +120,7 @@ function Header() {
                 return (
                   <div key={item._id} className="py-3">
                     <Link
-                      className="line-clamp-1 overflow-hidden  max-w-full hover:text-[#f6ab35] transition-all duration-200 font-light border-b border-white last:border-transparent"
+                      className="line-clamp-1 overflow-hidden  max-w-full hover:text-[#f8ab34] transition-all duration-200 font-light border-b border-white last:border-transparent"
                       href={`/service/${item._id}`}
                     >
                       {item.name}

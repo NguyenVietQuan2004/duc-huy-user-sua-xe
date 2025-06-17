@@ -85,7 +85,7 @@ function TablePrice({ onClick, isShow }: { onClick: () => void; isShow: boolean 
         </div>
 
         <div className="mt-[50px] mb-[24px]">
-          <div className="pb-[10px] border-b text-[#f6ab35] text-center border-[#f6ab35] text-2xl font-bold">
+          <div className="pb-[10px] border-b text-[#f8ab34] text-center border-[#f8ab34] text-2xl font-bold">
             BẢNG GIÁ DỊCH VỤ
           </div>
         </div>
@@ -93,7 +93,7 @@ function TablePrice({ onClick, isShow }: { onClick: () => void; isShow: boolean 
         {/* table */}
         <div className="">
           {table?.map((item: PriceServiceType, index) => (
-            <div key={index} style={{ marginBottom: "40px" }} className="border-b border-[#f6ab35] pb-[50px]">
+            <div key={index} style={{ marginBottom: "40px" }} className="border-b border-[#f8ab34] pb-[50px]">
               <h2 className="text-lg text-[#124d9b] font-bold flex items-center gap-3">
                 {/* <Image alt="" src={item.image} width={24} height={24} /> */}
                 <span className="text-wrap break-words max-w-full"> {item.name_service}</span>
@@ -130,7 +130,7 @@ function TablePrice({ onClick, isShow }: { onClick: () => void; isShow: boolean 
         <Button
           onClick={() => setIsShowModelBooking(true)}
           variant={"outline"}
-          className="w-full bg-[#f6ab35] text-white hover:bg-white hover:text-[#f6ab35] border border-transparent hover:border-[#f6ab35] transition-all duration-300 "
+          className="w-full bg-[#f8ab34] text-white hover:bg-white hover:text-[#f8ab34] border border-transparent hover:border-[#f8ab34] transition-all duration-300 "
         >
           ĐẶT LỊCH HẸN TỚI TRUNG TÂM BMB CAR CARE
         </Button>

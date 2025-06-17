@@ -45,7 +45,7 @@ function SixReason() {
           imageInView ? "opacity-100 -right-0" : "opacity-0 -right-32"
         } duration-300 lg:relative`}
       >
-        <div className="text-[#f6ab35] font-bold line-clamp-3 text-[36px]">{reason?.title}</div>
+        <div className="text-[#f8ab34] font-bold line-clamp-3 text-[36px]">{reason?.title}</div>
         <div className="text-lg font-semibold mb-[25px] line-clamp-3">{reason?.content}</div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-y-10">
           {reason?.reason?.map((item, index) => {
