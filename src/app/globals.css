@@ -12,6 +12,12 @@
 .text-start-css > * {
   text-align: start !important;
 }
+@layer base {
+  * {
+    font-family: "Kanit", sans-serif !important;
+  }
+}
+
 .font {
   font-family: "Kanit", sans-serif !important;
 }
