@@ -10,7 +10,7 @@ import { Address } from "@/type/address";
 import { Logo } from "@/type/logo";
 
 function Footer() {
-  const services = useAppSelector((state) => state.service.services);
+  const services = useAppSelector((state) => state.service.categories);
   const handleOnclick = () => {};
 
   const [centers, setCenter] = useState<Center[]>();
@@ -30,7 +30,7 @@ function Footer() {
   }, []);
   return (
     <div className="bg-[#242424] pt-16 lg:pt-[100px] px-2 lg:px-10 overflow-hidden pb-[64px] text-white ">
-      <div className="max-w-[1140px] mx-auto">
+      <div className="max-w-[1240px] mx-auto">
         <div className="grid gap-3 px-4   [grid-template-columns:repeat(15,1fr)]">
           <div className="cols-[repeat(15,_1fr)] lg:col-span-5 flex flex-col gap-6">
             <div>

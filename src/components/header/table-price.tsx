@@ -56,7 +56,7 @@ function TablePrice({ onClick, isShow }: { onClick: () => void; isShow: boolean 
       >
         <div className="flex justify-center relative">
           <div className="relative w-[128px] lg:w-[216px] h-[65px] ">
-            {logo?.images.length === 2 && (
+            {logo?.images.length && (
               <>
                 <Image
                   alt=""
@@ -65,14 +65,16 @@ function TablePrice({ onClick, isShow }: { onClick: () => void; isShow: boolean 
                   height={300}
                   className="absolute w-32 lg:w-full z-2 top-0 lg:top-0"
                 />
-                <Image
-                  alt=""
-                  src={logo.images[1]}
-                  width={160}
-                  height={300}
-                  // className="absolute  h-auto z-3 object-cover top-[calc(30%+16px)] lg:top-[30%] left-1/2 -translate-x-1/2"
-                  className="absolute w-32  z-3 object-cover inset-0 lg:w-full"
-                />
+                {logo?.images.length === 2 && (
+                  <Image
+                    alt=""
+                    src={logo.images[1]}
+                    width={160}
+                    height={300}
+                    // className="absolute  h-auto z-3 object-cover top-[calc(30%+16px)] lg:top-[30%] left-1/2 -translate-x-1/2"
+                    className="absolute w-32  z-3 object-cover inset-0 lg:w-full"
+                  />
+                )}
               </>
             )}
           </div>

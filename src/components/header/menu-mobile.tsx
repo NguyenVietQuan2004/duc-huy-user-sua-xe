@@ -7,12 +7,26 @@ import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/co
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Service } from "@/type/service";
 import { useAppSelector } from "@/store/hook";
+import { Category } from "@/type/category";
+import { useRouter } from "next/navigation";
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
-  const services = useAppSelector((state) => state.service.services);
-  const handleClose = () => setOpen(false);
+  const services = useAppSelector((state) => ({
+    services: state.service.services,
+    categories: state.service.categories,
+  }));
+  const router = useRouter();
 
+  const handleClose = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    setOpen(false);
+    e.stopPropagation();
+  };
+
+  const handleClick = (item: Category) => {
+    router.push(`/service/${item._id}?tag=category`);
+    setOpen(false);
+  };
   return (
     <div className="">
       <Sheet open={open} onOpenChange={setOpen}>
@@ -27,21 +41,28 @@ export default function MobileMenu() {
           </SheetHeader>
 
           <Accordion type="single" collapsible className="w-full mt-4">
-            <AccordionItem value="services">
-              <AccordionTrigger className="text-left">DỊCH VỤ</AccordionTrigger>
-              <AccordionContent className="pl-4 space-y-2 ">
-                {services?.map((item) => (
-                  <Link
-                    key={item._id}
-                    href={`/service/${item._id}`}
-                    className="line-clamp-1 py-1"
-                    onClick={handleClose}
-                  >
-                    • {item.name}
-                  </Link>
-                ))}
-              </AccordionContent>
-            </AccordionItem>
+            {services.categories.map((category) => {
+              const matchServices = services.services.filter((item) => item.category_id === category._id);
+              return (
+                <AccordionItem key={category._id} value="services">
+                  <AccordionTrigger className="text-left">
+                    <div onClick={() => handleClick(category)}>{category.name}</div>
+                  </AccordionTrigger>
+                  <AccordionContent className="pl-4 space-y-2 ">
+                    {matchServices.map((item) => (
+                      <Link
+                        key={item._id}
+                        href={`/service/${item._id}`}
+                        className="line-clamp-1 py-1"
+                        onClick={handleClose}
+                      >
+                        • {item.name}
+                      </Link>
+                    ))}
+                  </AccordionContent>
+                </AccordionItem>
+              );
+            })}
           </Accordion>
 
           <div className="mt-4 space-y-3 text-sm">

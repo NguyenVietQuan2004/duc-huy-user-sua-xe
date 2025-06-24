@@ -9,16 +9,30 @@ import { Service } from "@/type/service";
 import { servicesIcon } from "@/data";
 import Image from "next/image";
 import { posterApi } from "@/api-request/posterAPI";
+import { useSearchParams } from "next/navigation";
+import { categoryApi } from "@/api-request/categoryAPI";
+import { Category } from "@/type/category";
 
 function ServiceClient({ serviceId }: { serviceId: string }) {
   const [service, setService] = useState<Service>();
-  const listService: Service[] = useAppSelector((state) => state.service.services);
+  const searchParams = useSearchParams();
+  const tag = searchParams.get("tag");
+  const listService: Service[] | Category[] = useAppSelector((state) => {
+    return tag
+      ? state.service.categories
+      : state.service.services.filter((item) => item.category_id === service?.category_id) || [];
+  });
 
   const [img, setImg] = useState();
 
   useEffect(() => {
     const fetchAPI = async () => {
-      const service = await serviceApi.getServiceById({ serviceId });
+      let service;
+      if (tag) {
+        service = await categoryApi.getCategoryById({ categoryId: serviceId });
+      } else {
+        service = await serviceApi.getServiceById({ serviceId });
+      }
       const poster = await posterApi.getPoster();
       setImg(poster.images_service);
       setService(service);
@@ -48,7 +62,7 @@ function ServiceClient({ serviceId }: { serviceId: string }) {
       {/* List */}
       <div className="max-w-[1140px]  mx-auto text-[18px] lg:pt-60 px-4 lg:px-0 py-20 pt-30 flex flex-col gap-8">
         <div
-          className="flex flex-row-reverse  justify-between items-start gap-10 relative  z-[8] 
+          className="flex flex-row-reverse  justify-between items-start gap-10 relative  z-[8]
       lg:-top-[300px]"
         >
           <div className="  hidden lg:flex justify-end items-start  border-[#08080808]  bg-[#]">
