@@ -31,7 +31,6 @@ function ModelBooking() {
   const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (isSelectOpen) return;
     if (contentRef.current && !contentRef.current.contains(e.target as Node)) {
-      console.log("fdojdsoi");
       setIsShowModelBooking(false);
     }
   };

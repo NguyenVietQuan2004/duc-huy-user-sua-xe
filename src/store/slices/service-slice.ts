@@ -23,7 +23,6 @@ export const serviceSlice = createSlice({
   initialState,
   reducers: {
     setServices: (state, action: PayloadAction<payload>) => {
-      console.log(action.payload);
       state.services = action.payload.services;
       state.categories = action.payload.categories;
     },
