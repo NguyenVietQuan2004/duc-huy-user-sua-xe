@@ -90,7 +90,7 @@ function Footer() {
             </ul>
           </div>
           <div className="col-span-5 hidden lg:block">
-            <div className="font-bold ">HỆ THỐNG CÁC TRUNG TÂM DỊCH VỤ TRUNG TÂM BMB CAR CARE</div>
+            <div className="font-bold ">TRUNG TÂM CHĂM SÓC XE BMB CAR CARE</div>
 
             {centers?.map((item) => {
               return (
