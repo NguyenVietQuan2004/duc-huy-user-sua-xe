@@ -321,7 +321,7 @@ export default function Form({
   setIsSelectOpen?: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const { setIsShowModelBooking } = useModalBooking();
-  const servicesOptions = useAppSelector((state) => [...state.service.services, ...state.service.categories]);
+  const servicesOptions = useAppSelector((state) => [...state.service.categories]);
   const [isLoading, setIsLoading] = useState(false);
   const selectTriggerRef = useRef<HTMLButtonElement | null>(null);
   const [selectWidth, setSelectWidth] = useState<string>("auto");

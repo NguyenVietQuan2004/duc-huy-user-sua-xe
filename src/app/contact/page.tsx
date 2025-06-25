@@ -2,12 +2,17 @@
 import { useEffect, useState } from "react";
 import ContactForm from "./form";
 import { posterApi } from "@/api-request/posterAPI";
+import { homeApi } from "@/api-request/homeAPI";
+import { Address } from "@/type/address";
 
 function Introduce() {
   const [img, setImg] = useState<string>();
+  const [address, setAddress] = useState<Address[]>();
   useEffect(() => {
     const fetchAPI = async () => {
       const poster = await posterApi.getPoster();
+      const addresses = await homeApi.getAddresses();
+      setAddress(addresses);
       setImg(poster.images_contact);
     };
     fetchAPI();
@@ -54,6 +59,11 @@ function Introduce() {
                 className="w-full h-[200px] mt-2"
                 loading="lazy"
               ></iframe>
+              {address?.map((item) => (
+                <div key={item._id} className="mt-4 text-base">
+                  <span className="font-semibold ">SĐT liên hệ:</span> {item.address}
+                </div>
+              ))}
             </div>
 
             {/* <div>

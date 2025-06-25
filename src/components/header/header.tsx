@@ -269,7 +269,7 @@ function Header() {
       </div>
 
       <div className="bg-[#242424]  z-20 lg:z-0 top-0 left-0 right-0 fixed lg:static border-b border-white lg:mt-[57px]">
-        <div className="max-w-[1200px] flex justify-between mx-auto pl-1">
+        <div className="max-w-[1400px] flex justify-between mx-auto pl-1">
           <Link href="/" className="relative w-32 z-10 flex items-center aa  lg:w-[216px] h-[65px] ">
             {/* o day */}
             {logo?.images.length && (
@@ -279,7 +279,7 @@ function Header() {
                   src={logo.images[0]}
                   width={216}
                   height={300}
-                  className="absolute w-32 lg:w-full z-2 h-full lg:h-auto object-cover   lg:top-0"
+                  className="absolute w-32 lg:w-full z-2 h-full lg:h-auto object-contain lg:object-cover   lg:top-0"
                 />
                 {logo?.images.length === 2 && (
                   <Image
@@ -303,6 +303,13 @@ function Header() {
               <span className="hidden lg:block">Bảng giá dịch vụ</span>
             </div>
 
+            <Link
+              href={"/introduce"}
+              className=" hover:text-[#FFBE27] hidden lg:block cursor-pointer underline-animate
+          "
+            >
+              GIỚI THIỆU{" "}
+            </Link>
             {categorys.map((category: Category, index) => {
               const matchServices = listServices?.filter((service) => service.category_id === category._id);
               return (
@@ -346,13 +353,6 @@ function Header() {
               TIN TỨC{" "}
             </Link>
 
-            <Link
-              href={"/introduce"}
-              className=" hover:text-[#FFBE27] hidden lg:block cursor-pointer underline-animate
-          "
-            >
-              GIỚI THIỆU{" "}
-            </Link>
             <Link href={"/contact"} className=" hover:text-[#FFBE27] hidden lg:block cursor-pointer underline-animate">
               LIÊN HỆ
             </Link>

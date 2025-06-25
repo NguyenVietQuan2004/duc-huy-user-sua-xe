@@ -11,7 +11,7 @@ function MyService() {
   const [image, imageInView] = useInView({
     threshold: 0.001,
   });
-  const services = useAppSelector((state) => [...state.service.services]);
+  const services = useAppSelector((state) => [...state.service.categories]);
   return (
     <div
       ref={image}
@@ -35,7 +35,7 @@ function MyService() {
               if (index > 5) return null;
               return (
                 <Link
-                  href={`/service/${item._id}`}
+                  href={`/service/${item._id}?tag=category`}
                   key={index}
                   className={` group
                 ${
@@ -83,7 +83,7 @@ function MyService() {
               if (index > 2) return null;
               return (
                 <Link
-                  href={`/service/${item._id}`}
+                  href={`/service/${item._id}?tag=category`}
                   key={index}
                   className={` group
                py-[15px] hover:text-[#f8ab34] text-center px-10 flex flex-col gap-4 items-center               }
@@ -115,7 +115,7 @@ function MyService() {
         </div>
         {services.length && (
           <Link
-            href={`/service/${services[0]._id}`}
+            href={`/service/${services[0]._id}?tag=category`}
             className="absolute hover:underline text-[#124d9b] bottom-4 left-1/2 -translate-x-1/2"
           >
             Xem thêm
