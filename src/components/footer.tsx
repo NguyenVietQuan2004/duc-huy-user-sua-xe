@@ -47,7 +47,7 @@ function Footer() {
             {addresses?.map((item: Address) => {
               return (
                 <div className="flex items-center gap-4  hover:opacity-80 cursor-pointer" key={item._id}>
-                  {/* <EmailIcon /> */}
+                  {item.name === "Địa chỉ" ? <EmailIcon /> : <PhoneIcon />}
 
                   <span className="line-clamp-1">{item.address}</span>
                 </div>

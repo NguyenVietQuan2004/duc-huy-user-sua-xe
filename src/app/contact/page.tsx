@@ -59,11 +59,13 @@ function Introduce() {
                 className="w-full h-[200px] mt-2"
                 loading="lazy"
               ></iframe>
-              {address?.map((item) => (
-                <div key={item._id} className="mt-4 text-base">
-                  <span className="font-semibold ">SĐT liên hệ:</span> {item.address}
-                </div>
-              ))}
+              {address
+                ?.filter((add) => add.name === "Số điện thoại")
+                ?.map((item) => (
+                  <div key={item._id} className="mt-4 text-base">
+                    <span className="font-semibold ">SĐT liên hệ:</span> {item.address}
+                  </div>
+                ))}
             </div>
 
             {/* <div>
