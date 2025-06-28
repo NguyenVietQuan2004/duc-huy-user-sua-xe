@@ -270,8 +270,7 @@ function Header() {
 
       <div className="bg-[#242424]  z-20 lg:z-0 top-0 left-0 right-0 fixed lg:static border-b border-white lg:mt-[57px]">
         <div className="max-w-[1400px] flex justify-between mx-auto pl-1">
-          <Link href="/" className="relative w-32 z-10 flex items-center aa  lg:w-[216px] h-[65px] ">
-            {/* o day */}
+          {/* <Link href="/" className="relative w-32 z-10 flex items-center aa  lg:w-[216px] h-[65px] ">
             {logo?.images.length && (
               <>
                 <Image
@@ -293,8 +292,8 @@ function Header() {
                 )}
               </>
             )}
-          </Link>
-          <div className=" px-4  select-none h-[65px] items-center flex gap-10 font-semibold text-lg ">
+          </Link> */}
+          <div className=" px-4 w-full justify-between   select-none h-[65px] mx-auto items-center flex font-semibold text-lg ">
             <div
               onClick={handleShowTablePrice}
               className="flex gap-3 lg:hidden px-2 lg:px-0 cursor-pointer hover:text-[#f8ab34] transition-all duration-150"
@@ -302,7 +301,29 @@ function Header() {
               <TablePriceIcon />
               <span className="hidden lg:block">Bảng giá dịch vụ</span>
             </div>
-
+            <Link href="/" className="relative w-32 z-10 flex items-center aa  lg:w-[216px] h-[65px] ">
+              {logo?.images.length && (
+                <>
+                  <Image
+                    alt=""
+                    src={logo.images[0]}
+                    width={216}
+                    height={300}
+                    className="absolute w-32 lg:w-full z-2 h-full lg:h-auto object-contain lg:object-cover   lg:top-0"
+                  />
+                  {logo?.images.length === 2 && (
+                    <Image
+                      alt=""
+                      src={logo.images[1]}
+                      width={160}
+                      height={300}
+                      // className="absolute  h-auto z-3 object-cover top-[calc(30%+16px)] lg:top-[30%] left-1/2 -translate-x-1/2"
+                      className="absolute w-32  z-3 object-cover lg:inset-0 lg:w-full"
+                    />
+                  )}
+                </>
+              )}
+            </Link>
             <Link
               href={"/introduce"}
               className=" hover:text-[#FFBE27] hidden lg:block cursor-pointer underline-animate
@@ -330,7 +351,7 @@ function Header() {
                     className="absolute hidden lg:block bg-[#242424] min-w-[310px] text-lg z-10 px-6 
     py-3 top-[95%] opacity-0 scale-95 invisible group-hover:opacity-100 
     group-hover:scale-100 group-hover:visible transition-all duration-200 
-    text-white shadow-[4px_4px_15px_0px_#00000040]"
+    text-white shadow-[4px_4px_15px_0px_#00000040] max-h-[500px] overflow-auto"
                   >
                     {matchServices?.map((item: Service) => {
                       return (
