@@ -74,7 +74,7 @@ function SaleClient() {
             const month = date.getMonth() + 1; // Tháng trong JS bắt đầu từ 0
             const year = date.getFullYear();
             return (
-              <Link
+              <a
                 href={`/sale/${promo._id}`}
                 key={promo._id}
                 className="border rounded-sm group hover:text-[#f8ab34] p-4 flex flex-col shadow-md"
@@ -112,7 +112,7 @@ function SaleClient() {
                     Xem thêm
                   </Button>
                 </div>
-              </Link>
+              </a>
             );
           })}
         </div>

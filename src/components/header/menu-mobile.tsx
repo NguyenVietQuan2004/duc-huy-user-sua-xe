@@ -50,14 +50,14 @@ export default function MobileMenu() {
                   </AccordionTrigger>
                   <AccordionContent className="pl-4 space-y-2 ">
                     {matchServices.map((item) => (
-                      <Link
+                      <a
                         key={item._id}
                         href={`/service/${item._id}`}
                         className="line-clamp-1 py-1"
                         onClick={handleClose}
                       >
                         • {item.name}
-                      </Link>
+                      </a>
                     ))}
                   </AccordionContent>
                 </AccordionItem>
@@ -66,18 +66,18 @@ export default function MobileMenu() {
           </Accordion>
 
           <div className="mt-4 space-y-3 text-sm">
-            <Link href="/advice" className="pt-3 block" onClick={handleClose}>
+            <a href="/advice" className="pt-3 block" onClick={handleClose}>
               TIN TỨC
-            </Link>
-            <Link href="/introduce" className="border-t pt-3 block" onClick={handleClose}>
+            </a>
+            <a href="/introduce" className="border-t pt-3 block" onClick={handleClose}>
               GIỚI THIỆU
-            </Link>
-            <Link href="/contact" className="border-t pt-3 block" onClick={handleClose}>
+            </a>
+            <a href="/contact" className="border-t pt-3 block" onClick={handleClose}>
               LIÊN HỆ
-            </Link>
-            <Link href="/sale" className="border-t pt-3 block" onClick={handleClose}>
+            </a>
+            <a href="/sale" className="border-t pt-3 block" onClick={handleClose}>
               CHƯƠNG TRÌNH KHUYẾN MẠI
-            </Link>
+            </a>
           </div>
 
           {/* <div className="mt-6 relative">

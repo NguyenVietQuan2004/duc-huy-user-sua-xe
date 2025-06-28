@@ -8,10 +8,10 @@ import { SeparatorHorizontal } from "lucide-react";
 
 const ClientSafeHTML = dynamic(() => import("./client-safe-html"), { ssr: false });
 
-function ServiceDetail({ service }: { service: Service | undefined }) {
+function ServiceDetail({ service, isHasTag }: { service: Service | undefined; isHasTag?: boolean }) {
   const { setIsShowModelBooking } = useModalBooking();
   return (
-    <div className="text-lg  font-light mt-12 px-4  lg:-mt-[300px]">
+    <div className={`text-lg  font-light mt-12 px-4  ${isHasTag && "lg:-mt-[300px]"}`}>
       <div className="space-y-8 ">
         {service?.extra_images?.map((img, index) => {
           const text = service?.extra_images_text?.[index] || "";

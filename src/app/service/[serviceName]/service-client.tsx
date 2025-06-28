@@ -60,53 +60,93 @@ function ServiceClient({ serviceId }: { serviceId: string }) {
       </div>
 
       {/* List */}
-      <div className="max-w-[1140px]  mx-auto text-[18px] lg:pt-60 px-4 lg:px-0 py-20 pt-30 flex flex-col gap-8">
-        <div
-          className="flex flex-row-reverse  justify-between items-start gap-10 relative  z-[8]
+      <div
+        className={`max-w-[1140px]  mx-auto text-[18px]  px-4 lg:px-2 ${
+          !!tag ? "lg:pt-60 py-20 pt-30" : "pt-6"
+        }  flex flex-col gap-8`}
+      >
+        {tag ? (
+          <div
+            className="flex flex-row-reverse  justify-between items-start gap-10 relative  z-[8]
       lg:-top-[300px]"
-        >
-          <div className="  hidden lg:flex justify-end items-start  border-[#08080808]  bg-[#]">
-            <div className="bg-white  rounded-2xl p-8 border min-w-[370px] shadow-md w-full max-w-xs text-nowrap ">
-              <h3 className="text-[#f8ab34] text-lg font-bold mb-4 uppercase">Dịch vụ khác</h3>
-              <ul className="flex flex-col divide-y text-[18px] ">
-                {listService.map((item, index) => (
-                  <li
-                    key={item._id}
-                    className={`flex items-center hover:opacity-50 transition-all duration-300 gap-2 py-3 ${
-                      serviceId === item._id ? "text-[#f8ab34]" : ""
-                    }`}
-                  >
-                    <Link href={`/service/${item._id}`} className="flex items-center gap-2">
-                      {/* <Image width={100} height={100} src={item.image} alt="icon" className="w-5 h-5" /> */}
-                      {servicesIcon.length ? (
-                        <Image
-                          alt=""
-                          width={80}
-                          height={80}
-                          src={servicesIcon[index % 6].image}
-                          className="max-w-6 max-h-6 group-hover:animate-shake"
-                        />
-                      ) : (
-                        <div>icon</div>
-                      )}
-                      <span className="line-clamp-1 max-w-full text-wrap">{item.name}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+          >
+            {/*  */}
+            <div className="  hidden lg:flex justify-end items-start  border-[#08080808]  bg-[#]">
+              <div className="bg-white  rounded-2xl p-8 border min-w-[370px] shadow-md w-full max-w-xs text-nowrap ">
+                <h3 className="text-[#f8ab34] text-lg font-bold mb-4 uppercase">Dịch vụ khác</h3>
+                <ul className="flex flex-col divide-y text-[18px] ">
+                  {listService.map((item, index) => (
+                    <li
+                      key={item._id}
+                      className={`flex items-center hover:opacity-50 transition-all duration-300 gap-2 py-3 ${
+                        serviceId === item._id ? "text-[#f8ab34]" : ""
+                      }`}
+                    >
+                      <Link href={`/service/${item._id}`} className="flex items-center gap-2">
+                        {servicesIcon.length ? (
+                          <Image
+                            alt=""
+                            width={80}
+                            height={80}
+                            src={servicesIcon[index % 6].image}
+                            className="max-w-6 max-h-6 group-hover:animate-shake"
+                          />
+                        ) : (
+                          <div>icon</div>
+                        )}
+                        <span className="line-clamp-1 max-w-full text-wrap">{item.name}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
 
-              <div className="h-[1px] bg-[#f8ab34] my-4" />
+                <div className="h-[1px] bg-[#f8ab34] my-4" />
 
-              <ButtonClient />
+                <ButtonClient />
+              </div>
+            </div>
+            {/*  */}
+            <div className="lg:relative z-10  lg:mt-[100px] ">
+              <div className="text-4xl mb-7 font-semibold text-[#f8ab34] line-clamp-5">{service?.name}</div>
+              <div className="font-normal break-words text-wrap "> {service?.price}</div>
             </div>
           </div>
-
-          <div className="lg:relative z-10  lg:mt-[100px] ">
-            <div className="text-4xl mb-7 font-semibold text-[#f8ab34] line-clamp-5">{service?.name}</div>
-            <div className="font-normal break-words text-wrap "> {service?.price}</div>
+        ) : (
+          <div>
+            {" "}
+            <div className="">
+              <div className="text-4xl mb-7 font-semibold text-[#f8ab34] line-clamp-5">{service?.name}</div>
+              <div className="font-normal break-words text-wrap "> {service?.price}</div>
+            </div>
+            <h3 className="text-center mb-3 italic">Các dịch vụ liên quan khác</h3>
+            <ul className="grid grid-cols-1 overflow-hidden shadow-lg sm:grid-cols-3 border-2 border-[#f8ab34] rounded-md ">
+              {listService.map((item, index) => (
+                <li
+                  key={item._id}
+                  className={`flex border justify-center items-center hover:opacity-50 transition-all duration-300 gap-2 py-3 ${
+                    serviceId === item._id ? "text-[#f8ab34]" : ""
+                  }`}
+                >
+                  <Link href={`/service/${item._id}`} className="flex items-center gap-2">
+                    {servicesIcon.length ? (
+                      <Image
+                        alt=""
+                        width={80}
+                        height={80}
+                        src={servicesIcon[index % 6].image}
+                        className="max-w-6 max-h-6 group-hover:animate-shake"
+                      />
+                    ) : (
+                      <div>icon</div>
+                    )}
+                    <span className="line-clamp-1 max-w-full text-wrap">{item.name}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
-        <ServiceDetail service={service} />
+        )}
+        <ServiceDetail isHasTag={!!tag} service={service} />
       </div>
     </div>
   );

@@ -259,10 +259,10 @@ function Header() {
             </div>
           </div>
           <div className="flex items-center gap-7">
-            <Link href={"/sale"} className="flex gap-3 cursor-pointer hover:text-[#f8ab34] transition-all duration-150">
+            <a href={"/sale"} className="flex gap-3 cursor-pointer hover:text-[#f8ab34] transition-all duration-150">
               <SaleIcon />
               <span>Chương trình Khuyến mãi</span>
-            </Link>
+            </a>
             <div></div>
           </div>
         </div>
@@ -301,7 +301,7 @@ function Header() {
               <TablePriceIcon />
               <span className="hidden lg:block">Bảng giá dịch vụ</span>
             </div>
-            <Link href="/" className="relative w-32 z-10 flex items-center aa  lg:w-[216px] h-[65px] ">
+            <a href="/" className="relative w-32 z-10 flex items-center aa  lg:w-[216px] h-[65px] ">
               {logo?.images.length && (
                 <>
                   <Image
@@ -323,14 +323,14 @@ function Header() {
                   )}
                 </>
               )}
-            </Link>
-            <Link
+            </a>
+            <a
               href={"/introduce"}
               className=" hover:text-[#FFBE27] hidden lg:block cursor-pointer underline-animate
           "
             >
               GIỚI THIỆU{" "}
-            </Link>
+            </a>
             {categorys.map((category: Category, index) => {
               const matchServices = listServices?.filter((service) => service.category_id === category._id);
               return (
@@ -356,13 +356,13 @@ function Header() {
                     {matchServices?.map((item: Service) => {
                       return (
                         <div key={item._id} className="py-3">
-                          <Link
+                          <a
                             onClick={(e) => e.stopPropagation()}
                             className="line-clamp-1 overflow-hidden  max-w-full hover:text-[#f8ab34] transition-all duration-200 font-light border-b border-white last:border-transparent"
                             href={`/service/${item._id}`}
                           >
                             {item.name}
-                          </Link>
+                          </a>
                         </div>
                       );
                     })}
@@ -370,13 +370,13 @@ function Header() {
                 </div>
               );
             })}
-            <Link href={"/advice"} className=" hover:text-[#FFBE27] hidden lg:block  cursor-pointer underline-animate">
+            <a href={"/advice"} className=" hover:text-[#FFBE27] hidden lg:block  cursor-pointer underline-animate">
               TIN TỨC{" "}
-            </Link>
+            </a>
 
-            <Link href={"/contact"} className=" hover:text-[#FFBE27] hidden lg:block cursor-pointer underline-animate">
+            <a href={"/contact"} className=" hover:text-[#FFBE27] hidden lg:block cursor-pointer underline-animate">
               LIÊN HỆ
-            </Link>
+            </a>
 
             <div className="lg:hidden">
               <div>
