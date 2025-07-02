@@ -301,7 +301,7 @@ function Header() {
               <TablePriceIcon />
               <span className="hidden lg:block">Bảng giá dịch vụ</span>
             </div>
-            <a href="/" className="relative w-32 z-10 flex items-center aa  lg:w-[216px] h-[65px] ">
+            <Link href="/" className="relative w-32 z-10 flex items-center aa  lg:w-[216px] h-[65px] ">
               {logo?.images.length && (
                 <>
                   <Image
@@ -323,7 +323,7 @@ function Header() {
                   )}
                 </>
               )}
-            </a>
+            </Link>
             <a
               href={"/introduce"}
               className=" hover:text-[#FFBE27] hidden lg:block cursor-pointer underline-animate

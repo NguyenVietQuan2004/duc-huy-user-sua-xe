@@ -66,18 +66,18 @@ export default function MobileMenu() {
           </Accordion>
 
           <div className="mt-4 space-y-3 text-sm">
-            <a href="/advice" className="pt-3 block" onClick={handleClose}>
+            <Link href="/advice" className="pt-3 block" onClick={handleClose}>
               TIN TỨC
-            </a>
+            </Link>
             <a href="/introduce" className="border-t pt-3 block" onClick={handleClose}>
               GIỚI THIỆU
             </a>
             <a href="/contact" className="border-t pt-3 block" onClick={handleClose}>
               LIÊN HỆ
             </a>
-            <a href="/sale" className="border-t pt-3 block" onClick={handleClose}>
+            <Link href="/sale" className="border-t pt-3 block" onClick={handleClose}>
               CHƯƠNG TRÌNH KHUYẾN MẠI
-            </a>
+            </Link>
           </div>
 
           {/* <div className="mt-6 relative">
