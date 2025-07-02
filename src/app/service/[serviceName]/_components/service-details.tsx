@@ -81,9 +81,9 @@ function ServiceDetail({
         {service?.content && <div className="text-lg" dangerouslySetInnerHTML={{ __html: service?.content }} />}
 
         {!isHasTag && (
-          <div className="border-2 border-[#f8ab34] pt-4 rounded-md overflow-hidden mt-8">
+          <div className=" pt-4 rounded-md  mt-8">
             <h3 className="text-center mb-3 italic">Các dịch vụ liên quan khác</h3>
-            <ul className="grid grid-cols-1 overflow-hidden shadow-lg sm:grid-cols-3 border-t-2 border-[#f8ab34]  ">
+            <ul className="grid grid-cols-1 shadow-lg sm:grid-cols-3 border-2 overflow-hidden rounded-sm border-[#f8ab34]  ">
               {listService.map((item, index) => (
                 <li
                   key={item._id}
