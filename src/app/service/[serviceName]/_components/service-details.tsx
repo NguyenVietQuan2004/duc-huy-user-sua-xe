@@ -5,13 +5,26 @@ import { Button } from "@/components/ui/button";
 import useModalBooking from "@/hooks/use-model-booking";
 import Image from "next/image";
 import { SeparatorHorizontal } from "lucide-react";
+import { servicesIcon } from "@/data";
+import Link from "next/link";
+import { Category } from "@/type/category";
 
 const ClientSafeHTML = dynamic(() => import("./client-safe-html"), { ssr: false });
 
-function ServiceDetail({ service, isHasTag }: { service: Service | undefined; isHasTag?: boolean }) {
+function ServiceDetail({
+  service,
+  isHasTag,
+  listService,
+  serviceId,
+}: {
+  service: Service | undefined;
+  isHasTag?: boolean;
+  listService: Service[] | Category[];
+  serviceId: string;
+}) {
   const { setIsShowModelBooking } = useModalBooking();
   return (
-    <div className={`text-lg  font-light mt-12 px-4  ${isHasTag && "lg:-mt-[300px]"}`}>
+    <div className={`text-lg  font-light  px-4  ${isHasTag && "lg:-mt-[300px]"}`}>
       <div className="space-y-8 ">
         {service?.extra_images?.map((img, index) => {
           const text = service?.extra_images_text?.[index] || "";
@@ -67,11 +80,50 @@ function ServiceDetail({ service, isHasTag }: { service: Service | undefined; is
 
         {service?.content && <div className="text-lg" dangerouslySetInnerHTML={{ __html: service?.content }} />}
 
+        {!isHasTag && (
+          <div className="border-2 border-[#f8ab34] pt-4 rounded-md overflow-hidden mt-8">
+            <h3 className="text-center mb-3 italic">Các dịch vụ liên quan khác</h3>
+            <ul className="grid grid-cols-1 overflow-hidden shadow-lg sm:grid-cols-3 border-t-2 border-[#f8ab34]  ">
+              {listService.map((item, index) => (
+                <li
+                  key={item._id}
+                  className={`flex border px-1 justify-center items-center hover:opacity-50 transition-all duration-300 gap-2 py-3 ${
+                    serviceId === item._id ? "text-[#f8ab34]" : ""
+                  }`}
+                >
+                  <Link href={`/service/${item._id}`} className="flex items-center gap-2">
+                    {servicesIcon.length ? (
+                      <Image
+                        alt=""
+                        width={80}
+                        height={80}
+                        src={servicesIcon[index % 6].image}
+                        className="max-w-6 max-h-6 group-hover:animate-shake"
+                      />
+                    ) : (
+                      <div>icon</div>
+                    )}
+                    <span className="line-clamp-1 max-w-full text-wrap">{item.name}</span>
+                  </Link>
+                </li>
+              ))}
+              {Array.from({ length: 3 - (listService.length % 3) === 3 ? 0 : 3 - (listService.length % 3) }).map(
+                (_, index) => (
+                  <li
+                    key={index}
+                    className={`flex border justify-center items-center hover:opacity-50 transition-all duration-300 gap-2 py-3 `}
+                  ></li>
+                )
+              )}
+            </ul>
+          </div>
+        )}
+
         <Button
           variant={"outline"}
           type="submit"
           onClick={() => setIsShowModelBooking(true)}
-          className="w-full mt-6 bg-[#f8ab34] border border-transparent transition-all duration-500 hover:border-[#f8ab34]  text-white font-semibold py-5 rounded hover:bg-white hover:text-[#f8ab34] "
+          className="w-full mb-2 mt-6 bg-[#f8ab34] border border-transparent transition-all duration-500 hover:border-[#f8ab34]  text-white font-semibold py-5 rounded hover:bg-white hover:text-[#f8ab34] "
         >
           ĐẶT LỊCH HẸN TỚI TRUNG TÂM BMB CAR CARE
         </Button>
