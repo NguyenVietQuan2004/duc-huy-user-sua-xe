@@ -212,6 +212,7 @@ function ServiceClient({ serviceId }: { serviceId: string }) {
             className="absolute inset-0 bg-cover bg-center h-[500px] "
             style={{
               backgroundImage: `url(${img || "https://nhatphatauto.vn/wp-content/uploads/2024/06/Hero-GioiThieu.jpg"})`,
+              filter: "brightness(50%)",
             }}
           />
         )}
@@ -276,7 +277,7 @@ function ServiceClient({ serviceId }: { serviceId: string }) {
               </div>
             </div>
             <div className="lg:relative z-10  lg:mt-[100px] ">
-              <div className="text-4xl mb-7 font-semibold text-[#f8ab34] line-clamp-5">{service?.name}</div>
+              <div className="text-4xl mb-7 font-semibold text-[#f8ab34] line-clamp-5">{service?.title}</div>
               <div className="font-normal break-words text-wrap "> {service?.price}</div>
             </div>
             {/*  */}
@@ -284,7 +285,7 @@ function ServiceClient({ serviceId }: { serviceId: string }) {
         )}
         {!tag && (
           <div className=" ">
-            <div className="text-4xl font-semibold text-[#f8ab34] line-clamp-5">{service?.name}</div>
+            <div className="text-4xl font-semibold text-[#f8ab34] line-clamp-5">{service?.title}</div>
             <div className="font-normal break-words text-wrap "> {service?.price}</div>
           </div>
         )}

@@ -28,8 +28,10 @@ function AdviceSale() {
         className="absolute inset-0 bg-cover bg-center h-[500px] "
         style={{
           backgroundImage: "url(https://nhatphatauto.vn/wp-content/uploads/2024/05/Mask-group-3-compressed.jpg)",
+          filter: "brightness(50%)",
         }}
       />
+
       <div className="py-[100px] pb-16 px-4  relative max-w-[1140px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 ">
         {/* SALE SECTION */}
         <SlideKM />

@@ -27,6 +27,7 @@ function Introduce() {
             className="absolute inset-0 bg-cover bg-center h-[500px] "
             style={{
               backgroundImage: `url(${img || "https://nhatphatauto.vn/wp-content/uploads/2024/06/Hero-GioiThieu.jpg"})`,
+              filter: "brightness(50%)",
             }}
           />
         )}

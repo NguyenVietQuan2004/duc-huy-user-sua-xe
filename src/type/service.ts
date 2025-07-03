@@ -2,6 +2,7 @@ export type Service = {
   _id: string;
   name: string;
   content: string;
+  title: string;
   category_id: string;
   price: string;
   images: string[]; // assuming multiple image URLs
