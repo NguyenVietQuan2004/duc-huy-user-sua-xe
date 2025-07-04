@@ -83,11 +83,11 @@ function ServiceDetail({
         {!isHasTag && (
           <div className=" pt-4 rounded-md  mt-8">
             <h3 className="text-center mb-3 italic">Các dịch vụ liên quan khác</h3>
-            <ul className="grid grid-cols-1 shadow-lg sm:grid-cols-3 border-2 overflow-hidden rounded-sm border-[#f8ab34]  ">
+            <ul className="grid grid-cols-1 shadow-lg sm:grid-cols-3  border-2 overflow-hidden rounded-sm border-gray-300  ">
               {listService.map((item, index) => (
                 <li
                   key={item._id}
-                  className={`flex border px-1 justify-center items-center hover:opacity-50 transition-all duration-300 gap-2 py-3 ${
+                  className={`flex border px-1 justify-start pl-16 sm:pl-10 items-center hover:opacity-50 transition-all duration-300 gap-2 py-3 ${
                     serviceId === item._id ? "text-[#f8ab34]" : ""
                   }`}
                 >
