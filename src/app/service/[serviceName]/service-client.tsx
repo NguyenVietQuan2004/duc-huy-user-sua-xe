@@ -278,7 +278,7 @@ function ServiceClient({ serviceId }: { serviceId: string }) {
             </div>
             <div className="lg:relative z-10  lg:mt-[100px] ">
               <div className="text-4xl mb-7 font-semibold text-[#f8ab34] line-clamp-5">{service?.title}</div>
-              <div className="font-normal break-words text-wrap "> {service?.price}</div>
+              <div className="font-normal break-words text-wrap mt-4 mb-4 "> {service?.price}</div>
             </div>
             {/*  */}
           </div>
@@ -286,7 +286,7 @@ function ServiceClient({ serviceId }: { serviceId: string }) {
         {!tag && (
           <div className=" ">
             <div className="text-4xl font-semibold text-[#f8ab34] line-clamp-5">{service?.title}</div>
-            <div className="font-normal break-words text-wrap "> {service?.price}</div>
+            <div className="font-normal break-words text-wrap mt-4 mb-4 "> {service?.price}</div>
           </div>
         )}
 

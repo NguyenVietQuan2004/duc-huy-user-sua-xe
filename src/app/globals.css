@@ -47,22 +47,36 @@ img {
     overflow: hidden;
   }
 }
-h1 {
+* {
+  font-weight: 300;
+  font-size: 18px;
+}
+strong,
+strong * {
+  font-weight: 500;
+}
+h1,
+h1 * {
   @apply text-4xl font-bold;
 }
-h2 {
+h2,
+h2* {
   @apply text-3xl font-semibold;
 }
-h3 {
+h3,
+h3 * {
   @apply text-2xl font-semibold;
 }
-h4 {
+h4,
+h4 * {
   @apply text-xl font-medium;
 }
-h5 {
+h5,
+h5* {
   @apply text-lg font-medium;
 }
-h6 {
+h6,
+h6* {
   @apply text-base font-medium;
 }
 body {

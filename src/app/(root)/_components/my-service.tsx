@@ -23,7 +23,6 @@ function MyService() {
         className="absolute inset-0 bg-cover bg-center   "
         style={{
           backgroundImage: `url(https://nhatphatauto.vn/wp-content/uploads/2024/05/Mask-group-1-compressed.jpg)`,
-          filter: "brightness(50%)",
         }}
       />
       {/* Thêm nội dung hoặc một div trống để component hợp lệ */}

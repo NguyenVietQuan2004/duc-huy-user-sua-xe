@@ -23,8 +23,9 @@ function ServiceDetail({
   serviceId: string;
 }) {
   const { setIsShowModelBooking } = useModalBooking();
+  console.log(service?.content);
   return (
-    <div className={`text-lg  font-light  px-4  ${isHasTag && "lg:-mt-[300px]"}`}>
+    <div className={`text-lg  font-light  px-4 lg:px-0  ${isHasTag && "lg:-mt-[300px]"}`}>
       <div className="space-y-8 ">
         {service?.extra_images?.map((img, index) => {
           const text = service?.extra_images_text?.[index] || "";
@@ -78,7 +79,9 @@ function ServiceDetail({
       <div className="mt-6">
         {/* {service?.content && <ClientSafeHTML content={service.content} images={service.images} />} */}
 
-        {service?.content && <div className="text-lg" dangerouslySetInnerHTML={{ __html: service?.content }} />}
+        {service?.content && (
+          <div className="text-lg no-tailwind" dangerouslySetInnerHTML={{ __html: service?.content }} />
+        )}
 
         {!isHasTag && (
           <div className=" pt-4 rounded-md  mt-8">
