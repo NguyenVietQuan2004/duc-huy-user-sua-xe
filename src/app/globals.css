@@ -54,6 +54,9 @@ img {
 img {
   object-fit: cover;
 }
+.custom-img * {
+  object-fit: contain !important;
+}
 strong,
 b,
 b *,
