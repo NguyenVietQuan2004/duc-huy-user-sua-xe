@@ -51,6 +51,9 @@ img {
   font-size: 18px;
   font-weight: 300;
 }
+img {
+  object-fit: cover;
+}
 strong,
 b,
 b *,

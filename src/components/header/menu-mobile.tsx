@@ -36,8 +36,8 @@ export default function MobileMenu() {
 
         <SheetContent side="right" className="w-80 bg-[#212529] text-white flex flex-col">
           <SheetHeader>
-            <SheetTitle className="text-2xl font-bold text-white">NhatPhat</SheetTitle>
-            <span className="text-gray-400 text-sm block">auto.vn</span>
+            <SheetTitle className="text-2xl font-bold text-white">BMB Car</SheetTitle>
+            {/* <span className="text-gray-400 text-sm block">auto.vn</span> */}
           </SheetHeader>
 
           <Accordion type="single" collapsible className="w-full mt-4">
