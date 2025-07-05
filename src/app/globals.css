@@ -14,14 +14,14 @@
 }
 @layer base {
   * {
-    font-family: "Kanit", sans-serif !important;
+    font-family: "Kanit", sans-serif;
   }
 }
 
 .font {
-  font-family: "Kanit", sans-serif !important;
+  font-family: "Kanit", sans-serif;
 }
-.font > * {
+/* .font > * {
   font-family: "Kanit", sans-serif !important;
 }
 .font > span {
@@ -29,7 +29,7 @@
 }
 .font > p {
   font-family: "Kanit", sans-serif !important;
-}
+} */
 @media (max-width: 500px) {
   .custom-select > * {
     display: block !important;
@@ -48,12 +48,13 @@ img {
   }
 }
 * {
-  font-weight: 300;
   font-size: 18px;
 }
 strong,
+b,
+b *,
 strong * {
-  font-weight: 500;
+  font-weight: 600;
 }
 h1,
 h1 * {

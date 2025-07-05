@@ -326,7 +326,7 @@ function Header() {
             </Link>
             <a
               href={"/introduce"}
-              className=" hover:text-[#FFBE27] hidden lg:block cursor-pointer underline-animate
+              className=" hover:text-[#FFBE27] font-semibold hidden lg:block cursor-pointer underline-animate
           "
             >
               GIỚI THIỆU{" "}
@@ -337,7 +337,7 @@ function Header() {
                 <div
                   onClick={() => handleClick(category)}
                   key={category._id}
-                  className="hidden  group  lg:flex h-full items-center relative  gap-[7px] hover:text-[#FFBE27] cursor-pointer"
+                  className="hidden  group font-semibold  lg:flex h-full items-center relative  gap-[7px] hover:text-[#FFBE27] cursor-pointer"
                 >
                   {category.name}
                   <Image
@@ -370,11 +370,17 @@ function Header() {
                 </div>
               );
             })}
-            <a href={"/advice"} className=" hover:text-[#FFBE27] hidden lg:block  cursor-pointer underline-animate">
+            <a
+              href={"/advice"}
+              className="font-semibold hover:text-[#FFBE27] hidden lg:block  cursor-pointer underline-animate"
+            >
               TIN TỨC{" "}
             </a>
 
-            <a href={"/contact"} className=" hover:text-[#FFBE27] hidden lg:block cursor-pointer underline-animate">
+            <a
+              href={"/contact"}
+              className="font-semibold hover:text-[#FFBE27] hidden lg:block cursor-pointer underline-animate"
+            >
               LIÊN HỆ
             </a>
 

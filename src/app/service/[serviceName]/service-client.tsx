@@ -249,11 +249,14 @@ function ServiceClient({ serviceId }: { serviceId: string }) {
                   {listService.map((item, index) => (
                     <li
                       key={item._id}
-                      className={`flex items-center hover:opacity-50 transition-all duration-300 gap-2 py-3 ${
+                      className={`flex font-semibold items-center hover:opacity-50 transition-all duration-300 gap-2 py-3 ${
                         serviceId === item._id ? "text-[#f8ab34]" : ""
                       }`}
                     >
-                      <Link href={`/service/${item._id}?tag=category`} className="flex items-center gap-2">
+                      <Link
+                        href={`/service/${item._id}?tag=category`}
+                        className="flex font-semibold items-center gap-2"
+                      >
                         {servicesIcon.length ? (
                           <Image
                             alt=""
@@ -265,7 +268,7 @@ function ServiceClient({ serviceId }: { serviceId: string }) {
                         ) : (
                           <div>icon</div>
                         )}
-                        <span className="line-clamp-1 max-w-full text-wrap">{item.name}</span>
+                        <span className="line-clamp-1 font-normal max-w-full text-wrap">{item.name}</span>
                       </Link>
                     </li>
                   ))}
