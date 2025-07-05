@@ -54,7 +54,7 @@ img {
 img {
   object-fit: cover;
 }
-.custom-img * {
+.custom-img img {
   object-fit: contain !important;
   width: auto !important;
   height: auto !important;

@@ -595,7 +595,7 @@ export default function Form({
         disabled={isLoading}
         className="w-full bg-[#f8ab34] text-white font-semibold py-5 rounded hover:bg-white hover:text-[#f8ab34] border border-transparent hover:border-[#f8ab34]"
       >
-        {isLoading ? "ĐANG GỬI..." : "ĐẶT LỊCH HẸN TỚI TRUNG TÂM BMB CAR CARE"}
+        {isLoading ? "ĐANG GỬI..." : "ĐẶT LỊCH HẸN TỚI TRUNG TÂM"}
       </Button>
     </form>
   );

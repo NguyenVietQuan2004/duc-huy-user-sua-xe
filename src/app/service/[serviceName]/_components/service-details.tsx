@@ -128,7 +128,7 @@ function ServiceDetail({
           onClick={() => setIsShowModelBooking(true)}
           className="w-full mb-2 mt-6 bg-[#f8ab34] border border-transparent transition-all duration-500 hover:border-[#f8ab34]  text-white font-semibold py-5 rounded hover:bg-white hover:text-[#f8ab34] "
         >
-          ĐẶT LỊCH HẸN TỚI TRUNG TÂM BMB CAR CARE
+          ĐẶT LỊCH HẸN TỚI TRUNG TÂM
         </Button>
       </div>
     </div>

@@ -44,16 +44,18 @@ export default function MobileMenu() {
             {services.categories.map((category) => {
               const matchServices = services.services.filter((item) => item.category_id === category._id);
               return (
-                <AccordionItem key={category._id} value="services">
+                <AccordionItem key={category._id} value={category._id}>
                   <AccordionTrigger className="text-left">
-                    <div onClick={() => handleClick(category)}>{category.name}</div>
+                    <div onClick={() => handleClick(category)} className="text-sm">
+                      {category.name}
+                    </div>
                   </AccordionTrigger>
                   <AccordionContent className="pl-4 space-y-2 ">
                     {matchServices.map((item) => (
                       <a
                         key={item._id}
                         href={`/service/${item._id}`}
-                        className="line-clamp-1 py-1"
+                        className="line-clamp-1 py-1 "
                         onClick={handleClose}
                       >
                         • {item.name}

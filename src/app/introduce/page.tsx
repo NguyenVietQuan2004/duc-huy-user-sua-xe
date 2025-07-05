@@ -61,7 +61,7 @@ function Introduce() {
             type="submit"
             className="w-[460px]  bg-[#f8ab34] border border-transparent transition-all duration-500 hover:border-[#f8ab34]  text-white font-semibold py-7 rounded hover:bg-white hover:text-[#f8ab34] "
           >
-            ĐẶT LỊCH HẸN TỚI TRUNG TÂM BMB CAR CARE
+            ĐẶT LỊCH HẸN TỚI TRUNG TÂM
           </Button>
         </div>
       </div>
