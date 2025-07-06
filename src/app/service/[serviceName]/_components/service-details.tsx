@@ -79,8 +79,16 @@ function ServiceDetail({
       <div className="mt-6">
         {/* {service?.content && <ClientSafeHTML content={service.content} images={service.images} />} */}
 
-        {service?.content && (
+        {/* {service?.content && (
           <div className="text-lg no-tailwind" dangerouslySetInnerHTML={{ __html: service?.content }} />
+        )} */}
+        {service?.content && (
+          <div
+            className="text-lg no-tailwind"
+            dangerouslySetInnerHTML={{
+              __html: service.content.replace(/&nbsp;/g, " "),
+            }}
+          />
         )}
 
         {!isHasTag && (
