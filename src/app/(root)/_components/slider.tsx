@@ -18,7 +18,7 @@ function Slider() {
     fetchAPI();
   }, []);
   return (
-    <div>
+    <div className="min-h-[600px]">
       <Carousel
         plugins={[
           Autoplay({

@@ -58,17 +58,17 @@ function MyService() {
                       width={80}
                       height={80}
                       src={servicesIcon[index].image}
-                      className="max-w-20 max-h-20 group-hover:animate-shake"
+                      className="max-w-20 object-cover max-h-[90px] h-[90px] group-hover:animate-shake"
                     />
                   ) : (
                     <div>icon</div>
                   )}
                   <div className="font-bold line-clamp-3 text-[22px] lg:h-[100px]">{item.name}</div>
                   {/* <div>{item.content}</div> */}
-                  <div
+                  {/* <div
                     className="font-light line-clamp-3 text-start-css"
                     dangerouslySetInnerHTML={{ __html: stripHtml(item.content) }}
-                  />
+                  /> */}
                   <div className="mt-auto">
                     <LinkToIcon strokeColor="#124d9b" />
                   </div>
@@ -95,7 +95,7 @@ function MyService() {
                       width={80}
                       height={80}
                       src={servicesIcon[index].image}
-                      className="max-w-20 max-h-20 group-hover:animate-shake"
+                      className="max-w-20 object-cover max-h-[90px] h-[90px] group-hover:animate-shake"
                     />
                   ) : (
                     <div>icon</div>
@@ -106,6 +106,7 @@ function MyService() {
                     className="font-light line-clamp-3 text-start-css"
                     dangerouslySetInnerHTML={{ __html: stripHtml(item.content) }}
                   /> */}
+
                   <div className="mt-auto">
                     <LinkToIcon strokeColor="#124d9b" />
                   </div>
