@@ -203,6 +203,8 @@ function ServiceClient({ serviceId }: { serviceId: string }) {
     };
     fetchAPI();
   }, [serviceId]);
+  console.log(service);
+
   return (
     <div>
       {/* Banner */}

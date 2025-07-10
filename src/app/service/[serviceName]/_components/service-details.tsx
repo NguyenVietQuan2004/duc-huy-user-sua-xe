@@ -86,7 +86,8 @@ function ServiceDetail({
           <div
             className="text-lg no-tailwind"
             dangerouslySetInnerHTML={{
-              __html: service.content.replace(/&nbsp;/g, " "),
+              // __html: service.content.replace(/&nbsp;/g, " "),
+              __html: service.content,
             }}
           />
         )}
