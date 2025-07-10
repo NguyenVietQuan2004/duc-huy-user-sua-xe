@@ -54,7 +54,9 @@ img {
 ul {
   padding-left: 40px; /* hoặc nhiều hơn nếu bạn muốn rõ tab */
 }
-
+li {
+  list-style: disc;
+}
 img {
   object-fit: cover;
 }
