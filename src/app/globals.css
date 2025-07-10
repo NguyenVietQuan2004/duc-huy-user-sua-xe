@@ -14,12 +14,15 @@
 }
 @layer base {
   * {
-    font-family: "Kanit", sans-serif;
+    font-family: "Kanit", sans-serif !important;
   }
 }
 
 .font {
-  font-family: "Kanit", sans-serif;
+  font-family: "Kanit", sans-serif !important;
+}
+* {
+  font-family: "Kanit", sans-serif !important;
 }
 /* .font > * {
   font-family: "Kanit", sans-serif !important;

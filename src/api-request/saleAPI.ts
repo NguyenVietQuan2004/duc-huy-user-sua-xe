@@ -4,7 +4,9 @@ export const saleApi = {
   getAllSales({ limit, page }: { limit?: number; page?: number }) {
     return httpRequest.get<any>(
       `${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/admin/promotion?limit=${limit}&page=${page}`,
-      {}
+      {
+        cache: "force-cache",
+      }
     );
   },
   getSaleById({ saleId }: { saleId: string }) {
