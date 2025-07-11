@@ -324,13 +324,13 @@ function Header() {
                 </>
               )}
             </Link>
-            <a
+            <Link
               href={"/introduce"}
               className=" hover:text-[#FFBE27] font-semibold hidden lg:block cursor-pointer underline-animate
           "
             >
               GIỚI THIỆU{" "}
-            </a>
+            </Link>
             {categorys.map((category: Category, index) => {
               const matchServices = listServices?.filter((service) => service.category_id === category._id);
               return (
