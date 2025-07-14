@@ -23,7 +23,7 @@ function ServiceDetail({
   serviceId: string;
 }) {
   const { setIsShowModelBooking } = useModalBooking();
-  console.log(service?.content);
+  service?.content;
   return (
     <div className={`text-lg  font-light  px-4 lg:px-0  ${isHasTag && "lg:-mt-[300px]"}`}>
       <div className="space-y-8 ">
