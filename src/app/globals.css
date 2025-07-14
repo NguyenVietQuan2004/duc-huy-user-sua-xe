@@ -54,10 +54,10 @@ img {
   font-size: 18px;
   font-weight: 300;
 }
-ul {
+.ul-custom ul {
   padding-left: 40px; /* hoặc nhiều hơn nếu bạn muốn rõ tab */
 }
-li {
+.ul-custom li {
   list-style: disc;
 }
 img {

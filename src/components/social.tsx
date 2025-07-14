@@ -1,19 +1,13 @@
 "use client";
 import "swiper/css";
-import Link from "next/link";
 import "swiper/css/pagination";
-import Image from "next/image";
-import SlideKM from "@/components/slide-sale-card";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
-import { formatDateToDDMMYYYY, stripHtml } from "@/lib/utils";
 import { useEffect, useState } from "react";
-import { Blog } from "@/type/blog";
-import { blogApi } from "@/api-request/blogApi";
-import { BookingIcon, CarSkinIcon, MapIcon, MessIcon, PhoneRedIcon, ZaloIcon } from "../../public/icon";
+import { FacebookIcon, MessIcon, ZaloIcon } from "../../public/icon";
 import MenuButtons from "./social-detail";
 
-const socials = [BookingIcon, ZaloIcon, MessIcon, PhoneRedIcon, MapIcon];
+const socials = [FacebookIcon, ZaloIcon, MessIcon];
 function Social() {
   const [isShowDetail, setIsShowDetail] = useState(false);
   return (
@@ -28,7 +22,7 @@ function Social() {
           {socials?.map((Icon, index) => (
             <SwiperSlide key={index} className="!flex justify-center items-center">
               <div className="w-10 h-10 !flex justify-center items-center">
-                <Icon />
+                <Icon fill="#008df2" height="28px" width="28px" />
               </div>
             </SwiperSlide>
           ))}

@@ -73,20 +73,11 @@ function ServiceDetail({
           );
         })}
       </div>
-      {/* <div className="flex justify-center my-8">
-        <SeparatorHorizontal className="w-10 h-10 text-gray-400" />
-      </div> */}
       <div className="mt-6">
-        {/* {service?.content && <ClientSafeHTML content={service.content} images={service.images} />} */}
-
-        {/* {service?.content && (
-          <div className="text-lg no-tailwind" dangerouslySetInnerHTML={{ __html: service?.content }} />
-        )} */}
         {service?.content && (
           <div
-            className="text-lg no-tailwind"
+            className="text-lg no-tailwind ul-custom "
             dangerouslySetInnerHTML={{
-              // __html: service.content.replace(/&nbsp;/g, " "),
               __html: service.content,
             }}
           />
@@ -95,7 +86,7 @@ function ServiceDetail({
         {!isHasTag && (
           <div className=" pt-4 rounded-md  mt-8">
             <h3 className="text-center mb-3 italic">Các dịch vụ liên quan khác</h3>
-            <ul className="grid grid-cols-1 shadow-lg sm:grid-cols-3  border-2 overflow-hidden rounded-sm border-gray-300  ">
+            <ul className="grid !pl-0 grid-cols-1 shadow-lg sm:grid-cols-3  border-2 overflow-hidden rounded-sm border-gray-300  ">
               {listService.map((item, index) => (
                 <li
                   key={item._id}

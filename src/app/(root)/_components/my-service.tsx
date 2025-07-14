@@ -15,7 +15,7 @@ function MyService() {
   return (
     <div
       ref={image}
-      className={`  relative w-full lg:-mt-[200px] duration-300 ${
+      className={`  relative w-full lg:-mt-[180px] duration-300 ${
         imageInView ? "bottom-0 opacity-100" : "-bottom-32 opacity-0"
       }`}
     >

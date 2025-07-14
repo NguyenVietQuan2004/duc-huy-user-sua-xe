@@ -553,7 +553,7 @@ export default function Form({
                       field.onChange(newValue);
                     }}
                   />
-                  <span className="line-clamp-2">{label}</span>
+                  <span className="line-clamp-1 text-sm ">{label}</span>
                 </label>
               ))}
             </div>
@@ -562,13 +562,15 @@ export default function Form({
       </fieldset>
 
       <div className="mb-6">
-        <Label htmlFor="center">Lựa chọn Trung tâm BMB Car Care:</Label>
+        <Label htmlFor="center" className="">
+          Lựa chọn Trung tâm BMB Car Care:
+        </Label>
         <Controller
           control={control}
           name="center"
           render={({ field }) => (
             <Select onValueChange={field.onChange} value={field.value} onOpenChange={(open) => setIsSelectOpen?.(open)}>
-              <SelectTrigger ref={selectTriggerRef} className=" custom-select bg-white ">
+              <SelectTrigger ref={selectTriggerRef} className=" mt-1 custom-select bg-white ">
                 <SelectValue
                   className="text-ellipsis  overflow-hidden break-words text-wrap"
                   placeholder="Chọn trung tâm"

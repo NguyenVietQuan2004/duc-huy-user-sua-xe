@@ -203,8 +203,17 @@ function ServiceClient({ serviceId }: { serviceId: string }) {
     };
     fetchAPI();
   }, [serviceId]);
-  console.log(service);
 
+  const titles: any = {
+    "6859615ba48d2ab8ec1b38bc": "VỆ SINH & CHĂM SÓC XE TOÀN DIỆN",
+    "685a6f5b344a4d51606951ec": "CHĂM SÓC & BẢO DƯỠNG XE",
+    "685ba387ca4538a70e622383": "NÂNG CẤP & ĐỘ XE CHUYÊN NGHIỆP",
+  };
+  const subTitles: any = {
+    "6859615ba48d2ab8ec1b38bc": "Làm sạch chuyên sâu – Đảm bảo an toàn, bảo vệ tối ưu từng chi tiết xe",
+    "685a6f5b344a4d51606951ec": "Bảo dưỡng định kỳ – Đảm bảo vận hành ổn định, tăng tuổi thọ cho xế yêu",
+    "685ba387ca4538a70e622383": "Giải pháp nâng cấp toàn diện – Chuẩn mực an toàn, thẩm mỹ và công nghệ mới",
+  };
   return (
     <div>
       {/* Banner */}
@@ -219,9 +228,9 @@ function ServiceClient({ serviceId }: { serviceId: string }) {
           />
         )}
         <div className="relative max-w-[1140px] py-[120px] pt-[160px] h-[500px]  lg:pt-[120px] mx-auto px-4 ">
-          <div className=" text-white max-w-[540px]">
-            <div className="text-[18px]">CÂN CHỈNH ĐỘ CHỤM (GÓC LÁI) BÁNH XE</div>
-            <div className="text-[36px] font-bold">Với tiêu chuẩn an toàn số 1 thế giới từ máy Hunter – USA</div>
+          <div className=" text-white max-w-[600px]">
+            <div className="text-[18px]">{titles?.[serviceId] || "Không có tiêu đề"}</div>
+            <div className="text-[36px] font-bold line-clamp-3">{subTitles?.[serviceId] || "Không có mô tả"}</div>
           </div>
         </div>
       </div>

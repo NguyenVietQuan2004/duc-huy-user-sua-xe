@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { Car, Calendar, MessageSquare, MessagesSquare, Phone, MapPin, MapIcon } from "lucide-react"; // Icon từ lucide-react
-import { BookingIcon, CarSkinIcon, MessIcon, PhoneRedIcon, ZaloIcon } from "../../public/icon";
+import { MapIcon } from "lucide-react"; // Icon từ lucide-react
+import { BookingIcon, CarSkinIcon, FacebookIcon, MessIcon, PhoneRedIcon, ZaloIcon } from "../../public/icon";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const MenuButtons = () => {
   const [showAnimation, setShowAnimation] = useState(false);
@@ -19,36 +20,32 @@ const MenuButtons = () => {
       `}
       style={{ pointerEvents: showAnimation ? "auto" : "none" }}
     >
-      <Button className="w-full relative hover:right-3 right-0 transition-all duration-300 justify-between bg-[#1f5eb2]  text-white py-6">
-        Hỏi đáp xe
-        {/* <Car className="h-5 w-5" /> */}
-        <CarSkinIcon />
-      </Button>
-      <Button className="w-full relative hover:right-3 right-0 transition-all duration-300 justify-between bg-[#e0e0e0]  text-red-500 py-6">
-        Đặt lịch hẹn
-        {/* <Calendar className="h-5 w-5" /> */}
-        <BookingIcon />
-      </Button>
-      <Button className="w-full relative hover:right-3 right-0 transition-all duration-300 justify-between bg-[#005be0]   text-white py-6">
-        Nhắn Zalo
-        {/* <MessageSquare className="h-5 w-5" /> */}
+      <Link
+        href="https://zalo.me/0968807985"
+        target="_blank"
+        className="w-full p-3 rounded-sm relative flex  hover:right-3 right-0 transition-all duration-300 justify-between bg-[#005be0]   text-white "
+      >
+        <span className="block mr-2">Nhắn Zalo</span>
         <ZaloIcon />
-      </Button>
-      <Button className="w-full relative hover:right-3 right-0 transition-all duration-300 justify-between  bg-[#008df2]  text-white py-6">
-        Messenger
-        {/* <MessagesSquare className="h-5 w-5" /> */}
+      </Link>
+      <Link
+        href="https://m.me/chamsocxebmb"
+        target="_blank"
+        className="w-full p-3 rounded-sm relative flex  hover:right-3 right-0 transition-all duration-300 justify-between  bg-[#008df2]  text-white "
+      >
+        <span className="block mr-2">Messenger</span>
+
         <MessIcon />
-      </Button>
-      <Button className="w-full relative hover:right-3 right-0 transition-all duration-300 justify-between bg-[#dc3a41]  text-white py-6">
-        Gọi Hotline
-        {/* <Phone className="h-5 w-5" /> */}
-        <PhoneRedIcon />
-      </Button>
-      <Button className="w-full relative hover:right-3 right-0 transition-all duration-300 justify-between bg-[#cee3ff]  text-[#1A73E8] py-6">
-        Tìm đường
-        {/* <MapPin className="h-5 w-5" /> */}
-        <MapIcon />
-      </Button>
+      </Link>
+      <Link
+        href={"https://www.facebook.com/chamsocxebmb"}
+        target="_blank"
+        className="w-full p-3 rounded-sm relative flex  hover:right-3 right-0 transition-all duration-300 justify-between bg-[#008df2]  text-white "
+      >
+        <span className="block mr-2">Facebook</span>
+
+        <FacebookIcon height="26px" width="26px" />
+      </Link>
     </div>
   );
 };
