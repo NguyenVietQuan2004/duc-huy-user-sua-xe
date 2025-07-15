@@ -23,7 +23,7 @@ function ServiceDetail({
   serviceId: string;
 }) {
   const { setIsShowModelBooking } = useModalBooking();
-  service?.content;
+  // service?.content;
   return (
     <div className={`text-lg  font-light  px-4 lg:px-0  ${isHasTag && "lg:-mt-[300px]"}`}>
       <div className="space-y-8 ">
@@ -90,7 +90,7 @@ function ServiceDetail({
               {listService.map((item, index) => (
                 <li
                   key={item._id}
-                  className={`flex border px-1 justify-start pl-4 lg:pl-16 sm:pl-10 items-center hover:opacity-50 transition-all duration-300 gap-2 py-3 ${
+                  className={`flex border px-1 justify-start pl-16 sm:pl-10 items-center hover:opacity-50 transition-all duration-300 gap-2 py-3 ${
                     serviceId === item._id ? "text-[#f8ab34]" : ""
                   }`}
                 >
