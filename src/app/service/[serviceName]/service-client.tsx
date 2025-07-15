@@ -220,17 +220,23 @@ function ServiceClient({ serviceId }: { serviceId: string }) {
       <div className="relative">
         {img && (
           <div
-            className="absolute inset-0 bg-cover bg-center h-[500px] "
+            className={`absolute inset-0 bg-cover bg-center ${tag ? "h-[500px]" : "h-[300px]"} `}
             style={{
               backgroundImage: `url(${img || "https://nhatphatauto.vn/wp-content/uploads/2024/06/Hero-GioiThieu.jpg"})`,
               filter: "brightness(50%)",
             }}
           />
         )}
-        <div className="relative max-w-[1140px] py-[120px] pt-[160px] h-[500px]  lg:pt-[120px] mx-auto px-4 ">
+        <div
+          className={`relative max-w-[1140px] py-[120px] pt-[160px] ${
+            tag ? "h-[500px]" : "h-[300px]"
+          }   lg:pt-[120px] mx-auto px-4 `}
+        >
           <div className=" text-white max-w-[600px]">
-            <div className="text-[18px]">{titles?.[serviceId] || "Không có tiêu đề"}</div>
-            <div className="text-[36px] font-bold line-clamp-3">{subTitles?.[serviceId] || "Không có mô tả"}</div>
+            <div className="text-[18px]">{titles?.[serviceId] || "Dịch vụ tại BMB Car Care"}</div>
+            <div className="text-[36px] font-bold line-clamp-3">
+              {subTitles?.[serviceId] || "Chăm sóc từng chi tiết – Nâng cấp từng trải nghiệm"}
+            </div>
           </div>
         </div>
       </div>

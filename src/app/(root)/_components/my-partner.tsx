@@ -26,8 +26,8 @@ function MyPartner() {
 
   return (
     <div className="pb-16 max-w-[1140px] px-4  mx-auto">
-      <div className="text-[36px] font-bold">ĐỐI TÁC CỦA CHÚNG TÔI</div>
-      <div className="text-[24px] font-light mb-8">
+      <div className="text-[24px] lg:text-[36px] font-bold">ĐỐI TÁC CỦA CHÚNG TÔI</div>
+      <div className="text-[20px] lg:text-[24px] font-light mb-8">
         Trung tâm BMB Car Care tự hào được cộng tác với nhiều thương hiệu hàng đầu thế giới
       </div>
 

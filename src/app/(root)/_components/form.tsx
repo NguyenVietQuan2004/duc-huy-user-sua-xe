@@ -477,7 +477,7 @@ export default function Form({
         </div>
       </div>
 
-      <div className="flex gap-4 mb-4">
+      <div className="flex gap-4 mb-4  items-end">
         <div className="flex-1">
           <Label htmlFor="expected_date">Ngày dự kiến:</Label>
           <Controller
@@ -494,8 +494,10 @@ export default function Form({
             )}
           />
         </div>
-        <div className="flex-1">
-          <Label htmlFor="expected_time">Giờ dự kiến:</Label>
+        <div className="flex-1 ">
+          <Label htmlFor="expected_time">
+            <span className="line-clamp-1">Giờ dự kiến:</span>
+          </Label>
           <Controller
             control={control}
             name="expected_time"
