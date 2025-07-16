@@ -52,14 +52,14 @@ export default function MobileMenu() {
                   </AccordionTrigger>
                   <AccordionContent className="pl-4 space-y-2 ">
                     {matchServices.map((item) => (
-                      <a
+                      <Link
                         key={item._id}
                         href={`/service/${item._id}`}
                         className="line-clamp-1 py-1 "
                         onClick={handleClose}
                       >
                         • {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </AccordionContent>
                 </AccordionItem>

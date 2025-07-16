@@ -73,7 +73,11 @@ export default function AdviceClient() {
             const month = date.getMonth() + 1; // Tháng trong JS bắt đầu từ 0
             const year = date.getFullYear();
             return (
-              <a href={`/advice/${advice._id}`} key={advice._id} className="border group  p-4 flex flex-col shadow-md">
+              <Link
+                href={`/advice/${advice._id}`}
+                key={advice._id}
+                className="border group  p-4 flex flex-col shadow-md"
+              >
                 <h2 className="text-[24px] font-light h-[108px] line-clamp-3 mb-2 group-hover:text-[#f8ab34]">
                   {advice.title}
                 </h2>
@@ -110,7 +114,7 @@ export default function AdviceClient() {
                     Xem thêm
                   </Button>
                 </div>
-              </a>
+              </Link>
             );
           })}
         </div>
