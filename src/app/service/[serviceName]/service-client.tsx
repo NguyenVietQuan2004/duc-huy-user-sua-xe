@@ -28,6 +28,7 @@ function ServiceClient({ serviceId }: { serviceId: string }) {
   useEffect(() => {
     const fetchAPI = async () => {
       let service;
+
       if (tag) {
         service = await categoryApi.getCategoryById({ categoryId: serviceId });
       } else {
