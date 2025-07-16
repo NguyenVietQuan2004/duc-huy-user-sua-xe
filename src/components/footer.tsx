@@ -7,22 +7,17 @@ import { useEffect, useState } from "react";
 import { Center } from "@/type/center";
 import { homeApi } from "@/api-request/homeAPI";
 import { Address } from "@/type/address";
-import { Logo } from "@/type/logo";
 
 function Footer() {
   const services = useAppSelector((state) => state.service.categories);
-  const handleOnclick = () => {};
 
   const [centers, setCenter] = useState<Center[]>();
   const [addresses, setAddresses] = useState<Address[]>();
-  const [logo, setLogo] = useState<Logo>();
 
   useEffect(() => {
     const fetchAPI = async () => {
       const centers = await homeApi.getCenters();
       const addresses = await homeApi.getAddresses();
-      const logo = await homeApi.getLogo();
-      setLogo(logo);
       setAddresses(addresses);
       setCenter(centers);
     };
@@ -59,10 +54,18 @@ function Footer() {
                 {" "}
                 <FacebookIcon />
               </Link>
-              <Link href={""} className="hover:opacity-80">
+              <Link
+                target="_blank"
+                href={"https://www.youtube.com/@bmbbmb8979?si=j3WnpjN6GoW7Q3l0"}
+                className="hover:opacity-80"
+              >
                 <YoutubeIcon />
               </Link>
-              <Link href={""} className="hover:opacity-80">
+              <Link
+                target="_blank"
+                href={"https://www.tiktok.com/@bmbcar?_t=ZS-8y3A17sfsRt&_r=1"}
+                className="hover:opacity-80"
+              >
                 <svg height="24px" width="24px" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 50 50">
                   <path
                     fill="white"

@@ -4,10 +4,10 @@ import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { useEffect, useState } from "react";
-import { FacebookIcon, MessIcon, ZaloIcon } from "../../public/icon";
+import { FacebookIcon, MessIcon, PhoneIcon, PhoneRedIcon, ZaloIcon } from "../../public/icon";
 import MenuButtons from "./social-detail";
 
-const socials = [FacebookIcon, ZaloIcon, MessIcon];
+const socials = [PhoneRedIcon, ZaloIcon, MessIcon];
 function Social() {
   const [isShowDetail, setIsShowDetail] = useState(false);
   return (
@@ -22,7 +22,7 @@ function Social() {
           {socials?.map((Icon, index) => (
             <SwiperSlide key={index} className="!flex justify-center items-center">
               <div className="w-10 h-10 !flex justify-center items-center">
-                <Icon fill="#008df2" height="28px" width="28px" />
+                <Icon />
               </div>
             </SwiperSlide>
           ))}

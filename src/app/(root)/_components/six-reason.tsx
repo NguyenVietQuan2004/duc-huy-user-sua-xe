@@ -54,7 +54,7 @@ function SixReason() {
                 <div>
                   <Image alt="" width={20} height={200} src={reasonIcon} className="min-w-[20px] mt-[5px]" />
                 </div>
-                <div className="font-light text-base">{item}</div>
+                <div className="font-light text-base text-justify">{item}</div>
               </div>
             );
           })}

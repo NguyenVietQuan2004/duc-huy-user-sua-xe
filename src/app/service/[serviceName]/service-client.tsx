@@ -46,8 +46,8 @@ function ServiceClient({ serviceId }: { serviceId: string }) {
     "685ba387ca4538a70e622383": "NÂNG CẤP & ĐỘ XE CHUYÊN NGHIỆP",
   };
   const subTitles: any = {
-    "6859615ba48d2ab8ec1b38bc": "Làm sạch chuyên sâu – Đảm bảo an toàn, bảo vệ tối ưu từng chi tiết xe",
-    "685a6f5b344a4d51606951ec": "Bảo dưỡng định kỳ – Đảm bảo vận hành ổn định, tăng tuổi thọ cho xế yêu",
+    "6859615ba48d2ab8ec1b38bc": "Làm sạch chuyên sâu - Luôn đảm bảo an toàn, bảo vệ tối ưu từng chi tiết xe",
+    "685a6f5b344a4d51606951ec": "Bảo dưỡng định kỳ – Đảm bảo xe vận hành ổn định",
     "685ba387ca4538a70e622383": "Giải pháp nâng cấp toàn diện – Chuẩn mực an toàn, thẩm mỹ và công nghệ mới",
   };
   return (

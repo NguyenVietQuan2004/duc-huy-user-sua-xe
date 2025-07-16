@@ -1,6 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { MapIcon } from "lucide-react"; // Icon từ lucide-react
-import { BookingIcon, CarSkinIcon, FacebookIcon, MessIcon, PhoneRedIcon, ZaloIcon } from "../../public/icon";
+import {
+  BookingIcon,
+  CarSkinIcon,
+  FacebookIcon,
+  MessIcon,
+  PhoneIcon,
+  PhoneNew,
+  PhoneRedIcon,
+  ZaloIcon,
+} from "../../public/icon";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
@@ -21,6 +30,15 @@ const MenuButtons = () => {
       style={{ pointerEvents: showAnimation ? "auto" : "none" }}
     >
       <Link
+        className="w-full p-3 rounded-sm relative flex  hover:right-3 right-0 transition-all duration-300 justify-between   text-white "
+        style={{ background: "linear-gradient(0deg, #D51921 2.48%, #E45B61 98.71%)" }}
+        href="tel:0968807985"
+      >
+        <span className="block mr-2">Gọi Hotline</span>
+
+        <PhoneIcon />
+      </Link>
+      <Link
         href="https://zalo.me/0968807985"
         target="_blank"
         className="w-full p-3 rounded-sm relative flex  hover:right-3 right-0 transition-all duration-300 justify-between bg-[#005be0]   text-white "
@@ -36,15 +54,6 @@ const MenuButtons = () => {
         <span className="block mr-2">Messenger</span>
 
         <MessIcon />
-      </Link>
-      <Link
-        href={"https://www.facebook.com/chamsocxebmb"}
-        target="_blank"
-        className="w-full p-3 rounded-sm relative flex  hover:right-3 right-0 transition-all duration-300 justify-between bg-[#008df2]  text-white "
-      >
-        <span className="block mr-2">Facebook</span>
-
-        <FacebookIcon height="26px" width="26px" />
       </Link>
     </div>
   );

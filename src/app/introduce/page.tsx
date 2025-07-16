@@ -23,7 +23,7 @@ function Introduce() {
   }, []);
 
   return (
-    <div>
+    <div className="text-justify">
       <div className="relative">
         {img && (
           <div
@@ -37,7 +37,7 @@ function Introduce() {
         <div className="relative max-w-[1140px] py-[120px] pt-[160px] h-[500px] lg:pt-[120px] mx-auto px-4 ">
           <div className=" text-white max-w-[540px] h-[189px]">
             <div className="text-[18px]">GIỚI THIỆU VỀ TRUNG TÂM BMB CAR CARE</div>
-            <div className="text-[36px] font-bold">Công nghệ đỉnh cao mang lại uy tín & chất lượng vượt trội</div>
+            <div className="text-[36px] font-bold">Trung tâm chăm sóc xe chuyên nghiệp, uy tín và tận tâm</div>
           </div>
         </div>
       </div>
