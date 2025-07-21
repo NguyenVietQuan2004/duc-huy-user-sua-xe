@@ -215,7 +215,7 @@ export const ShareIcon = () => {
 };
 export const PhoneIcon = () => {
   return (
-    <svg height="24px" width="24px" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg height="20px" width="20px" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M14 2.40796C14 2.40796 16.2 2.60796 19 5.40796C21.8 8.20796 22 10.408 22 10.408"
         stroke="white"
@@ -476,7 +476,7 @@ export const BookingIcon = () => {
 
 export const ZaloIcon = () => {
   return (
-    <svg height="28px" width="28px" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg height="24px" width="24px" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M5.93172 0.875H34.0678C37.1464 0.875 39.6419 3.51244 39.6419 6.76618V34.2282C39.6419 37.4819 37.1464 40.1194 34.0678 40.1194H5.93172C2.85313 40.1194 0.357666 37.4819 0.357666 34.2282V6.76618C0.357666 3.51244 2.85313 0.875 5.93172 0.875Z"
         fill="white"
@@ -517,7 +517,7 @@ export const ZaloIcon = () => {
 
 export const MessIcon = () => {
   return (
-    <svg height="28px" width="28px" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg height="24px" width="24px" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         fillRule="evenodd"
         clipRule="evenodd"

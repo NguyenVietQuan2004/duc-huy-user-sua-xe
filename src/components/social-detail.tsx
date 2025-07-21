@@ -30,7 +30,7 @@ const MenuButtons = () => {
       style={{ pointerEvents: showAnimation ? "auto" : "none" }}
     >
       <Link
-        className="w-full p-3 rounded-sm relative flex  hover:right-3 right-0 transition-all duration-300 justify-between   text-white "
+        className="w-full p-3 rounded-sm relative flex items-center  hover:right-3 right-0 transition-all duration-300 justify-between   text-white "
         style={{ background: "linear-gradient(0deg, #D51921 2.48%, #E45B61 98.71%)" }}
         href="tel:0968807985"
       >
@@ -41,7 +41,7 @@ const MenuButtons = () => {
       <Link
         href="https://zalo.me/0968807985"
         target="_blank"
-        className="w-full p-3 rounded-sm relative flex  hover:right-3 right-0 transition-all duration-300 justify-between bg-[#005be0]   text-white "
+        className="w-full p-3 rounded-sm relative flex items-center hover:right-3 right-0 transition-all duration-300 justify-between bg-[#005be0]   text-white "
       >
         <span className="block mr-2 text-sm lg:text-base">Nhắn Zalo</span>
         <ZaloIcon />
@@ -49,7 +49,7 @@ const MenuButtons = () => {
       <Link
         href="https://m.me/chamsocxebmb"
         target="_blank"
-        className="w-full p-3 rounded-sm relative flex  hover:right-3 right-0 transition-all duration-300 justify-between  bg-[#008df2]  text-white "
+        className="w-full p-3 rounded-sm relative flex items-center  hover:right-3 right-0 transition-all duration-300 justify-between  bg-[#008df2]  text-white "
       >
         <span className="block mr-2 text-sm lg:text-base">Messenger</span>
 
