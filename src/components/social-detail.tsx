@@ -30,28 +30,28 @@ const MenuButtons = () => {
       style={{ pointerEvents: showAnimation ? "auto" : "none" }}
     >
       <Link
-        className="w-full p-3 rounded-sm relative flex items-center  hover:right-3 right-0 transition-all duration-300 justify-between   text-white "
+        className="w-full px-3 py-2 rounded-sm relative flex items-center  hover:right-3 right-0 transition-all duration-300 justify-between   text-white "
         style={{ background: "linear-gradient(0deg, #D51921 2.48%, #E45B61 98.71%)" }}
         href="tel:0968807985"
       >
-        <span className="block mr-2 text-sm lg:text-base">Gọi Hotline</span>
+        <span className="block mr-4 text-xs lg:text-sm">Gọi Hotline</span>
 
         <PhoneIcon />
       </Link>
       <Link
         href="https://zalo.me/0968807985"
         target="_blank"
-        className="w-full p-3 rounded-sm relative flex items-center hover:right-3 right-0 transition-all duration-300 justify-between bg-[#005be0]   text-white "
+        className="w-full px-3 py-2 rounded-sm relative flex items-center hover:right-3 right-0 transition-all duration-300 justify-between bg-[#005be0]   text-white "
       >
-        <span className="block mr-2 text-sm lg:text-base">Nhắn Zalo</span>
+        <span className="block mr-4 text-xs lg:text-sm">Nhắn Zalo</span>
         <ZaloIcon />
       </Link>
       <Link
         href="https://m.me/chamsocxebmb"
         target="_blank"
-        className="w-full p-3 rounded-sm relative flex items-center  hover:right-3 right-0 transition-all duration-300 justify-between  bg-[#008df2]  text-white "
+        className="w-full px-3 py-2 rounded-sm relative flex items-center  hover:right-3 right-0 transition-all duration-300 justify-between  bg-[#008df2]  text-white "
       >
-        <span className="block mr-2 text-sm lg:text-base">Messenger</span>
+        <span className="block mr-4 text-xs lg:text-sm">Messenger</span>
 
         <MessIcon />
       </Link>
