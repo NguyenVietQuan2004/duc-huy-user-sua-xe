@@ -30,54 +30,6 @@ function MyService() {
         <div className="text-[#124d9b] text-[36px] font-bold">DỊCH VỤ CỦA CHÚNG TÔI</div>
         <div className="text-[24px] font-light">Trung tâm BMB Car Carecung cấp các dịch vụ với tiêu chuẩn quốc tế</div>
         <div className="grid grid-cols-1 lg:grid-cols-3  mt-20 ">
-          {services?.length >= 6 &&
-            services.map((item, index) => {
-              if (index > 5) return null;
-              return (
-                <Link
-                  href={`/service/${item._id}?tag=category`}
-                  key={index}
-                  className={` group
-                ${
-                  index === 1
-                    ? "border border-transparent  border-t-black lg:border-black lg:border-t-transparent lg:border-b-transparent"
-                    : ""
-                }
-                ${index === 2 ? "border-t lg:border-t-transparent lg:border-b" : ""}
-                ${index === 3 ? "border-t" : ""}
-                ${
-                  index === 4 ? "border border-transparent border-t-black lg:border-black  lg:border-b-transparent" : ""
-                }
-                    ${index === 5 ? "border-t lg:border-t-transparent" : ""}
-                border-black py-[15px] hover:text-[#f8ab34] text-center px-10 flex flex-col gap-4 items-center
-              `}
-                >
-                  {servicesIcon.length ? (
-                    <Image
-                      alt=""
-                      width={80}
-                      height={80}
-                      src={servicesIcon[index].image}
-                      className="max-w-20 object-cover max-h-[90px] h-[90px] group-hover:animate-shake"
-                    />
-                  ) : (
-                    <div>icon</div>
-                  )}
-                  <div className="font-bold line-clamp-3 text-[22px] lg:h-[100px]">{item.name}</div>
-                  {/* <div>{item.content}</div> */}
-                  {/* <div
-                    className="font-light line-clamp-3 text-start-css"
-                    dangerouslySetInnerHTML={{ __html: stripHtml(item.content) }}
-                  /> */}
-                  <div className="mt-auto">
-                    <LinkToIcon strokeColor="#124d9b" />
-                  </div>
-                </Link>
-              );
-            })}
-
-          {/* service 3 */}
-
           {services?.length < 6 &&
             services.map((item, index) => {
               if (index > 2) return null;
@@ -95,7 +47,7 @@ function MyService() {
                       width={80}
                       height={80}
                       src={servicesIcon[index].image}
-                      className="max-w-20 object-cover max-h-[90px] h-[90px] group-hover:animate-shake"
+                      className="max-w-20 object-contain max-h-[90px] h-[90px] group-hover:animate-shake"
                     />
                   ) : (
                     <div>icon</div>
