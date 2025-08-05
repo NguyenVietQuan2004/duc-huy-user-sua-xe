@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="tempo" suppressHydrationWarning={true}>
+    <html lang="en" suppressHydrationWarning={true}>
       <body className={kanit.className}>
         <Providers>
           <Header />
