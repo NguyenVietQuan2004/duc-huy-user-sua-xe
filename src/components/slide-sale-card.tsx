@@ -11,13 +11,13 @@ import { useEffect, useState } from "react";
 import { Sale } from "@/type/sale";
 import { saleApi } from "@/api-request/saleAPI";
 
-function SlideSaleCard() {
-  const [sales, setSales] = useState<Sale[]>();
+function SlideSaleCard({ sales }: { sales: Sale[] }) {
+  // const [sales, setSales] = useState<Sale[]>();
 
   useEffect(() => {
     const fetchAPI = async () => {
-      const sales = await saleApi.getAllSales({ limit: 8, page: 1 });
-      setSales(sales.data);
+      // const sales = await saleApi.getAllSales({ limit: 8, page: 1 });
+      // setSales(sales.data);
     };
     fetchAPI();
   }, []);

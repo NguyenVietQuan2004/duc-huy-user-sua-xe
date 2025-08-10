@@ -9,37 +9,43 @@ import { Service } from "@/type/service";
 import { servicesIcon } from "@/data";
 import Image from "next/image";
 import { posterApi } from "@/api-request/posterAPI";
-import { useSearchParams } from "next/navigation";
+import { notFound, useSearchParams } from "next/navigation";
 import { categoryApi } from "@/api-request/categoryAPI";
 import { Category } from "@/type/category";
 
-function ServiceClient({ serviceId }: { serviceId: string }) {
-  const [service, setService] = useState<Service>();
-  const searchParams = useSearchParams();
-  const tag = searchParams.get("tag");
+function ServiceClient({
+  img,
+  service,
+  tag,
+}: {
+  img: string | undefined;
+  service: Service | undefined;
+  tag: string | undefined;
+}) {
+  // const [service, setService] = useState<Service>();
   const listService: Service[] | Category[] = useAppSelector((state) => {
     return tag
       ? state.service.categories
       : state.service.services.filter((item) => item.category_id === service?.category_id) || [];
   });
 
-  const [img, setImg] = useState();
+  // const [img, setImg] = useState();
 
-  useEffect(() => {
-    const fetchAPI = async () => {
-      let service;
+  // useEffect(() => {
+  //   const fetchAPI = async () => {
+  //     let service;
 
-      if (tag) {
-        service = await categoryApi.getCategoryById({ categoryId: serviceId });
-      } else {
-        service = await serviceApi.getServiceById({ serviceId });
-      }
-      const poster = await posterApi.getPoster();
-      setImg(poster.images_service);
-      setService(service);
-    };
-    fetchAPI();
-  }, [serviceId]);
+  //     if (tag) {
+  //       service = await categoryApi.getCategoryById({ categoryId: serviceId });
+  //     } else {
+  //       service = await serviceApi.getServiceById({ serviceId });
+  //     }
+  //     const poster = await posterApi.getPoster();
+  //     setImg(poster.images_service);
+  //     setService(service);
+  //   };
+  //   fetchAPI();
+  // }, [serviceId]);
 
   const titles: any = {
     "6859615ba48d2ab8ec1b38bc": "VỆ SINH & CHĂM SÓC XE TOÀN DIỆN",
@@ -51,6 +57,7 @@ function ServiceClient({ serviceId }: { serviceId: string }) {
     "685a6f5b344a4d51606951ec": "Bảo dưỡng định kỳ – Đảm bảo xe vận hành ổn định",
     "685ba387ca4538a70e622383": "Giải pháp nâng cấp toàn diện – Chuẩn mực an toàn, thẩm mỹ và công nghệ mới",
   };
+  if (!service) return notFound();
   return (
     <div>
       {/* Banner */}
@@ -70,9 +77,9 @@ function ServiceClient({ serviceId }: { serviceId: string }) {
           }   lg:pt-[120px] mx-auto px-4 `}
         >
           <div className=" text-white max-w-[600px]">
-            <div className="text-[18px]">{titles?.[serviceId] || "Dịch vụ tại BMB Car Care"}</div>
+            <div className="text-[18px]">{titles?.[service._id] || "Dịch vụ tại BMB Car Care"}</div>
             <div className="text-[36px] font-bold line-clamp-3">
-              {subTitles?.[serviceId] || "Chăm sóc từng chi tiết – Nâng cấp từng trải nghiệm"}
+              {subTitles?.[service._id] || "Chăm sóc từng chi tiết – Nâng cấp từng trải nghiệm"}
             </div>
           </div>
         </div>
@@ -104,7 +111,7 @@ function ServiceClient({ serviceId }: { serviceId: string }) {
                     <li
                       key={item._id}
                       className={`flex font-semibold items-center hover:opacity-50 transition-all duration-300 gap-2 py-3 ${
-                        serviceId === item._id ? "text-[#f8ab34]" : ""
+                        service._id === item._id ? "text-[#f8ab34]" : ""
                       }`}
                     >
                       <Link
@@ -147,7 +154,7 @@ function ServiceClient({ serviceId }: { serviceId: string }) {
           </div>
         )}
 
-        <ServiceDetail serviceId={serviceId} listService={listService} isHasTag={!!tag} service={service} />
+        <ServiceDetail serviceId={service._id} listService={listService} isHasTag={!!tag} service={service} />
       </div>
     </div>
   );

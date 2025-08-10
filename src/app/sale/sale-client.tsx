@@ -16,20 +16,19 @@ import { Button } from "@/components/ui/button";
 import { LinkToIcon } from "../../../public/icon";
 import { saleApi } from "@/api-request/saleAPI";
 import { stripHtml } from "@/lib/utils";
-import { posterApi } from "@/api-request/posterAPI";
 
 const ITEMS_PER_PAGE = 9;
 
-function SaleClient() {
+function SaleClient({ img }: { img: any }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [promotionsList, setPromotionList] = useState<Sale[]>();
   const totalPages = promotionsList ? Math.ceil(promotionsList.length / ITEMS_PER_PAGE) : 0;
-  const [img, setImg] = useState();
+  // const [img, setImg] = useState();
   useEffect(() => {
     const fetchAPI = async () => {
       const listPromotions = await saleApi.getAllSales({ limit: 100, page: 1 });
-      const poster = await posterApi.getPoster();
-      setImg(poster.images_promotion);
+      // const poster = await posterApi.getPoster();
+      // setImg(poster.images_promotion);
       setPromotionList(listPromotions.data);
     };
     fetchAPI();

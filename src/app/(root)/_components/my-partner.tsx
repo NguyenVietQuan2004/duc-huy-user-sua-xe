@@ -7,19 +7,6 @@ import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
-const logos = [
-  "https://nhatphatauto.vn/wp-content/uploads/2024/06/Castrol.jpg",
-  "https://nhatphatauto.vn/wp-content/uploads/2024/06/TECH.png",
-  "https://nhatphatauto.vn/wp-content/uploads/2024/06/ASUKI.png",
-  "https://nhatphatauto.vn/wp-content/uploads/2024/06/LiquiMoly.jpg",
-  "https://nhatphatauto.vn/wp-content/uploads/2024/05/image-116.png",
-  "https://nhatphatauto.vn/wp-content/uploads/2024/06/GERMAN_ADLER.png",
-  "https://nhatphatauto.vn/wp-content/uploads/2024/06/GERMAN_ADLER.png",
-  "https://nhatphatauto.vn/wp-content/uploads/2024/06/MatraX.svg",
-  "https://nhatphatauto.vn/wp-content/uploads/2024/06/varta-batteries.jpg",
-  "https://nhatphatauto.vn/wp-content/uploads/2024/06/Bosch.png",
-];
-
 function MyPartner() {
   const imageCount = 9;
   const images = Array.from({ length: imageCount }, (_, i) => `/images/${i + 1}.png`);

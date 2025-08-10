@@ -8,16 +8,16 @@ import { homeApi } from "@/api-request/homeAPI";
 import { Center } from "@/type/center";
 import useModalBooking from "@/hooks/use-model-booking";
 
-function Booking() {
-  const [content, setContent] = useState<ContentAppointmentType>();
-  const [centers, setcenters] = useState<Center[]>();
+function Booking({ content, centers }: { content: ContentAppointmentType; centers: Center[] }) {
+  // const [content, setContent] = useState<ContentAppointmentType>();
+  // const [centers, setcenters] = useState<Center[]>();
   const { isShowModelBooking } = useModalBooking();
   useEffect(() => {
     const fetchAPI = async () => {
-      const data = await homeApi.getContentAppointment();
-      const centers = await homeApi.getCenters();
-      setcenters(centers);
-      setContent(data[0]);
+      // const data = await homeApi.getContentAppointment();
+      // const centers = await homeApi.getCenters();
+      // setcenters(centers);
+      // setContent(data[0]);
     };
     fetchAPI();
   }, []);

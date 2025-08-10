@@ -1,25 +1,25 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { EmailIcon, FacebookIcon, InstagramIcon, LinkedIcon, PhoneIcon, XIcon, YoutubeIcon } from "../../public/icon";
+import { EmailIcon, FacebookIcon, PhoneIcon, YoutubeIcon } from "../../public/icon";
 import { useAppSelector } from "@/store/hook";
 import { useEffect, useState } from "react";
 import { Center } from "@/type/center";
 import { homeApi } from "@/api-request/homeAPI";
 import { Address } from "@/type/address";
 
-function Footer() {
+function Footer({ centers, addresses }: { centers: Center[]; addresses: Address[] }) {
   const services = useAppSelector((state) => state.service.categories);
 
-  const [centers, setCenter] = useState<Center[]>();
-  const [addresses, setAddresses] = useState<Address[]>();
+  // const [centers, setCenter] = useState<Center[]>();
+  // const [addresses, setAddresses] = useState<Address[]>();
 
   useEffect(() => {
     const fetchAPI = async () => {
-      const centers = await homeApi.getCenters();
-      const addresses = await homeApi.getAddresses();
-      setAddresses(addresses);
-      setCenter(centers);
+      // const centers = await homeApi.getCenters();
+      // const addresses = await homeApi.getAddresses();
+      // setAddresses(addresses);
+      // setCenter(centers);
     };
     fetchAPI();
   }, []);

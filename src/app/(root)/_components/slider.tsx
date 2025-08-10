@@ -6,14 +6,14 @@ import { useEffect, useState } from "react";
 import { homeApi } from "@/api-request/homeAPI";
 import { Banner } from "@/type/banner";
 
-function Slider() {
-  const [banner, setBanner] = useState<Banner>();
+function Slider({ banner }: { banner: Banner }) {
+  // const [banner, setBanner] = useState<Banner>();
 
   useEffect(() => {
     const fetchAPI = async () => {
-      const response = await homeApi.getBanner();
-      const data = response[0];
-      setBanner(data);
+      // const response = await homeApi.getBanner();
+      // const data = response[0];
+      // setBanner(data);
     };
     fetchAPI();
   }, []);

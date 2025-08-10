@@ -4,7 +4,6 @@ import Image from "next/image";
 import { LinkToIcon } from "../../../../public/icon";
 import { useInView } from "react-intersection-observer";
 import { useAppSelector } from "@/store/hook";
-import { stripHtml } from "@/lib/utils";
 import { servicesIcon } from "@/data";
 
 function MyService() {

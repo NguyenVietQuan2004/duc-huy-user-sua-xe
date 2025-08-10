@@ -7,14 +7,19 @@ import { useEffect, useState } from "react";
 import AdviceOtherCard from "@/components/advice-other-card";
 import { formatDateToDDMMYYYY, injectImageRandomly } from "@/lib/utils";
 import { saleApi } from "@/api-request/saleAPI";
+import { notFound } from "next/navigation";
 
 function ChuongtrinhKMDetail({ id }: { id: string }) {
   const [sale, setSale] = useState<Sale>();
 
   useEffect(() => {
     const fetchAPI = async () => {
-      const sale = await saleApi.getSaleById({ saleId: id });
-      setSale(sale);
+      try {
+        const sale = await saleApi.getSaleById({ saleId: id });
+        setSale(sale);
+      } catch (error) {
+        notFound();
+      }
     };
     fetchAPI();
   }, []);

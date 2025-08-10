@@ -11,13 +11,14 @@ import { formatDateToDDMMYYYY, stripHtml } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { Blog } from "@/type/blog";
 import { blogApi } from "@/api-request/blogApi";
+import { Sale } from "@/type/sale";
 
-function AdviceSale() {
-  const [adviceList, setAdviceList] = useState<Blog[]>();
+function AdviceSale({ adviceList, sales }: { adviceList: Blog[]; sales: Sale[] }) {
+  // const [adviceList, setAdviceList] = useState<Blog[]>();
   useEffect(() => {
     const fetchAPI = async () => {
-      const listAdvices = await blogApi.getAllBlogs({ limit: 5, page: 1 });
-      setAdviceList(listAdvices.data);
+      // const listAdvices = await blogApi.getAllBlogs({ limit: 5, page: 1 });
+      // setAdviceList(listAdvices.data);
     };
     fetchAPI();
   }, []);
@@ -34,7 +35,7 @@ function AdviceSale() {
 
       <div className="py-[100px] pb-16 px-4  relative max-w-[1140px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 ">
         {/* SALE SECTION */}
-        <SlideKM />
+        <SlideKM sales={sales} />
         {/* ADVICE SECTION - Sửa giống SALE SECTION */}
         <div className="bg-white overflow-hidden hover:text-[#f8ab34] shadow-[4px_4px_15px_0px_rgba(0,0,0,0.15)] border border-[#d9d9d9] rounded-sm">
           <div className="py-5 px-8 flex items-center gap-5">

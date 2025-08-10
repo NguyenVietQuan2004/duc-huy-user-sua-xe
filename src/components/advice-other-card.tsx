@@ -42,7 +42,7 @@ function AdviceOtherCard() {
             className="block rounded-none border-t  items-start border-transparent border-t-black
                     gap-4 py-3 px-4 overflow-hidden shadow-none hover:bg-gray-50 transition-all"
           >
-            <div className="flex gap-4">
+            <div className="flex gap-4 items-start">
               {item.images.length ? (
                 <Image
                   src={item.images[0]}
@@ -56,12 +56,9 @@ function AdviceOtherCard() {
               )}
 
               <div
-                className="font-semibold text-start-css text-sm leading-snug text-wrap line-clamp-4"
+                className="font-semibold text-start-css text-sm leading-snug text-wrap line-clamp-5 overflow-hidden"
                 dangerouslySetInnerHTML={{ __html: striptags(item.content) }}
               />
-              {/* <div className="font-semibold text-start-css text-sm leading-snug text-wrap line-clamp-4">
-                {striptags(item.content)}
-              </div> */}
             </div>
             <div className="flex-1">
               <div className="flex justify-between items-center mt-2">

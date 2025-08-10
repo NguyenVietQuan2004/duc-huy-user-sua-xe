@@ -6,7 +6,7 @@ import { homeApi } from "@/api-request/homeAPI";
 import { Reason } from "@/type/reason";
 import { reasonIcon } from "@/data";
 
-function SixReason() {
+function SixReason({ reason }: { reason: Reason }) {
   const [hasMounted, setHasMounted] = useState(false);
   const [image, imageInView] = useInView({
     threshold: 0.1,
@@ -16,12 +16,12 @@ function SixReason() {
   }, []);
   const showAnimation = hasMounted && imageInView;
 
-  const [reason, setReason] = useState<Reason>();
+  // const [reason, setReason] = useState<Reason>();
 
   useEffect(() => {
     const fetchAPI = async () => {
-      const data = await homeApi.getReason();
-      setReason(data);
+      // const data = await homeApi.getReason();
+      // setReason(data);
     };
     fetchAPI();
   }, []);

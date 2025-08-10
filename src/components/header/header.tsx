@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import MobileMenu from "./menu-mobile";
 import TablePrice from "./table-price";
-import SearchForm from "./search-input";
 import { ClockIcon, SaleIcon, SearchIcon, TablePriceIcon } from "../../../public/icon";
 import { Service } from "@/type/service";
 import { serviceApi } from "@/api-request/serviceAPI";
@@ -16,39 +15,41 @@ import { Category } from "@/type/category";
 import { categoryApi } from "@/api-request/categoryAPI";
 import { useRouter } from "next/navigation";
 
-function Header() {
+function Header({
+  listServices,
+  listCategories,
+  logo,
+}: {
+  listServices: Service[];
+  listCategories: Category[];
+  logo: Logo;
+}) {
   const [isShowTablePrice, setIsShowTablePricce] = useState(false);
-  const [isShowSearchInput, setIsShowSearchInput] = useState(false);
-  const [listServices, setListServices] = useState<Service[]>();
+  // const [listServices, setListServices] = useState<Service[]>();
   const dispatch = useAppDispatch();
-  const [categorys, setCategorys] = useState<Category[]>([]);
+  // const [categorys, setCategorys] = useState<Category[]>([]);
 
   useEffect(() => {
-    const fetchAPI = async () => {
-      const listServices = await serviceApi.getAllservices({ limit: 100, page: 1 });
-      const listCategories = await categoryApi.getAllcategory({ limit: 100, page: 1 });
-      dispatch(setServices({ services: listServices, categories: listCategories }));
-      setListServices(listServices);
-      setCategorys(listCategories);
-    };
-    fetchAPI();
+    // const fetchAPI = async () => {
+    // const listServices = await serviceApi.getAllservices({ limit: 100, page: 1 });
+    // const listCategories = await categoryApi.getAllcategory({ limit: 100, page: 1 });
+    dispatch(setServices({ services: listServices, categories: listCategories }));
+    // setListServices(listServices);
+    // setCategorys(listCategories);
+    // };
+    // fetchAPI();
   }, []);
   const handleShowTablePrice = () => {
     setIsShowTablePricce((pre) => !pre);
   };
-  const handleOpenSearchInput = () => {
-    setIsShowSearchInput((pre) => !pre);
-  };
 
-  const [logo, setLogo] = useState<Logo>();
-
-  useEffect(() => {
-    const fetchAPI = async () => {
-      const data = await homeApi.getLogo();
-      setLogo(data);
-    };
-    fetchAPI();
-  }, []);
+  // useEffect(() => {
+  //   const fetchAPI = async () => {
+  //     const data = await homeApi.getLogo();
+  //     setLogo(data);
+  //   };
+  //   fetchAPI();
+  // }, []);
   const router = useRouter();
   const handleClick = (item: Category) => {
     router.push(`/service/${item._id}?tag=category`);
@@ -120,12 +121,13 @@ function Header() {
             </Link>
             <Link
               href={"/introduce"}
+              prefetch={true}
               className=" hover:text-[#FFBE27] font-semibold hidden lg:block cursor-pointer underline-animate
           "
             >
               GIỚI THIỆU{" "}
             </Link>
-            {categorys.map((category: Category, index) => {
+            {listCategories.map((category: Category, index) => {
               const matchServices = listServices?.filter((service) => service.category_id === category._id);
               return (
                 <div

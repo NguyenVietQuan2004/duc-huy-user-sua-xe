@@ -5,19 +5,19 @@ import useModalBooking from "@/hooks/use-model-booking";
 import { Center } from "@/type/center";
 import { homeApi } from "@/api-request/homeAPI";
 
-function ModelBooking() {
+function ModelBooking({ centers }: { centers: Center[] }) {
   const contentRef = useRef<HTMLDivElement>(null);
   const { isShowModelBooking, setIsShowModelBooking } = useModalBooking();
 
-  const [centers, setcenters] = useState<Center[]>();
+  // const [centers, setcenters] = useState<Center[]>();
   const [isSelectOpen, setIsSelectOpen] = useState(false);
-  useEffect(() => {
-    const fetchAPI = async () => {
-      const centers = await homeApi.getCenters();
-      setcenters(centers);
-    };
-    fetchAPI();
-  }, []);
+  // useEffect(() => {
+  //   const fetchAPI = async () => {
+  //     const centers = await homeApi.getCenters();
+  //     setcenters(centers);
+  //   };
+  //   fetchAPI();
+  // }, []);
 
   useEffect(() => {
     if (isShowModelBooking) {
