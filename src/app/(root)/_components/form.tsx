@@ -136,7 +136,7 @@ export default function Form({
       onSubmit={handleSubmit(onSubmit)}
       className={`max-w-full sm:w-auto sm:max-w-[510px] relative ${
         hasCloseIcon && "max-h-[100vh]"
-      } lg:max-h-[3000px] overflow-auto mx-auto bg-[#F4F6F7] p-10 px-6 lg:px-10 rounded-xl shadow-md`}
+      }  overflow-auto mx-auto bg-[#F4F6F7] p-10 px-6 lg:px-10 rounded-xl shadow-md`}
     >
       {hasCloseIcon && (
         <button
