@@ -16,7 +16,8 @@ const ConfigHttp = async <ResType>(method: string, URL: string, option?: CustomR
     headers,
     ...(method !== "GET" && { body }),
     credentials: option?.credentials,
-    cache: option?.cache,
+    cache: "no-cache",
+    // cache: option?.cache,
   });
 
   const result: ResType = await response.json();
