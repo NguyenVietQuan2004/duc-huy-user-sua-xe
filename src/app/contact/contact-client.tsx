@@ -38,7 +38,7 @@ function ContactClient({ img, address }: Props) {
           <div className="flex flex-col gap-8">
             <div>
               <h3 className="font-bold">BMB Garage – Trung Tâm Chăm Sóc Xe</h3>
-              <p>21 Đường Phú Thuận, Phường Tân Phú, Quận 7, TP. Hồ Chí Minh</p>
+              <p>Số 21 Phú Thuận, P. Tân Mỹ, TP. Hồ Chí Minh (Đ/c cũ: 21 Phú Thuận, P. Tân Phú, Q.7)</p>
 
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.056640960699!2d106.73078149999999!3d10.7301149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175254fc81ab34d%3A0xc416f38314923c3a!2sBMB%20Garage!5e0!3m2!1svi!2s!4v1750091279481!5m2!1svi!2s"
