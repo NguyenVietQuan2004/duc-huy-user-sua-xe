@@ -53,6 +53,9 @@ function Header({
   const router = useRouter();
   const handleClick = (item: Category) => {
     router.push(`/service/${item._id}?tag=category`);
+    if (typeof window !== "undefined") {
+      window.location.href = `/service/${item._id}?tag=category`;
+    }
   };
   return (
     <div className="text-white">
@@ -121,7 +124,7 @@ function Header({
             </Link>
             <Link
               href={"/introduce"}
-              prefetch={true}
+              // prefetch={true}
               className=" hover:text-[#FFBE27] font-semibold hidden lg:block cursor-pointer underline-animate
           "
             >
@@ -152,13 +155,13 @@ function Header({
                     {matchServices?.map((item: Service) => {
                       return (
                         <div key={item._id} className="py-3">
-                          <Link
+                          <a
                             onClick={(e) => e.stopPropagation()}
                             className="line-clamp-1 overflow-hidden  max-w-full hover:text-[#f8ab34] transition-all duration-200 font-light border-b border-white last:border-transparent"
                             href={`/service/${item._id}`}
                           >
                             {item.name}
-                          </Link>
+                          </a>
                         </div>
                       );
                     })}
